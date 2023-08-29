@@ -1,0 +1,224 @@
+table 'Pop-AgeBand_Sex'
+	lineageTag: 3bfa6ef7-eedf-4eb7-baa2-00bf8b2160b1
+	ordinal: 33
+
+	partition 'Pop-AgeBand_Sex-2bbeb05b-e81e-4b6c-85e7-be9c5d6a36ab' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2029_1.data.csv?date=latest&geography=650117217,2092957699&c_sex=1,2&c2021_age_92=1001...1011&measures=20100"),[Delimiter=",", Columns=34, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C_SEX", Int64.Type}, {"C_SEX_NAME", type text}, {"C_SEX_CODE", type text}, {"C_SEX_TYPE", type text}, {"C_SEX_TYPECODE", Int64.Type}, {"C_SEX_SORTORDER", Int64.Type}, {"C2021_AGE_92", Int64.Type}, {"C2021_AGE_92_NAME", type text}, {"C2021_AGE_92_CODE", Int64.Type}, {"C2021_AGE_92_TYPE", type text}, {"C2021_AGE_92_TYPECODE", Int64.Type}, {"C2021_AGE_92_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", Int64.Type}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"DATE_NAME", "DATE_CODE", "DATE_TYPE", "DATE_TYPECODE", "DATE_SORTORDER", "GEOGRAPHY", "OBS_STATUS", "OBS_STATUS_NAME", "OBS_CONF", "OBS_CONF_NAME", "URN", "RECORD_OFFSET", "RECORD_COUNT"})
+			in
+			    #"Removed Columns"
+
+	column DATE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 82c135e4-1334-42a7-9fc5-0eab94177c31
+		sourceColumn: DATE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: a8e1e655-a27c-4c58-990d-cbd7bfb80c93
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 74273d7e-9b65-4bc6-87cc-90ecf6987de9
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 221430ec-b2e8-49f6-b6b4-8c7838e45f01
+		sourceColumn: GEOGRAPHY_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 19d2cfe7-bb62-4465-8161-74a9b82d637a
+		sourceColumn: GEOGRAPHY_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 772cefc7-e21a-4b59-a024-4df6937c44b1
+		sourceColumn: GEOGRAPHY_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 636fc857-9102-4f73-a4d8-0090b50338da
+		sourceColumn: C_SEX
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 2e7b67b4-a06a-4c55-b5d3-2009ce66292b
+		sourceColumn: C_SEX_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0a93de6f-a3e3-409a-b525-9debdfd779ea
+		sourceColumn: C_SEX_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: dc15a21e-deee-4c77-bc75-0731795c87ab
+		sourceColumn: C_SEX_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 6ffff9dc-d012-4d7f-ab3b-66f88f786871
+		sourceColumn: C_SEX_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_SEX_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b039dff3-a9a5-46e6-bdbe-49fff4fffc1a
+		sourceColumn: C_SEX_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: cf77e2ed-86cf-4265-ab84-2646e6a8fd20
+		sourceColumn: C2021_AGE_92
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 42e87fc2-5825-4e18-be1d-51adeaf2e121
+		sourceColumn: C2021_AGE_92_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92_CODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3f093361-a05d-4fc4-937e-f961cba23f86
+		sourceColumn: C2021_AGE_92_CODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 70b09a3d-0ff5-41ab-9a7e-528103d6914a
+		sourceColumn: C2021_AGE_92_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 918c4163-1a9c-4e82-8b23-4fdfe1a4b392
+		sourceColumn: C2021_AGE_92_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_92_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d08b8bea-b2a1-4368-9697-89206c370277
+		sourceColumn: C2021_AGE_92_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["SortByColumn"]
+
+	column MEASURES
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b68b86c5-6f7d-499c-ac6d-e61d50ceeabb
+		sourceColumn: MEASURES
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEASURES_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: fde0c3ec-19b1-45ce-bf70-53a3cf79121c
+		sourceColumn: MEASURES_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b6d342f0-be43-40fe-9fe3-81cdb4c958a4
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_ChangedProperties = ["Name"]
+

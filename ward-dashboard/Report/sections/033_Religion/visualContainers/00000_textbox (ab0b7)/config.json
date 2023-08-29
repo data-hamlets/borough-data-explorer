@@ -1,0 +1,53 @@
+{
+  "name": "ab0b76af9d32fbd2159b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.76271186440678,
+        "y": 51.254237288135592,
+        "z": 4000,
+        "width": 612.61016949152543,
+        "height": 99.457627118644069
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The religion of usual residents. Across the borough the most observed categories were ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "Muslim (39.9%), No religion (26.6%), and Christian (22.3%).",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

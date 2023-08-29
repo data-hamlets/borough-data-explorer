@@ -1,0 +1,98 @@
+table 'Age Band Lookup'
+	lineageTag: 734c1fe2-5658-405b-95b1-ccdc3854b2af
+	ordinal: 23
+
+	partition 'Age Band Lookup-dda185fc-1ff6-446c-baef-87d3a8de3fe7' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\age band look up.xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+			    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Age", Int64.Type}, {"5 year Age Band", type text}, {"5 year sort order", Int64.Type}, {"10 Year Age Band", type text}, {"10 year sort order", Int64.Type}, {"Broad Ranges", type text}, {"Broad Range sort order", Int64.Type}, {"16+", type text}})
+			in
+			    #"Changed Type1"
+
+	column Age
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: bd72680c-c062-41b4-86f5-b61322e6f090
+		sourceColumn: Age
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column '5 year Age Band'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 3f65377a-317f-4f11-babe-b409a17b0ced
+		sourceColumn: "5 year Age Band"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column '5 year sort order'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 0191138c-dad6-459c-a1b6-5f14e55f0976
+		sourceColumn: "5 year sort order"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10 Year Age Band'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 21511bad-40a6-4e15-b6c8-735f074b875e
+		sourceColumn: "10 Year Age Band"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10 year sort order'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 42596601-bf81-4a9e-bfc6-3703f24fc20b
+		sourceColumn: "10 year sort order"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broad Ranges'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 67fba1c6-9e04-4775-b78a-8eab686edc72
+		sourceColumn: "Broad Ranges"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broad Range sort order'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a5025a62-4eb3-4ae6-9e50-a146520d57a9
+		sourceColumn: "Broad Range sort order"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column '16+'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: f4ef609e-e99d-417e-b9aa-4d780dab11ed
+		sourceColumn: 16+
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

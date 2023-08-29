@@ -1,0 +1,40 @@
+{
+  "name": "452d0636b4c22293aa6b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 43.479155944415851,
+        "y": 4.6114256304683474,
+        "z": 4000,
+        "width": 502.64539372104991,
+        "height": 53.360782295419455
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Alternate claimant count rate",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

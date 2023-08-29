@@ -1,0 +1,48 @@
+table 'NS-SeC_ward'
+	lineageTag: 90007e2d-5429-4251-809c-ad4c182988c6
+	ordinal: 38
+
+	partition 'NS-SeC_ward-9c690600-dc6c-4c51-8f7b-4052d11fec2d' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2079_1.data.csv?date=latest&geography=641730979...641730990,641730994,641730995,641730991...641730993,641730996...641730998&c2021_nssec_10=1&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_NSSEC_10", Int64.Type}, {"C2021_NSSEC_10_NAME", type text}, {"C2021_NSSEC_10_CODE", type text}, {"C2021_NSSEC_10_TYPE", type text}, {"C2021_NSSEC_10_TYPECODE", Int64.Type}, {"C2021_NSSEC_10_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_NAME", "OBS_VALUE", "C2021_NSSEC_10_NAME"})
+			in
+			    #"Removed Other Columns"
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 63909f28-f7ea-4da9-9a45-68b379259d51
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_NSSEC_10_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 8ea08257-91bd-4b0a-a36e-677850a46d74
+		sourceColumn: C2021_NSSEC_10_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 43972d42-f246-477e-81d7-c589c1997a40
+		sourceColumn: OBS_VALUE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

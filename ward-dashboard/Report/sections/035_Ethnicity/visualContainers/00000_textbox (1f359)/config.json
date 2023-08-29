@@ -1,0 +1,40 @@
+{
+  "name": "1f359c2c94c0cf509e64",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 762.71186440677968,
+        "y": 46.372881355932208,
+        "z": 5000,
+        "width": 334.37288135593224,
+        "height": 89.694915254237287
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select one or more bars (Ctrl + click) to explore ethnicity by OA. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

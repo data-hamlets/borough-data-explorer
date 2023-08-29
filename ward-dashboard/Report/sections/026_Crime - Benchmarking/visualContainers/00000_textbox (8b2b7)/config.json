@@ -1,0 +1,51 @@
+{
+  "name": "8b2b749440dbbaafb5d6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 393.33333333333337,
+        "y": 639.16666666666674,
+        "z": 3000,
+        "width": 285.83333333333337,
+        "height": 27.5
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Sources: Met police ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "(2023), "
+                  },
+                  {
+                    "value": "ONS",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " (2021)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+table 'Ethnic Group Lookup'
+	lineageTag: 0eb5f6b8-f541-48a7-b7dd-b01c9093c284
+	ordinal: 31
+
+	partition 'Ethnic Group Lookup-98f7ce5f-6cdf-4e44-b64a-81f08e7708be' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\Ethnic Group Lookup.csv"} , "\"),
+			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"C2021_ETH_20_NAME", type text}, {"C2021_ETH_20_CODE", type text}, {"Ethnic Group", type text}, {"Ethnic Subgroup", type text}})
+			in
+			    #"Changed Type1"
+
+	column C2021_ETH_20_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 27f1c4ad-6226-44ff-81fe-6e80fa1dcc67
+		sourceColumn: C2021_ETH_20_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 01fb695e-8c7b-4f34-a8dc-c182aeb17d70
+		sourceColumn: C2021_ETH_20_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ethnic Group'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1df14433-9968-4e67-83bf-0594c09f2a03
+		sourceColumn: "Ethnic Group"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ethnic Subgroup'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: f6a725f5-7fd3-4469-bb2d-7dfeb28bfd86
+		sourceColumn: "Ethnic Subgroup"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,89 @@
+table 'ethnicity-21'
+	lineageTag: ce9fe59d-e3da-4b16-9ab8-1c4e6598329c
+	ordinal: 17
+
+	partition 'ethnicity-21-bb131bc5-b5c1-49c7-8407-f10c064799a3' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.csv?date=latest&geography=629165479...629165982,629303674...629303812,629317322...629317326,629317336...629317343,629317349...629317360,629317362...629317366,629317371,629317374,629317376,629317378,629317379,629317381,629317385,629317388...629317392,629317394...629317397,629317399...629317403,629317405...629317407,629317409,629317411,629317412,629317416...629317420,629317422...629317424,629317426,629317429...629317434,629317436,629317437,629317440...629317442,629317444...629317450,629317452...629317456,629317459...629317461,629317463,629317466...629317468,629317472,629317474...629317479,629317481,629317483,629317486,629317487,629317490,629317492,629317494,629317495,629317497,629317499...629317502,629317504,629317505,629317507...629317509,629317512...629317514,629317517,629317520,629317523,629317525,629317527,629317531,629317534,629317535,629317537,629317538,629317540,629317543...629317548,629317551,629317554,629317555,629317558,629317560,629317562,629317563,629317565,629317566,629317569...629317573,629317576...629317578,629317580,629317582,629317584,629317585,629317587,629317590...629317592,629317594,629317596...629317599,629317601,629317603,629317604,629317606,629317607,629317610,629317612,629317613,629317615...629317617,629317619...629317621,629317623,629317625...629317629,629317631...629317634,629317636,629317640,629317648,629317650...629317659,629317662,629317663,629317666...629317669,629317672...629317687,629317689,629317691,629317694,629317695,629317697,629317698,629317700,629317701,629317703,629317704,629317706,629317707,629317711...629317714,629317716,629317718...629317720,629317722...629317724,629317726,629317729,629317731,629317733,629317736...629317742,629317744,629317746...629317748,629323624,629323625&c2021_eth_20=1001,12,13,10,11,14,1002,16,15,17,1003,8,7,6,9,1004,1...5,1005,18,19&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_ETH_20", Int64.Type}, {"C2021_ETH_20_NAME", type text}, {"C2021_ETH_20_CODE", type text}, {"C2021_ETH_20_TYPE", type text}, {"C2021_ETH_20_TYPECODE", Int64.Type}, {"C2021_ETH_20_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_CODE", "C2021_ETH_20_NAME", "OBS_VALUE"}),
+			    #"Split Column by Delimiter" = Table.SplitColumn(#"Removed Other Columns", "C2021_ETH_20_NAME", Splitter.SplitTextByEachDelimiter({":"}, QuoteStyle.Csv, false), {"C2021_ETH_20_NAME.1", "C2021_ETH_20_NAME.2"}),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"C2021_ETH_20_NAME.1", type text}, {"C2021_ETH_20_NAME.2", type text}}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"C2021_ETH_20_NAME.1", "Ethnic group"}})
+			in
+			    #"Renamed Columns"
+
+	measure 'eth min' = MIN('ethnicity-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 87e743e8-2792-41d7-bf2f-e318b02d0b5b
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'eth average' = AVERAGE('ethnicity-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: fee70884-e04d-4122-88de-331b9dd19c1a
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'eth max' = MAX('ethnicity-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 97cc246d-c8dd-482e-a947-fbf10ffe0af5
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1b760d97-25d3-4139-858b-cd9329be41fb
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 982633cc-650f-482d-aebe-65c5b84a7024
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ethnic group'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 5a748910-84c4-4d8a-b003-dbdea65fb680
+		sourceColumn: "Ethnic group"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'C2021_ETH_20_NAME.2'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: f9ef0425-039f-4bfd-8f8d-be4457729fdf
+		sourceColumn: C2021_ETH_20_NAME.2
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Ethnic grou'
+		lineageTag: 1c34d8c7-55aa-4384-88ce-b1a049cff955
+
+		level 'Ethnic group'
+			column: 'Ethnic group'
+			lineageTag: 17548d8c-6ffa-4adb-97c2-a01edca34ed9
+
+		level '(detailed)'
+			column: 'C2021_ETH_20_NAME.2'
+			lineageTag: d2f4a531-62f6-45b1-b3a6-a043afcdc205
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

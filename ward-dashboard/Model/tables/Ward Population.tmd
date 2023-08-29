@@ -1,0 +1,59 @@
+table 'Ward Population'
+	lineageTag: 347b1d06-3cb7-4a6a-9cd2-71c495bd8b15
+	ordinal: 24
+
+	partition 'Ward Population-d97a244c-5c0a-48a1-bf3d-4126589c3b80' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2027_1.data.csv?date=latest&geography=641730979...641730990,641730994,641730995,641730991...641730993,641730996...641730998&c2021_age_102=1...101&measures=20100"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_AGE_102", Int64.Type}, {"C2021_AGE_102_NAME", type text}, {"C2021_AGE_102_CODE", type text}, {"C2021_AGE_102_TYPE", type text}, {"C2021_AGE_102_TYPECODE", Int64.Type}, {"C2021_AGE_102_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", Int64.Type}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_NAME", "GEOGRAPHY_CODE", "C2021_AGE_102_SORTORDER", "OBS_VALUE"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each true),
+			    #"Replaced Value" = Table.ReplaceValue(#"Filtered Rows"," (Tower Hamlets)","",Replacer.ReplaceText,{"GEOGRAPHY_NAME"})
+			in
+			    #"Replaced Value"
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 686507c9-b452-45df-a6f6-bc416cc1078a
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 64b49200-a5cf-485b-9894-37eabbef6690
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_102_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8073f859-d9a6-4ceb-8da2-1e99997c01a5
+		sourceColumn: C2021_AGE_102_SORTORDER
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d8181980-2bf1-41cd-825e-74518bae950e
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

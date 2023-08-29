@@ -1,0 +1,40 @@
+{
+  "name": "eefe220f79fe57ad40dd",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 67.118644067796609,
+        "y": 0,
+        "z": 6000,
+        "width": 304.47457627118644,
+        "height": 48.203389830508478
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Household language",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

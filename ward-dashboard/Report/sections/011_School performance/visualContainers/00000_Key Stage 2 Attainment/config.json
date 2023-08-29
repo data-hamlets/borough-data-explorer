@@ -1,0 +1,316 @@
+{
+  "name": "41c64eaf1b53850e0539",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 19.84251968503937,
+        "y": 192.75590551181102,
+        "z": 4000,
+        "width": 586.771653543307,
+        "height": 365.66929133858264
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "KeyStage2_Attainment.year",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(KeyStage2_Attainment.London)"
+        },
+        {
+          "queryRef": "Sum(KeyStage2_Attainment.Inner London)"
+        },
+        {
+          "queryRef": "Sum(KeyStage2_Attainment.England)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "k",
+          "Entity": "KeyStage2_Attainment",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "k"
+              }
+            },
+            "Property": "year"
+          },
+          "Name": "KeyStage2_Attainment.year"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "k"
+                  }
+                },
+                "Property": "London"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(KeyStage2_Attainment.London)"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "k"
+                  }
+                },
+                "Property": "Inner London"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(KeyStage2_Attainment.Inner London)"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "k"
+                  }
+                },
+                "Property": "England"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(KeyStage2_Attainment.England)"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 1,
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "k"
+                }
+              },
+              "Property": "year"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "Sum(KeyStage2_Attainment.London)": {
+        "displayName": "Tower Hamlets"
+      },
+      "Sum(KeyStage2_Attainment.Inner London)": {
+        "displayName": "London"
+      },
+      "KeyStage2_Attainment.year": {
+        "displayName": "Year"
+      }
+    },
+    "queryOptions": {
+      "keepProjectionOrder": true
+    },
+    "showAllRoles": [
+      "Category"
+    ],
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#AC0E73'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(KeyStage2_Attainment.Inner London)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B5351'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(KeyStage2_Attainment.England)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0FB4B8'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(KeyStage2_Attainment.London)"
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Attainment (%)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Key Stage 2 Attainment'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

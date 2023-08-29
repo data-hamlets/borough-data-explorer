@@ -1,0 +1,51 @@
+{
+  "name": "6c80c56576f5b773c9b6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 432.28346456692913,
+        "y": 637.79527559055111,
+        "z": 3000,
+        "width": 276.37795275590548,
+        "height": 38.267716535433067
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Source: ONS (2022)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

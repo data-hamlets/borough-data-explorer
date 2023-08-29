@@ -1,0 +1,110 @@
+table 'LSOA Parks only'
+	lineageTag: 87d30286-3788-4a56-a8c4-f187e28ab276
+	ordinal: 29
+
+	partition 'LSOA Parks only-6d2b4c26-60c3-45c6-8e1c-e7e5e8c8490b' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\ospublicgreenspacereferencetables.xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    #"LSOA Parks only_Sheet" = Source{[Item="LSOA Parks only",Kind="Sheet"]}[Data],
+			    #"Promoted Headers" = Table.PromoteHeaders(#"LSOA Parks only_Sheet", [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Country code", type text}, {"Country name", type text}, {"Region code", type text}, {"Region name", type text}, {"LAD code", type text}, {"LAD name", type text}, {"MSOA code", type text}, {"MSOA name", type text}, {"LSOA code", type text}, {"LSOA name", type text}, {"Index of Multiple Deprivation rank (country specific)", Int64.Type}, {"Index of Multiple Deprivation decile (country specific)", Int64.Type}, {"Average distance to nearest Park or Public Garden (m)", type number}, {"Average size of nearest Park or Public Garden (m2)", type number}, {"Average number of Parks or Public Gardens within 1,000 m radius", type number}, {"Average combined size of Parks or Public Gardens within 1,000 m radius (m2)", type number}, {"Number of postcodes within built up area", Int64.Type}, {"Number of built up area postcodes  within 300m of a Park or Public Garden", Int64.Type}, {"Number of built up area postcodes  within 900m of a Park or Public Garden", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Country code", "Country name", "Region code", "Region name", "MSOA code", "MSOA name", "Index of Multiple Deprivation rank (country specific)", "Average number of Parks or Public Gardens within 1,000 m radius", "Average combined size of Parks or Public Gardens within 1,000 m radius (m2)", "Number of postcodes within built up area", "Number of built up area postcodes  within 300m of a Park or Public Garden", "Number of built up area postcodes  within 900m of a Park or Public Garden"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([LAD name] = "Tower Hamlets"))
+			in
+			    #"Filtered Rows"
+
+	measure 'parks min' = MIN('LSOA Parks only'[Average distance to nearest Park or Public Garden (m)])
+		formatString:= 0
+		lineageTag: 717c71de-51c7-4a24-8156-dc97da1d2ab6
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'parks max' = MAX('LSOA Parks only'[Average distance to nearest Park or Public Garden (m)])
+		formatString:= 0
+		lineageTag: 84c6047c-fd21-4f92-b67c-f6bedca02d1a
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'parks avg' = AVERAGE('LSOA Parks only'[Average distance to nearest Park or Public Garden (m)])
+		formatString:= 0
+		lineageTag: d7b124fe-e357-48e6-b53b-20cac573d494
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column 'LAD code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 9df0ea46-c293-4bdb-904c-340f4390fa39
+		sourceColumn: "LAD code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LAD name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0a3fe8b8-a792-455d-8f77-f1f3f917d9c3
+		sourceColumn: "LAD name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LSOA code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0fc3fbcf-27b1-43c4-8435-34b69ae15967
+		sourceColumn: "LSOA code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LSOA name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 430353bb-a798-4899-bc4a-3eba4da71f97
+		sourceColumn: "LSOA name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index of Multiple Deprivation decile (country specific)'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3e8a4a75-9c4d-4a75-94be-af2f180de221
+		sourceColumn: "Index of Multiple Deprivation decile (country specific)"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Average distance to nearest Park or Public Garden (m)'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 56eda99f-9ae8-44f6-9055-4d5a1098165a
+		sourceColumn: "Average distance to nearest Park or Public Garden (m)"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Average size of nearest Park or Public Garden (m2)'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: f4f84b16-c7a5-4407-af42-93c9aa22ec28
+		sourceColumn: "Average size of nearest Park or Public Garden (m2)"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

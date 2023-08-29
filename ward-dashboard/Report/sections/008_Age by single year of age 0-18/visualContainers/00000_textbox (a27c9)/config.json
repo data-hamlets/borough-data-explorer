@@ -1,0 +1,40 @@
+{
+  "name": "a27c9fc0f4566327c6f1",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 44.137931034482754,
+        "y": 0,
+        "z": 5000,
+        "width": 420.29850746268653,
+        "height": 48.0905815748842
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Age by single year of age 0-18",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

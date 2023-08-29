@@ -1,0 +1,52 @@
+{
+  "name": "a4d385ece212207cf9bd",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 19.84251968503937,
+        "y": 94.960629921259837,
+        "z": 9000,
+        "width": 551.33858267716528,
+        "height": 97.795275590551171
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The highest level of qualification is measured using the UK Government standard levelling system. In Tower Hamlets the largest category is 'Level 4 qualifications or above' at ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "45.9%",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ". ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "b38ce2cdd44212a0a424",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 41.491525423728817,
+        "y": 5.491525423728814,
+        "z": 3000,
+        "width": 1050.7118644067798,
+        "height": 117.76271186440678
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Air Quality - PM2.5",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "There is strong evidence that air pollution causes the development of coronary heart disease, stroke, respiratory disease, and lung cancer, exacerbates asthma and has a contributory role in mortality.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

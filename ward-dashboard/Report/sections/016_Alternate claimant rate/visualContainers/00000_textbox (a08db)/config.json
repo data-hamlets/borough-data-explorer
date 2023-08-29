@@ -1,0 +1,39 @@
+{
+  "name": "a08dba95408b15b8166a",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.9212598425196852,
+        "y": 65.196850393700785,
+        "z": 5000,
+        "width": 568.34645669291331,
+        "height": 75.118110236220474
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The alternate claimant count measures the number of people claiming unemployment related benefits. In this case by ward.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

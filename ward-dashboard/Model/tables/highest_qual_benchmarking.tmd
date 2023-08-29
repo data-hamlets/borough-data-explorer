@@ -1,0 +1,63 @@
+table highest_qual_benchmarking
+	lineageTag: af899ac7-7b7e-4b5f-bce7-5ba323d13a4c
+	ordinal: 52
+
+	partition 'highest_qual_benchmarking-6b51efc1-e946-48c1-8556-f3a60d8e24fd' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2084_1.data.csv?date=latest&geography=645923010,2092957699,2013265927&c2021_hiqual_8=0...7&measures=20301&select=geography_name,c2021_hiqual_8_name,obs_value"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"GEOGRAPHY_NAME", type text}, {"C2021_HIQUAL_8_NAME", type text}, {"OBS_VALUE", type number}}),
+			    #"Pivoted Column" = Table.Pivot(#"Changed Type", List.Distinct(#"Changed Type"[GEOGRAPHY_NAME]), "GEOGRAPHY_NAME", "OBS_VALUE", List.Sum),
+			    #"Removed Bottom Rows" = Table.RemoveLastN(#"Pivoted Column",1),
+			    #"Renamed Columns" = Table.RenameColumns(#"Removed Bottom Rows",{{"C2021_HIQUAL_8_NAME", "Qualification Level"}})
+			in
+			    #"Renamed Columns"
+
+	column 'Qualification Level'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 3d9d80b2-40e9-4f25-a13f-02d88a585cea
+		sourceColumn: "Qualification Level"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tower Hamlets'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 15141c31-45b0-437e-a25e-e5a03df04544
+		sourceColumn: "Tower Hamlets"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column England
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 46c638cd-604c-4093-8ed8-fe8dc1f2a47f
+		sourceColumn: England
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column London
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: e491fff3-153b-4a75-bfaa-b8d19b182608
+		sourceColumn: London
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

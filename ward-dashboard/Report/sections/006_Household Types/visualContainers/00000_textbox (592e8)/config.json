@@ -1,0 +1,40 @@
+{
+  "name": "592e8974259f9283b71c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 512.542372881356,
+        "y": 248.33898305084747,
+        "z": 5000,
+        "width": 546.10169491525426,
+        "height": 51.864406779661017
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Please click on one or more household types in table (Ctrl + click) to explore map. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

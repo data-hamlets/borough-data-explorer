@@ -1,0 +1,119 @@
+table 'LSOA Fuel Poverty'
+	lineageTag: 6518e218-d1e8-4d37-b58e-780e93f46405
+	ordinal: 41
+
+	partition 'LSOA Fuel Poverty-daf29d4c-d776-4512-96f8-1472e19cb17d' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\sub-regional-fuel-poverty-2022-tables.xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    #"Table 3_Sheet" = Source{[Item="Table 3",Kind="Sheet"]}[Data],
+			    #"Removed Top Rows" = Table.Skip(#"Table 3_Sheet",2),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"LSOA Code", type text}, {"LSOA Name", type text}, {"LA Code", type text}, {"LA Name", type text}, {"Region", type text}, {"Number of households", Int64.Type}, {"Number of households in fuel poverty", Int64.Type}, {"Proportion of households fuel poor (%)", type number}, {"Column9", type any}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column9"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([LA Name] = "Tower Hamlets"))
+			in
+			    #"Filtered Rows"
+
+	measure 'Fuel poverty min' = MIN('LSOA Fuel Poverty'[Proportion of households fuel poor (%)])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 627d796f-62fc-412a-8f3b-de6426961215
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'Fuel poverty max' = MAX('LSOA Fuel Poverty'[Proportion of households fuel poor (%)])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: b6529fe6-797d-41ea-b2ce-adc241cbd4e4
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'Fuel poverty average' = AVERAGE('LSOA Fuel Poverty'[Proportion of households fuel poor (%)])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 7a495011-1768-4048-a7f9-23349cd88d94
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column 'LSOA Code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0195b4e1-b885-4934-9661-5608e85f8807
+		sourceColumn: "LSOA Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LSOA Name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 934760a6-5f30-4672-8191-35f31992a2a9
+		sourceColumn: "LSOA Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LA Code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: c771ccc4-88f8-412c-904a-aa9210d3aa71
+		sourceColumn: "LA Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LA Name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: e9e7d6bb-67d4-454c-ae15-1730ead8c6de
+		sourceColumn: "LA Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 27e42e79-0fef-4460-a161-cb2bcded9442
+		sourceColumn: Region
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of households'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 98beb89d-046b-4a62-974c-3a84330dd4a5
+		sourceColumn: "Number of households"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of households in fuel poverty'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 87955a79-4539-4ecd-a04b-32f0792a8621
+		sourceColumn: "Number of households in fuel poverty"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proportion of households fuel poor (%)'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: c7d592aa-1a18-47b4-b84e-4c7d7f6b11d1
+		sourceColumn: "Proportion of households fuel poor (%)"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

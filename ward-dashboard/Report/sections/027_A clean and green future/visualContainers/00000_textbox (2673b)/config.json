@@ -1,0 +1,55 @@
+{
+  "name": "2673ba0410812ffae738",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48,
+        "y": 272,
+        "z": 1000,
+        "width": 720,
+        "height": 400
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Tower Hamlets is a place where people want to live and work. It is also the most densely populated area in the country. Residents, workers and visitors need a clean local area, with clean air, green spaces to enjoy, and different options for getting around. ",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "a0297d98832ae1e5220d",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 16,
+        "y": 16,
+        "z": 0,
+        "width": 1088,
+        "height": 240.00000000000003
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Fuel Poverty",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A household is considered to be fuel poor if they are living in a property with a fuel poverty energy efficiency rating of band D or below ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  },
+                  {
+                    "value": "and",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  },
+                  {
+                    "value": " when they spend the required amount to heat their home, they are left with a residual income below the official poverty line. There is compelling evidence that the drivers of fuel poverty (low income, poor energy efficiency, and energy prices) are strongly linked to cold homes. Evidence shows that living in cold homes is associated with poor health outcomes and an increased risk of morbidity and mortality for all age groups. The map below shows LSOA statistical areas matched to ward by their population centre.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

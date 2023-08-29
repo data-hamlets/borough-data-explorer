@@ -1,0 +1,40 @@
+{
+  "name": "dbdcbe02e26d96161a72",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40.618388934092756,
+        "y": 213.50691619202604,
+        "z": 6000,
+        "width": 532.20504475183077,
+        "height": 71.863303498779487
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select one or more crime categories in bar chart (Ctrl + click) to explore map. Select an LSOA on the map to see its contribution to crime categories.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

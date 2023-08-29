@@ -1,0 +1,39 @@
+{
+  "name": "826ab6e6bd2504cc2dfc",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 19.84251968503937,
+        "y": 68.031496062992119,
+        "z": 2000,
+        "width": 551.33858267716528,
+        "height": 97.795275590551171
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Key stage 2 (ages 7-11) attainment is measured in this case by the percentage of pupils meeting the expected standard in reading, writing and maths. Key stage 4 performance is measured in this case by the percentage of pupils achieving level 4 or above in GCSE maths and english. ",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

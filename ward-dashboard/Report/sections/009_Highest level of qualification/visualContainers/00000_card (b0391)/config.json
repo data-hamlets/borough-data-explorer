@@ -1,0 +1,111 @@
+{
+  "name": "b039181ad7cd2a829cbc",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 640,
+        "y": 528,
+        "z": 4000,
+        "width": 192,
+        "height": 64
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Highest Level of Qualification.Minimum Percentage"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "h",
+          "Entity": "Highest Level of Qualification",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "h"
+              }
+            },
+            "Property": "Minimum Percentage"
+          },
+          "Name": "Highest Level of Qualification.Minimum Percentage"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "h"
+                }
+              },
+              "Property": "Minimum Percentage"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "Highest Level of Qualification.Minimum Percentage": {
+        "displayName": "Minimum"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "17D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FDE725'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

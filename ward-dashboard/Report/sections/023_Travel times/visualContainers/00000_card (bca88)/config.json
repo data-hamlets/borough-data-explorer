@@ -1,0 +1,111 @@
+{
+  "name": "bca8886a16982420c5a3",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 36.653932792397633,
+        "y": 562.23466253119761,
+        "z": 4000,
+        "width": 177,
+        "height": 69.448818897637793
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "jts_02_2019.school min"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "j1",
+          "Entity": "jts_02_2019",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "j1"
+              }
+            },
+            "Property": "school min"
+          },
+          "Name": "jts_02_2019.school min"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "j1"
+                }
+              },
+              "Property": "school min"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "jts_02_2019.school min": {
+        "displayName": "Minimum"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "17D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FDE725'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "9f2bc8efd81868d26d3b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48,
+        "y": 272,
+        "z": 1000,
+        "width": 720,
+        "height": 400
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Too many residents live in overcrowded accommodation. We will work alongside residents, housing providers and landlords to achieve real change.",
+                    "textStyle": {
+                      "fontSize": "32pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "25ed6769603f7dc18103",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 28.067796610169491,
+        "y": 196.47457627118644,
+        "z": 2000,
+        "width": 497.28813559322037,
+        "height": 294.71186440677968
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "A simple linear regression model was fitted on ward level data between the percentage of residents with non-white ethnicities and the percentage of residents working in L1, L2 or L3 sectors (higher managerial, administrative and professional occupations). ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "There is a significant negative relationship between these two variables (p< 0.05, r",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "2",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "super",
+                      "top": "-0.25em"
+                    }
+                  },
+                  {
+                    "value": " =0.546), with percentage of residents in L1, L2, and L3 sectors decreasing by an average of 4.95% for every 10% rise in non-white ethnicities per ward.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

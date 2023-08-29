@@ -1,0 +1,37 @@
+table lbth_oa21_ward_lookup
+	lineageTag: d1579575-a471-4081-9b3a-02cdfcdfbdd6
+	ordinal: 3
+
+	partition 'lbth_oa21_ward_lookup-e1e6c2f2-a730-498c-8581-501b660a3206' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://gist.githubusercontent.com/joel-lbth/da1b6f54f1cd076bf7336be7336de04b/raw/2e25cc5c14ae4a7914dcfc0c0a64dc131bab84bd/lbth_oa21_ward_lookup.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"oa21cd", type text}, {"ward_name", type text}})
+			in
+			    #"Changed Type1"
+
+	column oa21cd
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 6c27642a-3b33-4168-bf30-a489a92ddf37
+		sourceColumn: oa21cd
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column ward_name
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: e5dde06e-2346-4a63-bdcc-5480693a3823
+		sourceColumn: ward_name
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

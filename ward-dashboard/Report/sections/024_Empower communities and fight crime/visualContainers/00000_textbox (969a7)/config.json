@@ -1,0 +1,55 @@
+{
+  "name": "969a75f3bdea28e2cbe6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48,
+        "y": 272,
+        "z": 1000,
+        "width": 720,
+        "height": 400
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Our borough’s strength lies in its diversity and the different communities and cultures living side by side. We have a proud history of welcoming people to our borough, standing up to intolerance from the battle of Cable Street to the community coming together following the tragic racist murder of Altab Ali. We will bring communities together to build understanding, support and empower women, and develop dedicated programmes and facilities where needed.",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

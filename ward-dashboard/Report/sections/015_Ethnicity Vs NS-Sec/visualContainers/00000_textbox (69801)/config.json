@@ -1,0 +1,40 @@
+{
+  "name": "69801dfa00c9fbe1e9ee",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 50.033898305084747,
+        "y": 20.135593220338983,
+        "z": 1000,
+        "width": 350.84745762711867,
+        "height": 55.525423728813564
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Ethnicity vs NS-Sec",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

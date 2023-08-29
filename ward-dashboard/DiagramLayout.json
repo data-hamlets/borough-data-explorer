@@ -1,0 +1,653 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1412,
+        "y": 9
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 5906.228811209543,
+            "y": 337.14285714285717
+          },
+          "nodeIndex": "lbth_oa21_ward_lookup",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 30
+        },
+        {
+          "location": {
+            "x": 869.871178564966,
+            "y": 117.249888187502
+          },
+          "nodeIndex": "households-11",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 31,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 874.53229436913819,
+            "y": 235.28879050174135
+          },
+          "nodeIndex": "households-21",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 32,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 1122.5500010942953,
+            "y": 236.645012600261
+          },
+          "nodeIndex": "popden-21",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 33,
+          "expandedHeight": 126.94220359794849
+        },
+        {
+          "location": {
+            "x": 1116.5373280107076,
+            "y": 116.5210765944305
+          },
+          "nodeIndex": "popden-11",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 37,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 625.594266073685,
+            "y": 116.88548239096619
+          },
+          "nodeIndex": "residents-11",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 34,
+          "expandedHeight": 157.94437774821509
+        },
+        {
+          "location": {
+            "x": 626.32661747710483,
+            "y": 233.66974126735633
+          },
+          "nodeIndex": "residents-21",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 36,
+          "expandedHeight": 183.56096536738937
+        },
+        {
+          "location": {
+            "x": 1363.4511715890098,
+            "y": 116.88548239096622
+          },
+          "nodeIndex": "marriage-partnership-21",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 35,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 1738.9,
+            "y": 0
+          },
+          "nodeIndex": "household-composition-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 2114.3,
+            "y": 0
+          },
+          "nodeIndex": "country-of-birth-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 2489.7,
+            "y": 0
+          },
+          "nodeIndex": "passports-held-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 2865.1,
+            "y": 0
+          },
+          "nodeIndex": "deprivation-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 3240.5,
+            "y": 0
+          },
+          "nodeIndex": "religion-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 38
+        },
+        {
+          "location": {
+            "x": 3615.9,
+            "y": 0
+          },
+          "nodeIndex": "englishproficiency-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 3991.3,
+            "y": 0
+          },
+          "nodeIndex": "householdlanguage-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 4366.7,
+            "y": 0
+          },
+          "nodeIndex": "ethnicity-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 4742.1,
+            "y": 0
+          },
+          "nodeIndex": "NS-SeC-21",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 39
+        },
+        {
+          "location": {
+            "x": 6335.1,
+            "y": 0
+          },
+          "nodeIndex": "Ward lookup",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 148.87112339564749,
+            "y": 240.00000000000003
+          },
+          "nodeIndex": "Highest Level of Qualification",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 6324.1571428571433,
+            "y": 300
+          },
+          "nodeIndex": "jts_o5_2019",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 5971.3,
+            "y": 0
+          },
+          "nodeIndex": "Alt ClaimantCount",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 7144.5,
+            "y": 0
+          },
+          "nodeIndex": "Age Band Lookup",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 6677.6642857142851,
+            "y": 51.428571428571431
+          },
+          "nodeIndex": "Ward Population",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 7530.7,
+            "y": 0
+          },
+          "nodeIndex": "Occupation",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 6686.8999999999987,
+            "y": 289.14285714285717
+          },
+          "nodeIndex": "LSOA11 to Ward Lookup",
+          "size": {
+            "height": 222.57142857142861,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 8303.1,
+            "y": 240.4
+          },
+          "nodeIndex": "jts_02_2019",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 7916.9,
+            "y": 0
+          },
+          "nodeIndex": "jts_06_2019",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 8717.8,
+            "y": 0
+          },
+          "nodeIndex": "LSOA Parks only",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 9150.5,
+            "y": 0
+          },
+          "nodeIndex": "Ethnicity-21 Benchmarking",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 9536.7,
+            "y": 0
+          },
+          "nodeIndex": "Ethnic Group Lookup",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 9969.4,
+            "y": 0
+          },
+          "nodeIndex": "Sexual_Orientation-21",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 10402.1,
+            "y": 0
+          },
+          "nodeIndex": "Pop-AgeBand_Sex",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 10765.9,
+            "y": 0
+          },
+          "nodeIndex": "PopPyramid_Age_Lookup",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 11141.3,
+            "y": 0
+          },
+          "nodeIndex": "NO2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 12006.7,
+            "y": 0
+          },
+          "nodeIndex": "NS-SeC_ward",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 12439.4,
+            "y": 0
+          },
+          "nodeIndex": "Good Health",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 6314.5441731770852,
+            "y": 645.67708333333326
+          },
+          "nodeIndex": "Age by single year 0 - 18",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 40
+        },
+        {
+          "location": {
+            "x": 12858.3,
+            "y": 0
+          },
+          "nodeIndex": "LSOA Fuel Poverty",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 13254.5,
+            "y": 0
+          },
+          "nodeIndex": "tbl_measures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 11574,
+            "y": 0
+          },
+          "nodeIndex": "ethnicity_vs_nssec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 13687.2,
+            "y": 0
+          },
+          "nodeIndex": "Air Quality API",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 14119.9,
+            "y": 0
+          },
+          "nodeIndex": "Fuel Poverty API",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 14552.6,
+            "y": 0
+          },
+          "nodeIndex": "crime-lsoa",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 14985.3,
+            "y": 0
+          },
+          "nodeIndex": "crime benchmarking",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 15418,
+            "y": 0
+          },
+          "nodeIndex": "crime benchmarking th",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 15781.8,
+            "y": 0
+          },
+          "nodeIndex": "london population estimates",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 16145.6,
+            "y": 0
+          },
+          "nodeIndex": "tower hamlets population estimates",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 16568.8,
+            "y": 0
+          },
+          "nodeIndex": "KeyStage2_Attainment",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 16955,
+            "y": 0
+          },
+          "nodeIndex": "KeyStage4_performance",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 17341.2,
+            "y": 0
+          },
+          "nodeIndex": "highest_qual_benchmarking",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 17727.4,
+            "y": 0
+          },
+          "nodeIndex": "museum_gallery_th",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 18133.1,
+            "y": 0
+          },
+          "nodeIndex": "v&a_visits",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 50,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

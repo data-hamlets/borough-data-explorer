@@ -1,0 +1,52 @@
+{
+  "name": "157d7cdfecfcad74b8b1",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 13.671562082777035,
+        "y": 52.97730307076101,
+        "z": 4000,
+        "width": 644.27236315086782,
+        "height": 100.82777036048063
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Classifies usual residents by their proficiency in English. Across the borough",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  },
+                  {
+                    "value": " 73% of residents have English as their main language",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  },
+                  {
+                    "value": ". Out of the remaining 27% of residents for which English is not their first language, 12.5% can speak English very well, 8.3% can speak English well, 5.2% cannot speak English well, and 1% cannot speak English. ",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

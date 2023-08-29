@@ -1,0 +1,57 @@
+{
+  "name": "23e86b800dc41aa05221",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.423563777994158,
+        "y": 15.423563777994158,
+        "z": 0,
+        "width": 703.8753651411879,
+        "height": 154.9367088607595
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Museum and Gallery Visits - Within Tower Hamlets ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Tower Hamlets is home to a wealth of culture including numerous museums and art galleries. Admission is often free of charge, but these establishments can raise funds through donations, events and by charging admission to special exhibitions. The declining trend in the below examples will have been heavily influenced by the impact of COVID-19.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

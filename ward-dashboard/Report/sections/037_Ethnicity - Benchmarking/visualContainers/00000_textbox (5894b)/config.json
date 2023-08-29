@@ -1,0 +1,59 @@
+{
+  "name": "5894b6b1346d8e1b38b6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 6.7118644067796609,
+        "y": 49.423728813559322,
+        "z": 2000,
+        "width": 705.96610169491532,
+        "height": 139.72881355932205
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Classifies usual residents by self-defined ethnicity, this page breaks down the top 5 categories and 19 sub-categories nationally. Across the borough, the most observed category was ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "Asian, Asian British or Asian Welsh (44.4%), which was mostly made up of Bangladeshi people (34.6%)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ". The second most observed category was ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "White (39.4%).",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

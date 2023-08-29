@@ -1,0 +1,82 @@
+table 'v&a_visits'
+	lineageTag: 3eda2305-364b-4f57-849a-94ade823e609
+	ordinal: 54
+
+	partition 'v&a_visits-5cd15038-4117-4bb2-b242-67cde1ff49ac' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vSzIRpZ4uv9wyPR1O9nCJDhC5_3q0OLNpapf1m4MX5inTwhFNnfzzSS7nrtch1Xq_mtVufuOMboi6i9/pub?output=csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"year", type text}, {"Visits by UK adults in NS-SEC groups 5-8", type number}, {"Visits by UK visitors from ethnic minority background", type number}, {"Number of children visiting aged 16 and under ", type number}, {"Number of instances of children under 18 participating in onsite organised activities ", type number}, {"Total visits ", Int64.Type}}),
+			    #"Removed Bottom Rows" = Table.RemoveLastN(#"Changed Type",7)
+			in
+			    #"Removed Bottom Rows"
+
+	column year
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 6f3749ee-bf8b-468f-84d8-202f021a9dca
+		sourceColumn: year
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visits by UK adults in NS-SEC groups 5-8'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 222a8030-fc6e-4e2a-a7be-50354be6510d
+		sourceColumn: "Visits by UK adults in NS-SEC groups 5-8"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Visits by UK visitors from ethnic minority background'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: dafbc3a3-540e-4ff3-99c8-ff6e2faa9246
+		sourceColumn: "Visits by UK visitors from ethnic minority background"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Number of children visiting aged 16 and under '
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: ddfd488e-b843-46f8-abdc-8041869f557b
+		sourceColumn: "Number of children visiting aged 16 and under "
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Number of instances of children under 18 participating in onsite organised activities '
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: c5f3c396-aa9c-4eb2-804b-4eb20dc342e7
+		sourceColumn: "Number of instances of children under 18 participating in onsite organised activities "
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total visits '
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d5c9a6de-f935-4514-b9b3-cfb4a93fe743
+		sourceColumn: "Total visits "
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

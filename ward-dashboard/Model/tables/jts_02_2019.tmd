@@ -1,0 +1,81 @@
+table jts_02_2019
+	lineageTag: 8688f011-3eb0-4db2-8826-4781bd77e658
+	ordinal: 27
+
+	partition 'jts_02_2019-9c0b3c12-cec7-4ea9-b9cc-28c04f1ca8ea' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\jts_o2_2019.xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    #"2019_Sheet" = Source{[Item="2019",Kind="Sheet"]}[Data],
+			    #"Promoted Headers" = Table.PromoteHeaders(#"2019_Sheet", [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Department for Transport statistics", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}, {"Column27", type any}, {"Column28", type any}, {"Column29", type any}, {"Column30", type any}, {"Column31", type any}, {"Column32", type any}, {"Column33", type any}, {"Column34", type any}, {"Column35", type any}, {"Column36", type any}, {"Column37", type any}, {"Column38", type any}, {"Column39", type any}, {"Column40", type any}, {"Column41", type any}}),
+			    #"Removed Top Rows" = Table.Skip(#"Changed Type",5),
+			    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"LSOA_code", type text}, {"Region", type text}, {"LA_Code", type text}, {"LA_Name", type text}, {"PS_pop", Int64.Type}, {"PSPTt", type number}, {"PSPT15n", type number}, {"PSPT30n", type number}, {"PSPT45n", Int64.Type}, {"PSPT60n", Int64.Type}, {"PSPT15pct", type number}, {"PSPT30pct", Int64.Type}, {"PSPT45pct", Int64.Type}, {"PSPT60pct", Int64.Type}, {"PSCyct", type number}, {"PSCyc15n", type number}, {"PSCyc30n", Int64.Type}, {"PSCyc45n", Int64.Type}, {"PSCyc60n", Int64.Type}, {"PSCyc15pct", type number}, {"PSCyc30pct", Int64.Type}, {"PSCyc45pct", Int64.Type}, {"PSCyc60pct", Int64.Type}, {"PSCart", type number}, {"PSCar15n", type number}, {"PSCar30n", Int64.Type}, {"PSCar45n", Int64.Type}, {"PSCar60n", Int64.Type}, {"PSCar15pct", Int64.Type}, {"PSCar30pct", Int64.Type}, {"PSCar45pct", Int64.Type}, {"PSCar60pct", Int64.Type}, {"PSWalkt", type number}, {"PSWalk15n", type number}, {"PSWalk30n", type number}, {"PSWalk45n", Int64.Type}, {"PSWalk60n", Int64.Type}, {"PSWalk15pct", type number}, {"PSWalk30pct", Int64.Type}, {"PSWalk45pct", Int64.Type}, {"PSWalk60pct", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"PS_pop", "PSPT15n", "PSPT30n", "PSPT45n", "PSPT60n", "PSPT15pct", "PSPT30pct", "PSPT45pct", "PSPT60pct", "PSCyct", "PSCyc15n", "PSCyc30n", "PSCyc45n", "PSCyc60n", "PSCyc15pct", "PSCyc30pct", "PSCyc45pct", "PSCyc60pct", "PSCart", "PSCar15n", "PSCar30n", "PSCar45n", "PSCar60n", "PSCar15pct", "PSCar30pct", "PSCar45pct", "PSCar60pct", "PSWalkt", "PSWalk15n", "PSWalk30n", "PSWalk45n", "PSWalk60n", "PSWalk15pct", "PSWalk30pct", "PSWalk45pct", "PSWalk60pct"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([LA_Name] = "Tower Hamlets")),
+			    #"Removed Columns1" = Table.RemoveColumns(#"Filtered Rows",{"Region"})
+			in
+			    #"Removed Columns1"
+
+	measure 'school min' = MIN(jts_02_2019[PSPTt])
+		lineageTag: 0e1bd11a-9142-48eb-9717-517c9856bbfe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'school max' = MAX(jts_02_2019[PSPTt])
+		lineageTag: bdf9b820-c648-4967-9f24-a0095d6fdb7d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'school avg' = AVERAGE(jts_02_2019[PSPTt])
+		lineageTag: 2d7a05c9-723d-4a0b-b10e-eac88dcbfbe7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LSOA_code
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4093e544-35ba-4673-8bcb-763f18b0cfc0
+		sourceColumn: LSOA_code
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column LA_Code
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b5857640-ec71-4db4-b5ad-4014fbc9a0ea
+		sourceColumn: LA_Code
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column LA_Name
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 04e63143-e772-440f-9c09-6a0d33ef2a92
+		sourceColumn: LA_Name
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column PSPTt
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 744e24a7-0658-402b-a140-97d524ed3d1a
+		sourceColumn: PSPTt
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

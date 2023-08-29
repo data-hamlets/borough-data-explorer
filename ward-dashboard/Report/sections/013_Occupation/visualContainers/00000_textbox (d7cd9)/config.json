@@ -1,0 +1,39 @@
+{
+  "name": "d7cd9c635927015e3d47",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.590551181102361,
+        "y": 221.10236220472439,
+        "z": 6000,
+        "width": 565.511811023622,
+        "height": 48.188976377952756
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Please select one or more bars (Ctrl +click) to explore the data. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

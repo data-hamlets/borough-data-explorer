@@ -1,0 +1,190 @@
+[
+  {
+    "name": "Filterf414d0eeda041669ebdc",
+    "expression": {
+      "Aggregation": {
+        "Expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "deprivation-21"
+              }
+            },
+            "Property": "OBS_VALUE"
+          }
+        },
+        "Function": 0
+      }
+    },
+    "type": "Advanced",
+    "howCreated": 1,
+    "isHiddenInViewMode": false,
+    "ordinal": 0
+  },
+  {
+    "name": "Filter4c51efc93ea43d540138",
+    "expression": {
+      "Aggregation": {
+        "Expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ethnicity-21"
+              }
+            },
+            "Property": "OBS_VALUE"
+          }
+        },
+        "Function": 0
+      }
+    },
+    "type": "Advanced",
+    "howCreated": 1,
+    "isHiddenInViewMode": false,
+    "ordinal": 1
+  },
+  {
+    "name": "Filterc67220b1008a72d1b13e",
+    "expression": {
+      "Column": {
+        "Expression": {
+          "SourceRef": {
+            "Entity": "ethnicity-21"
+          }
+        },
+        "Property": "GEOGRAPHY_CODE"
+      }
+    },
+    "type": "Categorical",
+    "howCreated": 1,
+    "isHiddenInViewMode": false,
+    "ordinal": 2
+  },
+  {
+    "name": "Filter37e4b394bb300883a647",
+    "expression": {
+      "HierarchyLevel": {
+        "Expression": {
+          "Hierarchy": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ethnicity-21"
+              }
+            },
+            "Hierarchy": "Ethnic grou"
+          }
+        },
+        "Level": "Ethnic group"
+      }
+    },
+    "type": "Categorical",
+    "howCreated": 1,
+    "ordinal": 3
+  },
+  {
+    "name": "Filter3e88b6f510e47b09c177",
+    "expression": {
+      "HierarchyLevel": {
+        "Expression": {
+          "Hierarchy": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ethnicity-21"
+              }
+            },
+            "Hierarchy": "Ethnic grou"
+          }
+        },
+        "Level": "(detailed)"
+      }
+    },
+    "filter": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "e",
+          "Entity": "ethnicity-21",
+          "Type": 0
+        }
+      ],
+      "Where": [
+        {
+          "Condition": {
+            "Not": {
+              "Expression": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "e"
+                          }
+                        },
+                        "Property": "C2021_ETH_20_NAME.2"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "type": "Categorical",
+    "cachedDisplayNames": [
+      {
+        "id": {
+          "scopeId": {
+            "Comparison": {
+              "ComparisonKind": 0,
+              "Left": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ethnicity-21"
+                    }
+                  },
+                  "Property": "C2021_ETH_20_NAME.2"
+                }
+              },
+              "Right": {
+                "Literal": {
+                  "Value": "null"
+                }
+              }
+            }
+          }
+        },
+        "displayName": "(Blank)"
+      }
+    ],
+    "howCreated": 1,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ordinal": 4
+  }
+]

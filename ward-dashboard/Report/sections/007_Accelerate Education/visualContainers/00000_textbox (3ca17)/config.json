@@ -1,0 +1,55 @@
+{
+  "name": "3ca1730bca20a9840d90",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48,
+        "y": 272,
+        "z": 1000,
+        "width": 720,
+        "height": 400
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Tower Hamlets is an exciting place to grow up, full of opportunities to learn and play. Our schools are overwhelmingly good and outstanding. The council will make sure that children get the right learning and financial support, so they can stay in education and do well. ",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

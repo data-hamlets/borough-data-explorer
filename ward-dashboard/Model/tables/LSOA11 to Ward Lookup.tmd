@@ -1,0 +1,59 @@
+table 'LSOA11 to Ward Lookup'
+	lineageTag: 0fb4fda5-3731-4aa4-b562-797d0e9a2246
+	ordinal: 26
+
+	partition 'LSOA11 to Ward Lookup-8a37ae24-e324-4f1f-80b0-9b392a1b46dc' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\LSOA11 to Ward Lookup.xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+			    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"LSOA11CD", type text}, {"LSOA11NM", type text}, {"WD20CD", type text}, {"WD20NM", type text}})
+			in
+			    #"Changed Type1"
+
+	column LSOA11CD
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: d40eb01f-eb56-46c3-9a55-45b020971022
+		sourceColumn: LSOA11CD
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column LSOA11NM
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b3ad1eaa-ef9e-483c-b87e-bd229f80074e
+		sourceColumn: LSOA11NM
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD20CD
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 3b9b0bf6-bb7d-41d0-abe4-4184b9035e12
+		sourceColumn: WD20CD
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD20NM
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1c1c4c76-471a-4d80-8e9d-575404457ea3
+		sourceColumn: WD20NM
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

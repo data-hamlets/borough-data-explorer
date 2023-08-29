@@ -1,0 +1,59 @@
+{
+  "name": "ddb0e8403a4b1bbd1ba6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 3.4178905206942587,
+        "y": 0,
+        "z": 1000,
+        "width": 100.82777036048063,
+        "height": 39.305740987983974
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "actionButton",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "icon": [
+        {
+          "properties": {
+            "shapeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'back'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Back'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

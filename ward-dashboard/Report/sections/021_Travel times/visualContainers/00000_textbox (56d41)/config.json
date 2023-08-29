@@ -1,0 +1,61 @@
+{
+  "name": "56d41d7230f8e6497d21",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 16,
+        "y": 16,
+        "z": 0,
+        "width": 1088,
+        "height": 208
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Travel Times",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Travel times to public services are an important part of ensuring access for all, some studies have shown that people access services less the further they live from the service. The data shows the average travel time to the relevant service from the identified small area geography. The data was published by Central Government and calculated in 2019 using commercially available software.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This map shows the travel time to a GP practice.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

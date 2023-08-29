@@ -1,0 +1,40 @@
+{
+  "name": "c7cccf64c7f98cf17bdb",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 36,
+        "y": 5.491525423728814,
+        "z": 2000,
+        "width": 412.47457627118644,
+        "height": 50.644067796610173
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Total Population - Census 2021",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+table 'london population estimates'
+	lineageTag: 2fad85ef-1d05-4d64-b6b6-cc4a6ef6d110
+	ordinal: 48
+
+	partition 'london population estimates-da8d1818-fbb5-46be-a30d-5a5f5147946c' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=2013265927&date=latestMINUS11-latest&gender=0&c_age=200&measures=20100"),[Delimiter=",", Columns=34, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"GENDER", Int64.Type}, {"GENDER_NAME", type text}, {"GENDER_CODE", Int64.Type}, {"GENDER_TYPE", type text}, {"GENDER_TYPECODE", Int64.Type}, {"GENDER_SORTORDER", Int64.Type}, {"C_AGE", Int64.Type}, {"C_AGE_NAME", type text}, {"C_AGE_CODE", Int64.Type}, {"C_AGE_TYPE", type text}, {"C_AGE_TYPECODE", Int64.Type}, {"C_AGE_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", Int64.Type}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"DATE_NAME", "DATE_CODE", "DATE_TYPE", "DATE_TYPECODE", "DATE_SORTORDER", "GEOGRAPHY", "GEOGRAPHY_NAME", "GEOGRAPHY_CODE", "GEOGRAPHY_TYPE", "GEOGRAPHY_TYPECODE", "GEOGRAPHY_SORTORDER", "GENDER", "GENDER_NAME", "GENDER_CODE", "GENDER_TYPE", "GENDER_TYPECODE", "GENDER_SORTORDER", "C_AGE", "C_AGE_NAME", "C_AGE_TYPE", "C_AGE_TYPECODE", "C_AGE_SORTORDER", "MEASURES", "MEASURES_NAME", "OBS_STATUS", "OBS_STATUS_NAME", "OBS_CONF", "OBS_CONF_NAME", "URN", "RECORD_OFFSET", "RECORD_COUNT", "C_AGE_CODE"}),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"DATE", type text}}),
+			    #"Changed Type2" = Table.TransformColumnTypes(#"Changed Type1",{{"DATE", type date}}),
+			    #"Extracted Year" = Table.TransformColumns(#"Changed Type2",{{"DATE", Date.Year, Int64.Type}})
+			in
+			    #"Extracted Year"
+
+	column DATE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: dc729a33-c6e9-4297-820d-310164692b36
+		sourceColumn: DATE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column OBS_VALUE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 4ce6a050-e5a3-4711-8132-f1d1d5c4a1a0
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

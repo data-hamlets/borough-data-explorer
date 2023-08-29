@@ -1,0 +1,70 @@
+table 'crime-lsoa'
+	lineageTag: 7a81835a-4b36-4ebf-b061-1d76814c4728
+	ordinal: 45
+
+	partition 'crime-lsoa-9eb57542-6651-4f92-b5b5-077a139011f5' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://data.london.gov.uk/download/recorded_crime_summary/644a9e0d-75a3-4c3a-91ad-03d2a7cb8f8e/MPS%20LSOA%20Level%20Crime%20%28most%20recent%2024%20months%29.csv"),[Delimiter=",", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", Int64.Type}, {"Column7", Int64.Type}, {"Column8", Int64.Type}, {"Column9", Int64.Type}, {"Column10", Int64.Type}, {"Column11", Int64.Type}, {"Column12", Int64.Type}, {"Column13", Int64.Type}, {"Column14", Int64.Type}, {"Column15", Int64.Type}, {"Column16", Int64.Type}, {"Column17", Int64.Type}, {"Column18", Int64.Type}, {"Column19", Int64.Type}, {"Column20", Int64.Type}, {"Column21", Int64.Type}, {"Column22", Int64.Type}, {"Column23", Int64.Type}, {"Column24", Int64.Type}, {"Column25", Int64.Type}, {"Column26", Int64.Type}, {"Column27", Int64.Type}, {"Column28", Int64.Type}, {"Column29", Int64.Type}}),
+			    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"Column3", Order.Descending}}),
+			    #"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each Text.Contains([Column3], "Tower")),
+			    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Column1", "lsoa code"}, {"Column4", "crime"}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Column2", "Column3"}),
+			    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Column5", "detailed"}}),
+			    #"Inserted Sum" = Table.AddColumn(#"Renamed Columns1", "Addition", each List.Sum({[Column6], [Column7], [Column8], [Column9], [Column10], [Column21], [Column20], [Column19], [Column18], [Column17], [Column16], [Column15], [Column14], [Column13], [Column11], [Column12], [Column22], [Column23], [Column24], [Column25], [Column26], [Column27], [Column28], [Column29]}), Int64.Type),
+			    #"Removed Columns1" = Table.RemoveColumns(#"Inserted Sum",{"Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29"}),
+			    #"Grouped Rows" = Table.Group(#"Removed Columns1", {"lsoa code", "crime"}, {{"sum", each List.Sum([Addition]), type number}})
+			in
+			    #"Grouped Rows"
+
+	measure 'crime min' = MIN('crime-lsoa'[sum])
+		lineageTag: 98c4048f-2bdc-4bff-a6ff-f0da65aad90f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'crime max' = MAX('crime-lsoa'[sum])
+		lineageTag: ba26b789-77eb-4702-a231-47b628e8375b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'crime avg' = AVERAGE('crime-lsoa'[sum])
+		lineageTag: d85e37d8-9da8-43bf-9403-729ebeaea86f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'lsoa code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: c9b809e2-3ae7-44f0-8f21-dc5ab7a07e6a
+		sourceColumn: "lsoa code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column crime
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: c2d4bdd6-fba9-4e60-bc14-3711e696d3ac
+		sourceColumn: crime
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column sum
+		dataType: Double
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 6223c46e-b52d-46cd-9434-c7a8aa2df3e1
+		sourceColumn: sum
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

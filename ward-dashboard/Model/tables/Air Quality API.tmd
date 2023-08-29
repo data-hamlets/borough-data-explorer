@@ -1,0 +1,266 @@
+table 'Air Quality API'
+	lineageTag: 8cea8332-f944-44dc-a0f8-09d05ec603fa
+	ordinal: 44
+
+	partition 'Air Quality API-de3b266c-7c8a-4d17-8d1c-9d2ed8a58b20' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://fingertips.phe.org.uk/api/all_data/csv/by_indicator_id?indicator_ids=93867"),[Delimiter=",", Columns=27, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Indicator ID", Int64.Type}, {"Indicator Name", type text}, {"Parent Code", type text}, {"Parent Name", type text}, {"Area Code", type text}, {"Area Name", type text}, {"Area Type", type text}, {"Sex", type text}, {"Age", type text}, {"Category Type", type text}, {"Category", type text}, {"Time period", Int64.Type}, {"Value", type number}, {"Lower CI 95.0 limit", type text}, {"Upper CI 95.0 limit", type text}, {"Lower CI 99.8 limit", type text}, {"Upper CI 99.8 limit", type text}, {"Count", type text}, {"Denominator", type text}, {"Value note", type text}, {"Recent Trend", type text}, {"Compared to England value or percentiles", type text}, {"Column not used", type text}, {"Time period Sortable", Int64.Type}, {"New data", type text}, {"Compared to goal", type text}, {"Time period range", type text}})
+			in
+			    #"Changed Type"
+
+	column 'Indicator ID'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 9541c396-1821-448b-af6d-3e0e4db49bf2
+		sourceColumn: "Indicator ID"
+		summarizeBy: Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indicator Name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4979ec19-cb05-4ef0-a9ed-28ebd28aafab
+		sourceColumn: "Indicator Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: ae520aac-5334-43a7-ac9b-c20f455ff374
+		sourceColumn: "Parent Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 9d2bf3ad-6ac2-4649-8b35-ba9dc5c9c061
+		sourceColumn: "Parent Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 943155eb-9b5a-4b0c-9ca0-9f7f0c960933
+		sourceColumn: "Area Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Name'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 641d6c49-3a05-487f-b0c3-a33d445a1b28
+		sourceColumn: "Area Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Type'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1019d5a5-00b9-4a71-bdaa-ef680ee24890
+		sourceColumn: "Area Type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4d07a73b-fb89-47c0-bf38-04c55917c885
+		sourceColumn: Sex
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 3e2f4b05-209f-42be-8ca6-c9b2a032f44a
+		sourceColumn: Age
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Type'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: ef9e9c05-3965-43c6-9cc1-0e84ddffafa6
+		sourceColumn: "Category Type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 66f83daa-391e-4427-bef4-a8ab794292fb
+		sourceColumn: Category
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time period'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 647e7259-2157-4d07-9ffd-7438ff057504
+		sourceColumn: "Time period"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: e874e128-1aed-4172-b992-3bf06214eef9
+		sourceColumn: Value
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Lower CI 95.0 limit'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4e227abf-45db-41e7-819f-4c8c1d1abd75
+		sourceColumn: "Lower CI 95.0 limit"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upper CI 95.0 limit'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 54ee0dcb-bcf0-40c6-84fe-813933e609c3
+		sourceColumn: "Upper CI 95.0 limit"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lower CI 99.8 limit'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: dd5cd3d0-2a67-4f90-9a29-428cff0d2831
+		sourceColumn: "Lower CI 99.8 limit"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upper CI 99.8 limit'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 27ac87f1-d593-4c95-bdee-224e45b9accd
+		sourceColumn: "Upper CI 99.8 limit"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 8d334f5b-2173-4a86-a184-f216b14fbe00
+		sourceColumn: Count
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Denominator
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 733c3ddc-d874-4199-9264-c57179eb3828
+		sourceColumn: Denominator
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value note'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1b613a8d-4538-4dd0-9524-39fb9e5f3d52
+		sourceColumn: "Value note"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recent Trend'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 47261926-f03b-4f7a-90cf-9a9f5ac29971
+		sourceColumn: "Recent Trend"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compared to England value or percentiles'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 947c8c75-4872-48b2-88c0-9de44992087a
+		sourceColumn: "Compared to England value or percentiles"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column not used'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 96c48215-8996-450f-9176-7fbfebee7d8b
+		sourceColumn: "Column not used"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time period Sortable'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 1cdecc2f-b86c-4e12-ab6f-4e26a28b74ad
+		sourceColumn: "Time period Sortable"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New data'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 7281109c-564e-4252-8324-3f65669a785b
+		sourceColumn: "New data"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compared to goal'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b25170a7-d887-45c1-9158-74892ef651d6
+		sourceColumn: "Compared to goal"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time period range'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 481cfe80-db30-4c90-b660-1377c5825247
+		sourceColumn: "Time period range"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

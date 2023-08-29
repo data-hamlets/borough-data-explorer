@@ -1,0 +1,40 @@
+{
+  "name": "a45f74cd22b544ff1635",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 741.86550976138835,
+        "y": 121.82212581344903,
+        "z": 3000,
+        "width": 253.01518438177877,
+        "height": 29.674620390455534
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Click arrow to turn on drill-down.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

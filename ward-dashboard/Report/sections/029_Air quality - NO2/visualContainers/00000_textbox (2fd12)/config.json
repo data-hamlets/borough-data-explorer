@@ -1,0 +1,40 @@
+{
+  "name": "2fd121768cafa25b8896",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 47.999999999999993,
+        "z": 3000,
+        "width": 1007.9999999999999,
+        "height": 64
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "There is strong evidence that air pollution causes the development of coronary heart disease, stroke, respiratory disease, and lung cancer, exacerbates asthma and has a contributory role in mortality.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

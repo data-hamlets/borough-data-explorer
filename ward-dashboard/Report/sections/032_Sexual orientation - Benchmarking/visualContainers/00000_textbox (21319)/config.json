@@ -1,0 +1,39 @@
+{
+  "name": "213194dd1bf2b1e67115",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 5.491525423728814,
+        "y": 54.305084745762713,
+        "z": 2000,
+        "width": 723.66101694915255,
+        "height": 92.13559322033899
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "For the first time the Census in 2021 asked about people sexual orientation. This information support the planning of services to more the needs of residents and others within the London Region.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

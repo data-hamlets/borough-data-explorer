@@ -1,0 +1,111 @@
+{
+  "name": "412ca34d1f6df506a00a",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 800,
+        "y": 520,
+        "z": 8000,
+        "width": 157,
+        "height": 70
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "NS-SeC-21.NS-SeC Min"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "n",
+          "Entity": "NS-SeC-21",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "n"
+              }
+            },
+            "Property": "NS-SeC Min"
+          },
+          "Name": "NS-SeC-21.NS-SeC Min"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "n"
+                }
+              },
+              "Property": "NS-SeC Min"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "NS-SeC-21.NS-SeC Min": {
+        "displayName": "Minimum"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "17D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FDE725'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

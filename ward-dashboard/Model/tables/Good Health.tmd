@@ -1,0 +1,183 @@
+table 'Good Health'
+	lineageTag: 4f42f274-1164-47d9-9110-92996a6d6ba1
+	ordinal: 39
+
+	partition 'Good Health-e7bd9bdf-1263-4f7f-a9d7-78f4bf828048' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2055_1.data.csv?date=latest&geography=629165479...629165982,629303674...629303812,629317322...629317326,629317336...629317343,629317349...629317360,629317362...629317366,629317371,629317374,629317376,629317378,629317379,629317381,629317385,629317388...629317392,629317394...629317397,629317399...629317403,629317405...629317407,629317409,629317411,629317412,629317416...629317420,629317422...629317424,629317426,629317429...629317434,629317436,629317437,629317440...629317442,629317444...629317450,629317452...629317456,629317459...629317461,629317463,629317466...629317468,629317472,629317474...629317479,629317481,629317483,629317486,629317487,629317490,629317492,629317494,629317495,629317497,629317499...629317502,629317504,629317505,629317507...629317509,629317512...629317514,629317517,629317520,629317523,629317525,629317527,629317531,629317534,629317535,629317537,629317538,629317540,629317543...629317548,629317551,629317554,629317555,629317558,629317560,629317562,629317563,629317565,629317566,629317569...629317573,629317576...629317578,629317580,629317582,629317584,629317585,629317587,629317590...629317592,629317594,629317596...629317599,629317601,629317603,629317604,629317606,629317607,629317610,629317612,629317613,629317615...629317617,629317619...629317621,629317623,629317625...629317629,629317631...629317634,629317636,629317640,629317648,629317650...629317659,629317662,629317663,629317666...629317669,629317672...629317687,629317689,629317691,629317694,629317695,629317697,629317698,629317700,629317701,629317703,629317704,629317706,629317707,629317711...629317714,629317716,629317718...629317720,629317722...629317724,629317726,629317729,629317731,629317733,629317736...629317742,629317744,629317746...629317748,629323624,629323625&c2021_health_6=1,2&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_HEALTH_6", Int64.Type}, {"C2021_HEALTH_6_NAME", type text}, {"C2021_HEALTH_6_CODE", type text}, {"C2021_HEALTH_6_TYPE", type text}, {"C2021_HEALTH_6_TYPECODE", Int64.Type}, {"C2021_HEALTH_6_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"DATE_NAME", "DATE_CODE", "DATE_TYPE", "DATE_TYPECODE", "DATE_SORTORDER", "GEOGRAPHY", "OBS_STATUS", "OBS_STATUS_NAME", "OBS_CONF", "OBS_CONF_NAME", "URN", "RECORD_OFFSET", "RECORD_COUNT"})
+			in
+			    #"Removed Columns"
+
+	measure 'health min' = MIN('Good Health'[OBS_VALUE])/100 
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 11210ca7-7ca4-4f81-9c24-1cd4e00b62ac
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'health max' = MAX('Good Health'[OBS_VALUE])/100 
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: fcbf47fc-d1c8-46b5-ab53-6d7d86187fc8
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'health avg' = AVERAGE('Good Health'[OBS_VALUE])/100 
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 4fe31019-4a07-49d0-9793-87f30e712b1c
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column DATE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ffe08150-ff2c-41b3-8a00-5fb0b7087d40
+		sourceColumn: DATE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b848b1e3-1dc4-48d4-9a91-6b6b4cdee582
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: f1d466a9-7dba-4aae-b221-2607f6ec6dec
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: f56a55eb-fa71-4570-b792-496ca337157c
+		sourceColumn: GEOGRAPHY_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a31450ab-67c9-4376-a648-3388b30b0e5a
+		sourceColumn: GEOGRAPHY_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: fab84a53-94a7-4a7a-a816-f35de171fec8
+		sourceColumn: GEOGRAPHY_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 32e5d4fe-78a6-48f3-aa68-5d19648640b9
+		sourceColumn: C2021_HEALTH_6
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 971d585e-f612-4f9e-b99c-13d7cbc3641e
+		sourceColumn: C2021_HEALTH_6_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4ba76f14-9868-4167-a2c8-636327975b17
+		sourceColumn: C2021_HEALTH_6_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0abe82a9-4034-4ca5-99b9-fe88e6a467b6
+		sourceColumn: C2021_HEALTH_6_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3ee195dc-dbf5-4174-b67d-39e929e98ff7
+		sourceColumn: C2021_HEALTH_6_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_HEALTH_6_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8db87622-dca0-4050-bb9e-e5f8264ed4d2
+		sourceColumn: C2021_HEALTH_6_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEASURES
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d492787b-dbb9-49a1-a622-556d13bf6bda
+		sourceColumn: MEASURES
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEASURES_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 931417a6-5814-4191-b43a-e46d88a40f28
+		sourceColumn: MEASURES_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: a66c95ff-c439-4c16-a284-aa9da111710e
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_ChangedProperties = ["Name"]
+

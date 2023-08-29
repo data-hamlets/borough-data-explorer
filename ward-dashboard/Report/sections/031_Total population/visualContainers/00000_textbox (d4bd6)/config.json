@@ -1,0 +1,72 @@
+{
+  "name": "d4bd673c38ec6d326e7a",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 13.423728813559322,
+        "y": 56.135593220338983,
+        "z": 1000,
+        "width": 1054.3728813559321,
+        "height": 88.47457627118645
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The Census undertaken by the Office for National Statistics in 2021 recorded the population of Tower Hamlets as ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "310,200 ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "people, this represented an increase of",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": " 22.1% (56,200 people)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": " on the Census of 2011 and make Tower Hamlets the fastest growing area in England for the second census in a row.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

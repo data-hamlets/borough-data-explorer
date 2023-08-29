@@ -1,0 +1,48 @@
+table 'residents-11'
+	lineageTag: 185eb1b0-048e-45a6-a150-5e7fdbdc722c
+	ordinal: 7
+
+	partition 'residents-11-9f983d5f-fdcc-4bb3-8c1e-1360a2cccf88' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_144_1.data.csv?date=latest&geography=1254117467...1254118025,1254259398...1254259586&rural_urban=0&cell=0...2,7&measures=20100"),[Delimiter=",", Columns=34, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"RURAL_URBAN", Int64.Type}, {"RURAL_URBAN_NAME", type text}, {"RURAL_URBAN_CODE", Int64.Type}, {"RURAL_URBAN_TYPE", type text}, {"RURAL_URBAN_TYPECODE", Int64.Type}, {"RURAL_URBAN_SORTORDER", Int64.Type}, {"CELL", Int64.Type}, {"CELL_NAME", type text}, {"CELL_CODE", type text}, {"CELL_TYPE", type text}, {"CELL_TYPECODE", Int64.Type}, {"CELL_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_CODE", "CELL_NAME", "OBS_VALUE"})
+			in
+			    #"Removed Other Columns"
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 74e900a2-5038-435b-be10-3ba2527d69a6
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column CELL_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0d225f67-3048-4f12-a3ea-8b0b50df7a5f
+		sourceColumn: CELL_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 33828a75-9a5c-4481-84a0-f3955b36bcd6
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,287 @@
+table 'Ethnicity-21 Benchmarking'
+	lineageTag: 5352767c-13c0-4463-9e95-d7a3ff7c72d9
+	ordinal: 30
+
+	partition 'Ethnicity-21 Benchmarking-d61ec981-4bca-4a3a-b00d-261bf5c9287a' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.csv?date=latest&geography=650117217,2092957699,2013265927&c2021_eth_20=1001,12,13,10,11,14,1002,16,15,17,1003,8,7,6,9,1004,1...5,1005,18,19&measures=20100,20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_ETH_20", Int64.Type}, {"C2021_ETH_20_NAME", type text}, {"C2021_ETH_20_CODE", type text}, {"C2021_ETH_20_TYPE", type text}, {"C2021_ETH_20_TYPECODE", Int64.Type}, {"C2021_ETH_20_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([MEASURES_NAME] = "Percent") and ([C2021_ETH_20_CODE] <> "1001" and [C2021_ETH_20_CODE] <> "1002" and [C2021_ETH_20_CODE] <> "1003" and [C2021_ETH_20_CODE] <> "1004" and [C2021_ETH_20_CODE] <> "1005"))
+			in
+			    #"Filtered Rows"
+
+	column DATE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8af3d2ac-77fc-43ca-bbef-101d78231f83
+		sourceColumn: DATE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_NAME
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: f0c0a42d-633c-4add-9dbd-684990357f49
+		sourceColumn: DATE_NAME
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_CODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 1dec0cd9-ec2d-4776-b41f-8305ec10b258
+		sourceColumn: DATE_CODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 04d75f89-a7f1-411c-914d-452d435a503d
+		sourceColumn: DATE_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a7d6221b-612d-41df-919f-cd6fd81940b2
+		sourceColumn: DATE_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 07866b8f-a7cf-45e8-9bbb-1f8e035c9d74
+		sourceColumn: DATE_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b280cd4b-5ad8-4a41-87a6-ce1d8de80b36
+		sourceColumn: GEOGRAPHY
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 8845f222-9c01-4517-a4ff-23a49a9d1cd8
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 21f3fae6-3253-412b-889d-22289a40db42
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 2e31aaed-8b39-4a59-a34a-352276b36d92
+		sourceColumn: GEOGRAPHY_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3ee5638a-cd21-4be4-b60c-7c712c0eead5
+		sourceColumn: GEOGRAPHY_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 253fa833-ff33-488f-86d5-b5fc84469a6a
+		sourceColumn: GEOGRAPHY_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e7a728db-617f-4d7a-a90b-fd925fdaebe5
+		sourceColumn: C2021_ETH_20
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 69b2df26-543e-4323-91f0-03b0fa55b6d7
+		sourceColumn: C2021_ETH_20_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 2c2f2808-8480-4bbe-9ea7-a653c2f59d4b
+		sourceColumn: C2021_ETH_20_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_TYPE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 2b28e17d-820c-4173-8053-e73444ef9d2a
+		sourceColumn: C2021_ETH_20_TYPE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_TYPECODE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 97aa46aa-3958-41b2-855b-fe5d2501cfd0
+		sourceColumn: C2021_ETH_20_TYPECODE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_ETH_20_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8b8d0396-bd14-4ef5-9390-abf2e8755f90
+		sourceColumn: C2021_ETH_20_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEASURES
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 7b60ae97-2b05-4730-a0b4-5d015f77659b
+		sourceColumn: MEASURES
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEASURES_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 9d044f78-bd15-4982-8633-171de3334a14
+		sourceColumn: MEASURES_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 079e1cdb-dfc1-4aed-a0d5-55a955849389
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OBS_STATUS
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 39cdd30b-68f0-46b6-b778-105933cc13dd
+		sourceColumn: OBS_STATUS
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_STATUS_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 3020f95b-2dfd-4dad-ace5-f6e450bade2f
+		sourceColumn: OBS_STATUS_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_CONF
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 35d55f0e-038e-4620-8d99-4e1cd6663b6a
+		sourceColumn: OBS_CONF
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_CONF_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1fb4def3-b2b8-463c-ae9e-42f54b3a629f
+		sourceColumn: OBS_CONF_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column URN
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: ff7192b1-6b45-48be-828a-6858fed34a0b
+		sourceColumn: URN
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD_OFFSET
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 099633b6-4cb3-4010-a743-0391d2d86083
+		sourceColumn: RECORD_OFFSET
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD_COUNT
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 819440de-b99f-4f70-b460-c040a2c5b29d
+		sourceColumn: RECORD_COUNT
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

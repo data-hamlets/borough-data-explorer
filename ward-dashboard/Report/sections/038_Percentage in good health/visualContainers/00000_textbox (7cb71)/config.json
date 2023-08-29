@@ -1,0 +1,40 @@
+{
+  "name": "7cb71c469637ab23eb84",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 709.01694915254234,
+        "y": 46.983050847457626,
+        "z": 6000,
+        "width": 352.06779661016952,
+        "height": 72
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Click segment in pie chart to explore map. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

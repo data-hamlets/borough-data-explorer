@@ -1,0 +1,54 @@
+{
+  "name": "4d4eef835751f8c8cdea",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 39.685039370078741,
+        "y": 569.763779527559,
+        "z": 6000,
+        "width": 325.98425196850394,
+        "height": 52.440944881889763
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Note data is missing 19/20 and 20/21 due to COVID related data collection issues",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

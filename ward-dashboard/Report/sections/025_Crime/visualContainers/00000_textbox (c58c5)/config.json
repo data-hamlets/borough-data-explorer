@@ -1,0 +1,42 @@
+{
+  "name": "c58c52a6d8a4f50d394d",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570.75409836065569,
+        "y": 631.18688524590164,
+        "z": 10000,
+        "width": 179.61967213114755,
+        "height": 31.055737704918034
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Source: Met police (2023",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ")"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

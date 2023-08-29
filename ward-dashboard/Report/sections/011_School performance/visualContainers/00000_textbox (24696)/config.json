@@ -1,0 +1,51 @@
+{
+  "name": "246968a78b580eeade59",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 330.23622047244095,
+        "y": 622.20472440944877,
+        "z": 3000,
+        "width": 276.37795275590548,
+        "height": 38.267716535433067
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Source: Department for Education (2022)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

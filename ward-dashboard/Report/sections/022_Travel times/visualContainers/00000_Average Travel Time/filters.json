@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Filterec820a07ab6ed31013cb",
+    "expression": {
+      "Column": {
+        "Expression": {
+          "SourceRef": {
+            "Entity": "deprivation-21"
+          }
+        },
+        "Property": "MEASURES_NAME"
+      }
+    },
+    "filter": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "d",
+          "Entity": "deprivation-21",
+          "Type": 0
+        }
+      ],
+      "Where": [
+        {
+          "Condition": {
+            "In": {
+              "Expressions": [
+                {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "d"
+                      }
+                    },
+                    "Property": "MEASURES_NAME"
+                  }
+                }
+              ],
+              "Values": [
+                [
+                  {
+                    "Literal": {
+                      "Value": "'Percent'"
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "type": "Categorical",
+    "howCreated": 1,
+    "objects": {}
+  },
+  {
+    "expression": {
+      "Arithmetic": {
+        "Left": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "deprivation-21"
+                  }
+                },
+                "Property": "OBS_VALUE"
+              }
+            },
+            "Function": 6
+          }
+        },
+        "Right": {
+          "ScopedEval": {
+            "Expression": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "deprivation-21"
+                      }
+                    },
+                    "Property": "OBS_VALUE"
+                  }
+                },
+                "Function": 6
+              }
+            },
+            "Scope": []
+          }
+        },
+        "Operator": 3
+      }
+    },
+    "type": "Advanced",
+    "howCreated": 1,
+    "isHiddenInViewMode": false
+  }
+]

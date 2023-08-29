@@ -1,0 +1,40 @@
+table 'popden-11'
+	lineageTag: 98ed7ea9-115a-4432-b208-2e4eafd89fb5
+	ordinal: 5
+
+	partition 'popden-11-b6338bb6-5be5-4a30-bceb-91622ae27e23' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_160_1.data.csv?date=latest&geography=1254117467...1254118025,1254259398...1254259586&cell=2&measures=20100"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"OBS_VALUE", Int64.Type}}),
+			    #"Added Custom" = Table.AddColumn(#"Changed Type", "OBS_VALUE_SQKM", each [OBS_VALUE] * 100),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom",{"GEOGRAPHY_CODE", "OBS_VALUE_SQKM"}),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"OBS_VALUE_SQKM", Int64.Type}})
+			in
+			    #"Changed Type1"
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 4d1b9207-e072-44dc-a9d8-c5780d6215bd
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE_SQKM
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b9d43381-0908-4ff2-9ad9-608cbbe46dad
+		sourceColumn: OBS_VALUE_SQKM
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

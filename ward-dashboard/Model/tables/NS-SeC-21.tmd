@@ -1,0 +1,83 @@
+table 'NS-SeC-21'
+	lineageTag: 32e9286a-dec6-4dbd-88d0-c350dc7eb06b
+	ordinal: 18
+
+	partition 'NS-SeC-21-a12c6507-2d32-4eb2-b9a0-f0fc332d5b22' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2079_1.data.csv?date=latest&geography=629165479...629165982,629303674...629303812,629317322...629317326,629317336...629317343,629317349...629317360,629317362...629317366,629317371,629317374,629317376,629317378,629317379,629317381,629317385,629317388...629317392,629317394...629317397,629317399...629317403,629317405...629317407,629317409,629317411,629317412,629317416...629317420,629317422...629317424,629317426,629317429...629317434,629317436,629317437,629317440...629317442,629317444...629317450,629317452...629317456,629317459...629317461,629317463,629317466...629317468,629317472,629317474...629317479,629317481,629317483,629317486,629317487,629317490,629317492,629317494,629317495,629317497,629317499...629317502,629317504,629317505,629317507...629317509,629317512...629317514,629317517,629317520,629317523,629317525,629317527,629317531,629317534,629317535,629317537,629317538,629317540,629317543...629317548,629317551,629317554,629317555,629317558,629317560,629317562,629317563,629317565,629317566,629317569...629317573,629317576...629317578,629317580,629317582,629317584,629317585,629317587,629317590...629317592,629317594,629317596...629317599,629317601,629317603,629317604,629317606,629317607,629317610,629317612,629317613,629317615...629317617,629317619...629317621,629317623,629317625...629317629,629317631...629317634,629317636,629317640,629317648,629317650...629317659,629317662,629317663,629317666...629317669,629317672...629317687,629317689,629317691,629317694,629317695,629317697,629317698,629317700,629317701,629317703,629317704,629317706,629317707,629317711...629317714,629317716,629317718...629317720,629317722...629317724,629317726,629317729,629317731,629317733,629317736...629317742,629317744,629317746...629317748,629323624,629323625&c2021_nssec_10=1...9&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_NSSEC_10", Int64.Type}, {"C2021_NSSEC_10_NAME", type text}, {"C2021_NSSEC_10_CODE", type text}, {"C2021_NSSEC_10_TYPE", type text}, {"C2021_NSSEC_10_TYPECODE", Int64.Type}, {"C2021_NSSEC_10_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_CODE", "C2021_NSSEC_10_NAME", "OBS_VALUE"}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"OBS_VALUE", "Percentage"}}),
+			    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns", "Sort order", each if Text.Contains([C2021_NSSEC_10_NAME], "L1, L2") then 1 else if Text.Contains([C2021_NSSEC_10_NAME], "L4, L5") then 2 else if Text.Contains([C2021_NSSEC_10_NAME], "L7") then 3 else if Text.Contains([C2021_NSSEC_10_NAME], "L8") then 4 else if Text.Contains([C2021_NSSEC_10_NAME], "L10") then 5 else if Text.Contains([C2021_NSSEC_10_NAME], "L12") then 6 else if Text.Contains([C2021_NSSEC_10_NAME], "L13") then 7 else if Text.Contains([C2021_NSSEC_10_NAME], "L14.1") then 8 else if Text.Contains([C2021_NSSEC_10_NAME], "L15") then 9 else null),
+			    #"Sorted Rows" = Table.Sort(#"Added Conditional Column",{{"Sort order", Order.Ascending}})
+			in
+			    #"Sorted Rows"
+
+	measure Mean = AVERAGE('NS-SeC-21'[Percentage])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 03051e09-1c3a-4a46-a467-f54726af9c72
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'NS-SeC Max ' = MAX('NS-SeC-21'[Percentage])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 64d04d95-a593-4888-9e5b-7d9bd4579b09
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'NS-SeC Min' = MIN('NS-SeC-21'[Percentage])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: c20cf79a-f77f-4bb1-af97-aadaa8196f1c
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 59b9eadf-667f-4f71-bcfd-dcb0c2f3d536
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_NSSEC_10_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 99a4918c-0868-4269-a88f-3c59364cea92
+		sortByColumn: 'Sort order'
+		sourceColumn: C2021_NSSEC_10_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["SortByColumn"]
+
+	column Percentage
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: a2e0bd4c-a191-4272-a456-836ab28d1a62
+		sourceColumn: Percentage
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sort order'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: ac1dc734-ad40-4c44-b174-526d9759741d
+		sourceColumn: "Sort order"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

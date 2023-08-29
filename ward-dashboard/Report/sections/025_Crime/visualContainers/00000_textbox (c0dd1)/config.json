@@ -1,0 +1,39 @@
+{
+  "name": "c0dd1d45f679664d6d65",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 19.788445890968266,
+        "y": 47.908868999186325,
+        "z": 1000,
+        "width": 772.79088689991863,
+        "height": 64.572823433685926
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The Met police provide crime data covering the past 24 months, broken down by LSOA and Home Office crime classifications",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

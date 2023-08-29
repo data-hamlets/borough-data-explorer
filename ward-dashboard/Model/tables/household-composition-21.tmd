@@ -1,0 +1,95 @@
+table 'household-composition-21'
+	lineageTag: e5cbe251-fe9b-42d4-8a2d-c8f489068ca5
+	ordinal: 10
+
+	partition 'household-composition-21-fa3ce113-214d-49f9-87f2-ff58a2a56a28' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2023_1.data.csv?date=latest&geography=629165479...629165982,629303674...629303812,629317322...629317326,629317336...629317343,629317349...629317360,629317362...629317366,629317371,629317374,629317376,629317378,629317379,629317381,629317385,629317388...629317392,629317394...629317397,629317399...629317403,629317405...629317407,629317409,629317411,629317412,629317416...629317420,629317422...629317424,629317426,629317429...629317434,629317436,629317437,629317440...629317442,629317444...629317450,629317452...629317456,629317459...629317461,629317463,629317466...629317468,629317472,629317474...629317479,629317481,629317483,629317486,629317487,629317490,629317492,629317494,629317495,629317497,629317499...629317502,629317504,629317505,629317507...629317509,629317512...629317514,629317517,629317520,629317523,629317525,629317527,629317531,629317534,629317535,629317537,629317538,629317540,629317543...629317548,629317551,629317554,629317555,629317558,629317560,629317562,629317563,629317565,629317566,629317569...629317573,629317576...629317578,629317580,629317582,629317584,629317585,629317587,629317590...629317592,629317594,629317596...629317599,629317601,629317603,629317604,629317606,629317607,629317610,629317612,629317613,629317615...629317617,629317619...629317621,629317623,629317625...629317629,629317631...629317634,629317636,629317640,629317648,629317650...629317659,629317662,629317663,629317666...629317669,629317672...629317687,629317689,629317691,629317694,629317695,629317697,629317698,629317700,629317701,629317703,629317704,629317706,629317707,629317711...629317714,629317716,629317718...629317720,629317722...629317724,629317726,629317729,629317731,629317733,629317736...629317742,629317744,629317746...629317748,629323624,629323625&c2021_hhcomp_15=1...3,1003,4...6,1004,7...9,1005,10,11,1006,12...14&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_HHCOMP_15", Int64.Type}, {"C2021_HHCOMP_15_NAME", type text}, {"C2021_HHCOMP_15_CODE", type text}, {"C2021_HHCOMP_15_TYPE", type text}, {"C2021_HHCOMP_15_TYPECODE", Int64.Type}, {"C2021_HHCOMP_15_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", Int64.Type}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"GEOGRAPHY_CODE", "C2021_HHCOMP_15_NAME", "OBS_VALUE"}),
+			    #"Split Column by Delimiter" = Table.SplitColumn(#"Removed Other Columns", "C2021_HHCOMP_15_NAME", Splitter.SplitTextByDelimiter(":", QuoteStyle.None), {"C2021_HHCOMP_15_NAME.1", "C2021_HHCOMP_15_NAME.2"}),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"C2021_HHCOMP_15_NAME.1", type text}, {"C2021_HHCOMP_15_NAME.2", type text}}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"C2021_HHCOMP_15_NAME.1", "Household type"}, {"C2021_HHCOMP_15_NAME.2", "Household detail"}})
+			in
+			    #"Renamed Columns"
+
+	measure 'household min' = MIN('household-composition-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 41752840-a372-47b1-a40d-6dd9b60277b5
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'household average' = AVERAGE('household-composition-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 0184c8c1-9812-4887-a199-0d51fd1e255e
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'household max' = MAX('household-composition-21'[OBS_VALUE])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 3d126d44-6f11-4ae4-b3e2-ea2927aac214
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 28e85ae4-30d7-42d0-a531-bdd98c98b4bc
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBS_VALUE
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: cc750251-d891-49bf-b7f4-cdc69a265dbf
+		sourceColumn: OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["FormatString","DataType"]
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Household type'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 539f3e08-9a60-4079-9127-2dbba6db8f50
+		sourceColumn: "Household type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Household detail'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0c3eeddb-4a00-47f4-802a-2588de1bdf2e
+		sourceColumn: "Household detail"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'C2021_HHCOMP_15_NAME.1 Hierarchy'
+		lineageTag: 7bd4948b-7ddf-4f4e-9eb4-66ae93e946f8
+
+		level 'Household type'
+			column: 'Household type'
+			lineageTag: 0020ec24-a3dd-4071-bf3d-6546923d989e
+
+		level 'Household detail'
+			column: 'Household detail'
+			lineageTag: ebbe5ab3-0c90-47ab-a9f0-3fb61cd0ae76
+
+		level OBS_VALUE
+			column: OBS_VALUE
+			lineageTag: 261e1ff7-ab8f-4eb6-8ba0-ac38ee818e4a
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

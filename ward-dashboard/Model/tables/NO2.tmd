@@ -1,0 +1,53 @@
+table NO2
+	lineageTag: 8a659e06-bc81-4f27-a798-3bbc3dba6685
+	ordinal: 35
+
+	partition 'NO2-2042b027-c217-46c9-8225-c1dbfd1e272b' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://tower-hamlets-air-sensors-history.vercel.app/air-sensors/NO2.csv?_sort_desc=%40MeasurementDateGMT&_size=336"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"@MeasurementDateGMT", type datetime}, {"@Value", type number}, {"@Site", type text}}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"@MeasurementDateGMT", "DateTime"}, {"@Value", "NO2"}, {"@Site", "Sensor"}}),
+			    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","Tower Hamlets - ","",Replacer.ReplaceText,{"Sensor"})
+			in
+			    #"Replaced Value"
+
+	column DateTime
+		dataType: DateTime
+		formatString:= General Date
+		isDataTypeInferred: false
+		lineageTag: dfad0b52-5f73-47bc-b545-f7971bee62a5
+		sourceColumn: DateTime
+		summarizeBy: None
+
+		variation Variation
+			defaultHierarchy: 'LocalDateTable_d4abc65e-478b-450b-a7a0-d10225b5d81f'.'Date Hierarchy'
+			isDefault
+			relationship: '5ae5fdc1-fa77-463f-8794-4094caa0e035'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NO2
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: d7b4cc55-0533-461d-b39c-542f38e5b928
+		sourceColumn: NO2
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sensor
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 7d9cc395-e732-457a-a05b-5da986dfaed3
+		sourceColumn: Sensor
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_ResultType = Table
+

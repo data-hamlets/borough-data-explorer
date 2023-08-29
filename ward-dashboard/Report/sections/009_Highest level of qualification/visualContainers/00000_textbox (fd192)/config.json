@@ -1,0 +1,40 @@
+{
+  "name": "fd19241d7d258f12734c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 49.559412550066753,
+        "y": 8.544726301735647,
+        "z": 7000,
+        "width": 389.63951935914548,
+        "height": 59.813084112149525
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Highest level of qualification",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

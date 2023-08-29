@@ -1,0 +1,40 @@
+{
+  "name": "ce8bbea19298ad362cd2",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 732.81355932203394,
+        "y": 53.084745762711869,
+        "z": 5000,
+        "width": 354.50847457627117,
+        "height": 90.305084745762713
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select one or more bars (Ctrl + click) to explore English proficiency by OA. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

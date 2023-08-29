@@ -1,0 +1,204 @@
+<LinguisticSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Language="en-US" DynamicImprovement="Default" xmlns="http://schemas.microsoft.com/sqlserver/2016/01/linguisticschema">
+  <Entities>
+    <Entity Name="Home" ConceptualEntity="Pod2" Source="Generated">
+      <Words>
+        <Word>Home</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Deprivation" ConceptualEntity="Pod" Source="Generated">
+      <Words>
+        <Word>Deprivation</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Household_Types" ConceptualEntity="Pod1" Source="Generated">
+      <Words>
+        <Word>Household Types</Word>
+      </Words>
+    </Entity>
+    <Entity Name="NSSec" ConceptualEntity="Pod4" Source="Generated">
+      <Words>
+        <Word>NS-Sec</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Household_language" ConceptualEntity="Pod8" Source="Generated">
+      <Words>
+        <Word>Household language</Word>
+      </Words>
+    </Entity>
+    <Entity Name="English_proficiency" ConceptualEntity="Pod10" Source="Generated">
+      <Words>
+        <Word>English proficiency</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Ethnicity" ConceptualEntity="Pod11" Source="Generated">
+      <Words>
+        <Word>Ethnicity</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Fuel_Poverty" ConceptualEntity="Pod12" Source="Generated">
+      <Words>
+        <Word>Fuel Poverty</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Alternate_claimant_rate" ConceptualEntity="Pod13" Source="Generated">
+      <Words>
+        <Word>Alternate claimant rate</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Highest_level_of_qualification" ConceptualEntity="Pod14" Source="Generated">
+      <Words>
+        <Word>Highest level of qualification</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Occupation" ConceptualEntity="Pod15" Source="Generated">
+      <Words>
+        <Word>Occupation</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Religion" ConceptualEntity="Pod16" Source="Generated">
+      <Words>
+        <Word>Religion</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Travel_times" ConceptualEntity="Pod9" Source="Generated">
+      <Words>
+        <Word>Travel times</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Travel_times1" ConceptualEntity="Pod17" Source="Generated">
+      <Words>
+        <Word>Travel times</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Travel_times2" ConceptualEntity="Pod18" Source="Generated">
+      <Words>
+        <Word>Travel times</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Access_to_public_green_space" ConceptualEntity="Pod19" Source="Generated">
+      <Words>
+        <Word>Access to public green space</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Ethnicity__Benchmarking" ConceptualEntity="Pod20" Source="Generated">
+      <Words>
+        <Word>Ethnicity - Benchmarking</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Sexual_orientation__Benchmarking" ConceptualEntity="Pod21" Source="Generated">
+      <Words>
+        <Word>Sexual orientation - Benchmarking</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Total_population" ConceptualEntity="Pod22" Source="Generated">
+      <Words>
+        <Word>Total population</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Air_quality__NO2" ConceptualEntity="Pod23" Source="Generated">
+      <Words>
+        <Word>Air quality - NO2</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Ethnicity_Vs_NSSec" ConceptualEntity="Pod7" Source="Generated">
+      <Words>
+        <Word>Ethnicity Vs NS-Sec</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Percentage_in_good_health" ConceptualEntity="Pod24" Source="Generated">
+      <Words>
+        <Word>Percentage in good health</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Age_by_single_year_of_age_018" ConceptualEntity="Pod25" Source="Generated">
+      <Words>
+        <Word>Age by single year of age 0-18</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Fuel_Poverty1" ConceptualEntity="Pod26" Source="Generated">
+      <Words>
+        <Word>Fuel Poverty</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Air_quality__PM2_5" ConceptualEntity="Pod27" Source="Generated">
+      <Words>
+        <Word>Air quality - PM2.5</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Tackling_the_Costofliving_crisis" ConceptualEntity="Pod3" Source="Generated">
+      <Words>
+        <Word>Tackling the Cost-of-living crisis</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Homes_for_the_future" ConceptualEntity="Pod5" Source="Generated">
+      <Words>
+        <Word>Homes for the future</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Accelerate_Education" ConceptualEntity="Pod6" Source="Generated">
+      <Words>
+        <Word>Accelerate Education</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Boost_culture_business_jobs_and_leisure" ConceptualEntity="Pod28" Source="Generated">
+      <Words>
+        <Word>Boost culture, business, jobs and leisure</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Invest_in_public_services" ConceptualEntity="Pod29" Source="Generated">
+      <Words>
+        <Word>Invest in public services</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Empower_communities_and_fight_crime" ConceptualEntity="Pod30" Source="Generated">
+      <Words>
+        <Word>Empower communities and fight crime</Word>
+      </Words>
+    </Entity>
+    <Entity Name="A_clean_and_green_future" ConceptualEntity="Pod31" Source="Generated">
+      <Words>
+        <Word>A clean and green future</Word>
+      </Words>
+    </Entity>
+    <Entity Name="A_council_that_listens_and_works_for_everyone9" ConceptualEntity="Pod32" Source="Generated">
+      <Words>
+        <Word>A council that listens and works for everyone</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Closing_note" ConceptualEntity="Pod33" Source="Generated">
+      <Words>
+        <Word>Closing note</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Crime" ConceptualEntity="Pod34" Source="Generated">
+      <Words>
+        <Word>Crime</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Crime__Benchmarking" ConceptualEntity="Pod35" Source="Generated">
+      <Words>
+        <Word>Crime - Benchmarking</Word>
+      </Words>
+    </Entity>
+    <Entity Name="School_performance" ConceptualEntity="Pod36" Source="Generated">
+      <Words>
+        <Word>School performance</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Highest_level_of_qualification_benchmarking" ConceptualEntity="Pod37" Source="Generated">
+      <Words>
+        <Word>Highest level of qualification- benchmarking</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Museum_and_gallery_visits_within_the_borough" ConceptualEntity="Pod38" Source="Generated">
+      <Words>
+        <Word>Museum and gallery visits- within the borough</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Museum_and_gallery_visits_outside_the_borough" ConceptualEntity="Pod39" Source="Generated">
+      <Words>
+        <Word>Museum and gallery visits- outside the borough</Word>
+      </Words>
+    </Entity>
+  </Entities>
+</LinguisticSchema>

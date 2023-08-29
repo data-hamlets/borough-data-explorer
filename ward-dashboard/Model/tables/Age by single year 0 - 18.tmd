@@ -1,0 +1,116 @@
+table 'Age by single year 0 - 18'
+	lineageTag: b957179e-e8c2-40c8-aa72-71bd7c686a12
+	ordinal: 40
+
+	partition 'Age by single year 0 - 18-d154f583-b212-4c7a-950b-2a024b622f42' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2027_1.data.csv?date=latest&geography=641730979...641730990,641730994,641730995,641730991...641730993,641730996...641730998&c2021_age_102=1...19&measures=20100,20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"DATE", "GEOGRAPHY_NAME", "GEOGRAPHY_CODE", "C2021_AGE_102_NAME", "C2021_AGE_102_SORTORDER", "MEASURES_NAME", "OBS_VALUE"}),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"OBS_VALUE", type number}, {"C2021_AGE_102_SORTORDER", Int64.Type}}),
+			    #"Replaced Value" = Table.ReplaceValue(#"Changed Type"," (Tower Hamlets)","",Replacer.ReplaceText,{"GEOGRAPHY_NAME"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Replaced Value", each true),
+			    #"Pivoted Column" = Table.Pivot(#"Filtered Rows", List.Distinct(#"Filtered Rows"[MEASURES_NAME]), "MEASURES_NAME", "OBS_VALUE", List.Sum),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Pivoted Column",{{"Value", Int64.Type}}),
+			    #"Replaced Value1" = Table.ReplaceValue(#"Changed Type1","Aged ","",Replacer.ReplaceText,{"C2021_AGE_102_NAME"}),
+			    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","under 1 year","0 years",Replacer.ReplaceText,{"C2021_AGE_102_NAME"}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Replaced Value2",{{"Percent", "Percentage of Ward Population"}, {"Value", "Number of Children in Ward"}, {"GEOGRAPHY_NAME", "Ward"}})
+			in
+			    #"Renamed Columns"
+
+	measure 'age min' = MIN('Age by single year 0 - 18'[Percentage of Ward Population])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 817e1ed6-3e54-4da1-b665-8de3e97c2c8f
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'age max' = MAX('Age by single year 0 - 18'[Percentage of Ward Population])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 9c48bd01-0098-4ef0-bc1c-977c9ced0d5c
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure 'age average' = AVERAGE('Age by single year 0 - 18'[Percentage of Ward Population])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: c5428e70-9035-4e28-969a-a80b1b65b815
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column DATE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 782d68f8-7601-4b2f-b6de-f96880897b50
+		sourceColumn: DATE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ward
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b2bd2821-bdcb-4b70-8833-e1407acc84ec
+		sourceColumn: Ward
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEOGRAPHY_CODE
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 31e5843f-b9f8-4a4a-b885-053dc1afe607
+		sourceColumn: GEOGRAPHY_CODE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2021_AGE_102_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: da725c5e-e179-4a16-8695-5cf89cdd3f96
+		sortByColumn: C2021_AGE_102_SORTORDER
+		sourceColumn: C2021_AGE_102_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["SortByColumn"]
+
+	column C2021_AGE_102_SORTORDER
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 1570f4d7-8a51-4238-9496-218d51ae23c6
+		sourceColumn: C2021_AGE_102_SORTORDER
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Children in Ward'
+		dataType: Int64
+		isDataTypeInferred: false
+		lineageTag: 47ccb603-38b7-4802-bb6c-1367fe8392c7
+		sourceColumn: "Number of Children in Ward"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Percentage of Ward Population'
+		dataType: Double
+		formatString:= 0.0
+		isDataTypeInferred: false
+		lineageTag: 0aebc199-1031-492e-871a-d59e00edaade
+		sourceColumn: "Percentage of Ward Population"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

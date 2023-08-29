@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Filterd6bec83c20d9010534ae",
+    "expression": {
+      "HierarchyLevel": {
+        "Expression": {
+          "Hierarchy": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ethnicity-21"
+              }
+            },
+            "Hierarchy": "Ethnic grou"
+          }
+        },
+        "Level": "(detailed)"
+      }
+    },
+    "filter": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "e",
+          "Entity": "ethnicity-21",
+          "Type": 0
+        }
+      ],
+      "Where": [
+        {
+          "Condition": {
+            "Not": {
+              "Expression": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "e"
+                          }
+                        },
+                        "Property": "C2021_ETH_20_NAME.2"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "type": "Categorical",
+    "cachedDisplayNames": [
+      {
+        "id": {
+          "scopeId": {
+            "Comparison": {
+              "ComparisonKind": 0,
+              "Left": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ethnicity-21"
+                    }
+                  },
+                  "Property": "C2021_ETH_20_NAME.2"
+                }
+              },
+              "Right": {
+                "Literal": {
+                  "Value": "null"
+                }
+              }
+            }
+          }
+        },
+        "displayName": "(Blank)"
+      }
+    ],
+    "howCreated": 1,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "isHiddenInViewMode": false
+  }
+]

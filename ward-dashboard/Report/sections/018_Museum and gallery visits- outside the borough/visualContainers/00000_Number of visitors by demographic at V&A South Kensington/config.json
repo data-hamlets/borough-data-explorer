@@ -1,0 +1,343 @@
+{
+  "name": "0e647d78b1eff96a8606",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.726495726495727,
+        "y": 136.06837606837607,
+        "z": 2000,
+        "width": 1243.7606837606838,
+        "height": 451.28205128205133
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "barChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "v&a_visits.year",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(v&a_visits.Number of children visiting aged 16 and under )"
+        },
+        {
+          "queryRef": "Sum(v&a_visits.Number of instances of children under 18 participating in onsite organised activities )"
+        },
+        {
+          "queryRef": "Sum(v&a_visits.Visits by UK visitors from ethnic minority background)"
+        },
+        {
+          "queryRef": "Sum(v&a_visits.Visits by UK adults in NS-SEC groups 5-8)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "v",
+          "Entity": "v&a_visits",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "v"
+              }
+            },
+            "Property": "year"
+          },
+          "Name": "v&a_visits.year"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "Number of children visiting aged 16 and under "
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(v&a_visits.Number of children visiting aged 16 and under )"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "Number of instances of children under 18 participating in onsite organised activities "
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(v&a_visits.Number of instances of children under 18 participating in onsite organised activities )"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "Visits by UK visitors from ethnic minority background"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(v&a_visits.Visits by UK visitors from ethnic minority background)"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "Visits by UK adults in NS-SEC groups 5-8"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(v&a_visits.Visits by UK adults in NS-SEC groups 5-8)"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 1,
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "v"
+                }
+              },
+              "Property": "year"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "v&a_visits.year": {
+        "displayName": "Year"
+      },
+      "Sum(v&a_visits.Number of children visiting aged 16 and under )": {
+        "displayName": "Children aged 16 and under "
+      },
+      "Sum(v&a_visits.Number of instances of children under 18 participating in onsite organised activities )": {
+        "displayName": "Children under 18 participating in onsite organised activities "
+      },
+      "Sum(v&a_visits.Visits by UK visitors from ethnic minority background)": {
+        "displayName": "UK visitors from ethnic minority background"
+      },
+      "Sum(v&a_visits.Visits by UK adults in NS-SEC groups 5-8)": {
+        "displayName": "UK adults in NS-SEC groups 5-8"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Number of Visitors'"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(v&a_visits.Number of children visiting aged 16 and under )"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(v&a_visits.Visits by UK visitors from ethnic minority background)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(v&a_visits.Visits by UK adults in NS-SEC groups 5-8)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(v&a_visits.Number of instances of children under 18 participating in onsite organised activities )"
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Number of visitors by demographic at V&A South Kensington'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

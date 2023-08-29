@@ -1,0 +1,54 @@
+{
+  "name": "51493aff9e0acf09ae9b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.627081021087681,
+        "y": 15.627081021087681,
+        "z": 0,
+        "width": 703.92896781354057,
+        "height": 93.762486126526085
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Museum and Gallery Visits - Outside the Borough",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Residents of Tower Hamlets also have access to museums and galleries outside of the borough"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "22a2ae373dd9043a3858",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.590551181102361,
+        "y": 58.110236220472437,
+        "z": 9000,
+        "width": 551.33858267716528,
+        "height": 147.4015748031496
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification.  The most observed category in Tower Hamlets is '2. Professional occupations' at ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#323132"
+                    }
+                  },
+                  {
+                    "value": "27%",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt",
+                      "color": "#323132"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#323132"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

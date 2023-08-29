@@ -1,0 +1,39 @@
+{
+  "name": "b80109559530589a9d25",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 49.606299212598422,
+        "y": 79.370078740157481,
+        "z": 2000,
+        "width": 620.78740157480308,
+        "height": 68.031496062992119
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The highest level of qualification held by residents of Tower Hamlets, London and England broken down by standard qualification level. ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

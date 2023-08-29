@@ -1,0 +1,40 @@
+{
+  "name": "df162328d55a00082e19",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 719.38983050847457,
+        "y": 39.661016949152547,
+        "z": 5000,
+        "width": 381.35593220338984,
+        "height": 73.220338983050851
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select one or more bars (Ctrl + click) to explore household language by OA. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

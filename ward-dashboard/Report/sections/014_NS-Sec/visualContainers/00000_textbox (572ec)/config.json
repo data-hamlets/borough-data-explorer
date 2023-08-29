@@ -1,0 +1,53 @@
+{
+  "name": "572ec73920ee25a8450a",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 3.4178905206942587,
+        "y": 51.268357810413882,
+        "z": 4000,
+        "width": 760.48064085447254,
+        "height": 133.29773030707608
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The National Statistics Socio-economic classification (NS-SEC) ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "is an Office of National Statistics standard measure which provides an indication of socio-economic position based on occupation. Across the borough the most observed categories were ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "L1, L2 and L3 (20.9%), L4, L5, L6 (18.9%) and L14.1 and L14.2 (13.7%).",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

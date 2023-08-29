@@ -1,0 +1,55 @@
+{
+  "name": "0a375abe634c2556da3d",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 14.722492697176241,
+        "y": 587.49756572541378,
+        "z": 1000,
+        "width": 384.88802336903603,
+        "height": 32.950340798442063
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Source: Charities Commission for England and Wales (2023)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

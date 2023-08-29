@@ -1,0 +1,264 @@
+{
+  "name": "fd329a98219c4976fe65",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 35.958188153310104,
+        "y": 173.10104529616726,
+        "z": 3000,
+        "width": 603.76306620209061,
+        "height": 441.53310104529618
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "TornadoChart1452517688218",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sum(Pop-AgeBand_Sex.OBS_VALUE)"
+        }
+      ],
+      "Series": [
+        {
+          "queryRef": "Pop-AgeBand_Sex.C_SEX_NAME"
+        }
+      ],
+      "Category": [
+        {
+          "queryRef": "PopPyramid_Age_Lookup.Age Band"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "p",
+          "Entity": "Pop-AgeBand_Sex",
+          "Type": 0
+        },
+        {
+          "Name": "p1",
+          "Entity": "PopPyramid_Age_Lookup",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "p"
+                      }
+                    },
+                    "Property": "OBS_VALUE"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "OBS_VALUE"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          },
+          "Name": "Sum(Pop-AgeBand_Sex.OBS_VALUE)"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "p"
+              }
+            },
+            "Property": "C_SEX_NAME"
+          },
+          "Name": "Pop-AgeBand_Sex.C_SEX_NAME"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "p1"
+              }
+            },
+            "Property": "Age Band"
+          },
+          "Name": "PopPyramid_Age_Lookup.Age Band"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "p1"
+                }
+              },
+              "Property": "Age Band"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "PopPyramid_Age_Lookup.Age Band": {
+        "displayName": "Age band"
+      },
+      "Pop-AgeBand_Sex.C_SEX_NAME": {
+        "displayName": "Sex"
+      },
+      "Sum(Pop-AgeBand_Sex.OBS_VALUE)": {
+        "displayName": "Percentage"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B5351'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pop-AgeBand_Sex"
+                          }
+                        },
+                        "Property": "C_SEX_NAME"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Female'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0FB4B8'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pop-AgeBand_Sex"
+                          }
+                        },
+                        "Property": "C_SEX_NAME"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Male'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tower Hamlets'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

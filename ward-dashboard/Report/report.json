@@ -1,0 +1,300 @@
+{
+  "id": 0,
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod"
+    },
+    {
+      "boundSection": "ReportSectionc3c8467c3805e0ca05c7",
+      "config": "{}",
+      "name": "Pod2"
+    },
+    {
+      "boundSection": "ReportSectionee093817b0b100200311",
+      "config": "{}",
+      "name": "Pod1"
+    },
+    {
+      "boundSection": "ReportSectiondc7cf953081d58755067",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod4",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSection9e96332293d87b9ad204",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod8"
+    },
+    {
+      "boundSection": "ReportSection8002a54458d5ae3043e1",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod10"
+    },
+    {
+      "boundSection": "ReportSectionff378363125089a0a59c",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod11"
+    },
+    {
+      "boundSection": "ReportSectiond22b99c0d2d59d9148cd",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod12",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSectionf7b53b09a093e2ce69e5",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod13",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSectione42c190ceaa09d0c17c2",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod14"
+    },
+    {
+      "boundSection": "ReportSectionfe6d1c0205994c1f6539",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod15"
+    },
+    {
+      "boundSection": "ReportSection66c12ea4bdf2552b2dc9",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod16",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSection6b8660a5ff6186b3f846",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod9"
+    },
+    {
+      "boundSection": "ReportSectionfef5fac4589f0d549404",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod17"
+    },
+    {
+      "boundSection": "ReportSection2591f844cb8fb405c540",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod18"
+    },
+    {
+      "boundSection": "ReportSection954ed52b1bbfd57bd72b",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod19"
+    },
+    {
+      "boundSection": "ReportSection9affd763768e063e1200",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod20"
+    },
+    {
+      "boundSection": "ReportSection82fea6d1a64a28c6b81c",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod21"
+    },
+    {
+      "boundSection": "ReportSection109aff5b5f65e5340015",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod22",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSectionde4055636349fdbda6c5",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod23",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSection996915d5fb0af5989ce6",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod7"
+    },
+    {
+      "boundSection": "ReportSection75c591d11516652d8175",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod24"
+    },
+    {
+      "boundSection": "ReportSectionc94222dec2fab2a9700a",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod25",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSectiond5c3db6b55ed995c3bbc",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod26"
+    },
+    {
+      "boundSection": "ReportSection39f4caaad14665cc0be1",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod27",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSectionebee3da750a06027947b",
+      "config": "{}",
+      "name": "Pod3"
+    },
+    {
+      "boundSection": "ReportSection8a84809a50239c60d736",
+      "config": "{}",
+      "name": "Pod5"
+    },
+    {
+      "boundSection": "ReportSection4ece8a08bb9e0a92b2ce",
+      "config": "{}",
+      "name": "Pod6"
+    },
+    {
+      "boundSection": "ReportSection10fb91042320b85a245d",
+      "config": "{}",
+      "name": "Pod28"
+    },
+    {
+      "boundSection": "ReportSection159de5878d2283996257",
+      "config": "{}",
+      "name": "Pod29"
+    },
+    {
+      "boundSection": "ReportSectionafb6d08ba0f804c73552",
+      "config": "{}",
+      "name": "Pod30"
+    },
+    {
+      "boundSection": "ReportSection33a71d4a371cdec2a83e",
+      "config": "{}",
+      "name": "Pod31"
+    },
+    {
+      "boundSection": "ReportSection43bed798cc1ef1996d58",
+      "config": "{}",
+      "name": "Pod32"
+    },
+    {
+      "boundSection": "ReportSection1e49a6218bedbfbb87ff",
+      "config": "{}",
+      "name": "Pod33"
+    },
+    {
+      "boundSection": "ReportSection9b33caed1277dcc2e43f",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod34",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSection17147c4d898102802f7e",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod35",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "ReportSection29f6357a8f832bcd0bbe",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod36"
+    },
+    {
+      "boundSection": "ReportSection875f19afa141aff0fa0d",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod37"
+    },
+    {
+      "boundSection": "ReportSection439efc5ae4b9309b4f6c",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod38"
+    },
+    {
+      "boundSection": "ReportSection56054e30dd6bb672c230",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod39"
+    }
+  ],
+  "publicCustomVisuals": [
+    "BBED0A4D4D8D44CE93CF2DAFADEE466C",
+    "TornadoChart1452517688218"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY22SU11",
+            "path": "BaseThemes/CY22SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "corporate-background47956578574263076.png",
+            "path": "corporate-background47956578574263076.png",
+            "type": 100
+          },
+          {
+            "name": "lbth_oa21.topo0678750905106007.json",
+            "path": "lbth_oa21.topo0678750905106007.json",
+            "type": 200
+          },
+          {
+            "name": "lbth_oa21.topo9724882609383467.json",
+            "path": "lbth_oa21.topo9724882609383467.json",
+            "type": 200
+          },
+          {
+            "name": "lbth-wards.topo05194908401748455.json",
+            "path": "lbth-wards.topo05194908401748455.json",
+            "type": 200
+          },
+          {
+            "name": "lbth-lsoa117997910546401386.json",
+            "path": "lbth-lsoa117997910546401386.json",
+            "type": 200
+          },
+          {
+            "name": "corporate-titlepage7251284639930957.png",
+            "path": "corporate-titlepage7251284639930957.png",
+            "type": 100
+          },
+          {
+            "name": "Viridis10653835140254264.json",
+            "path": "Viridis10653835140254264.json",
+            "type": 201
+          },
+          {
+            "name": "corporate-sectionpage1463628241949564.png",
+            "path": "corporate-sectionpage1463628241949564.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "BBED0A4D4D8D44CE93CF2DAFADEE466C.pbiviz.json",
+            "path": "BBED0A4D4D8D44CE93CF2DAFADEE466C.pbiviz.json",
+            "type": 5
+          }
+        ],
+        "name": "BBED0A4D4D8D44CE93CF2DAFADEE466C",
+        "type": 0
+      }
+    }
+  ],
+  "theme": "Viridis10653835140254264.json"
+}

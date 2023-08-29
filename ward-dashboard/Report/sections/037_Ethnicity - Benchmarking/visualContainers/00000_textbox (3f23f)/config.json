@@ -1,0 +1,40 @@
+{
+  "name": "3f23fa2dbda253d1678d",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 39.050847457627121,
+        "y": 0,
+        "z": 4000,
+        "width": 391.728813559322,
+        "height": 49.423728813559322
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Ethnicity - Benchmarking",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

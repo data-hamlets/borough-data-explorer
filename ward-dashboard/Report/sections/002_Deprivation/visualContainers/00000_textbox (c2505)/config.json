@@ -1,0 +1,101 @@
+{
+  "name": "c25052675349d69a774c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.380507343124165,
+        "y": 0,
+        "z": 0,
+        "width": 1088.5981308411215,
+        "height": 208.49132176234977
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "   Deprivation",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A household is deprived in a dimension if they meet one or more of the following conditions:",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "employment: any member of a household, who is not a full-time student, is either unemployed or long-term sick",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "education: no person in the household has at least level 2 education (5+ GCSE passes) or is aged 16-18 and a full-time student",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "health and disability: any person in the household has general health that is “bad” or has a long-term health problem",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "housing: the household’s accommodation is either overcrowded or is in a shared dwelling, or has no central heating.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

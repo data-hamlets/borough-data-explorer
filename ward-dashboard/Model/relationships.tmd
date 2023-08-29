@@ -1,0 +1,335 @@
+relationship 'e2c4927c-11a0-43ff-89a3-153af4b79c7b'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'households-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'b2fe1d29-33c3-49c3-a7f1-32c441952f8a'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'popden-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '0b53a129-9a38-46aa-a148-687389d05600'
+	fromColumn: 'marriage-partnership-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '6d82980a-593e-4346-8db2-f9919ab3a6fd'
+	fromColumn: 'residents-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '2221bdee-fe30-4313-96e4-e6c099482816'
+	fromColumn: 'household-composition-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '0ab58e89-f886-4633-9e60-4cf32f8098c9'
+	fromColumn: 'household-composition-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '503f337a-b7d0-41d4-9f15-b5c884989244'
+	fromColumn: 'household-composition-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship 'be732244-e08a-4d9f-b1f7-25d7a4df7a9b'
+	fromColumn: 'country-of-birth-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '0f402e99-cdc6-40dc-8246-db8052e00ab3'
+	fromColumn: 'country-of-birth-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '850accb1-e7ad-40c1-b7cf-81980a6c5514'
+	fromColumn: 'country-of-birth-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship 'f45a549e-c0d7-498f-800a-db1ee3afd429'
+	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'd26254c0-dc87-424b-8fd9-bd7e7a5498d1'
+	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship 'b3c26a1c-6a27-452a-8a79-0bc54e8d53a0'
+	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '4f8a9ad6-e9ac-4ee2-bb00-9949364c3426'
+	fromColumn: 'deprivation-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '694c0dec-6725-4198-ae5f-09263e7db761'
+	fromColumn: 'deprivation-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship 'a1d6db05-ffef-44d1-b3ca-609cc4e76bd7'
+	fromColumn: 'deprivation-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '764f1e15-c4c0-421e-9582-24b5d97eedb1'
+	fromColumn: 'religion-21'.GEOGRAPHY_NAME
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '1a31a4ed-8fff-4c0f-bb3e-b9a68ba7ab17'
+	fromColumn: 'religion-21'.GEOGRAPHY_NAME
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship 'bba5b513-5a77-44f4-b167-ffaf9bcf8153'
+	fromColumn: 'religion-21'.GEOGRAPHY_NAME
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship 'd4912a33-a4a7-4590-9ca1-41a54904dac0'
+	fromColumn: 'englishproficiency-21'.GEOGRAPHY_NAME
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '951346f3-9c52-478b-b667-442f2b8f8027'
+	fromColumn: 'englishproficiency-21'.GEOGRAPHY_NAME
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship 'f61808bf-d167-479a-9c25-49b847e754ce'
+	fromColumn: 'englishproficiency-21'.GEOGRAPHY_NAME
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '2f99cdab-c170-4c6d-8367-2d85d45dde07'
+	fromColumn: 'householdlanguage-21'.GEOGRAPHY_NAME
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '1cb88fe6-9308-430c-8638-6cf8decfbb99'
+	fromColumn: 'householdlanguage-21'.GEOGRAPHY_NAME
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '61ccf6ec-545a-4ac3-a42b-0a19064da34b'
+	fromColumn: 'householdlanguage-21'.GEOGRAPHY_NAME
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '2e412cc2-aec2-455d-b0ed-339695b059f7'
+	fromColumn: 'ethnicity-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'd9788423-ca56-4f42-b178-e0ed6155a773'
+	fromColumn: 'ethnicity-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '231fe93e-6111-4913-ab1f-964068b29c01'
+	fromColumn: 'ethnicity-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '19de7342-7c5d-4fa2-a92c-ba4d064592cd'
+	fromColumn: 'NS-SeC-21'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'ef43781f-7e7b-4041-8502-da3ffa0f82d1'
+	fromColumn: 'NS-SeC-21'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '2eece8cf-ace4-4461-8ed8-e9ebc6aa79b5'
+	fromColumn: 'NS-SeC-21'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship 'aebbda04-74ed-49f6-ae2b-8fec16813f5a'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'Alt ClaimantCount'.Ward
+	toColumn: 'Ward lookup'.Ward
+
+relationship 'd5fe59bb-f102-40da-aafe-dc25d0a8a88e'
+	fromColumn: 'Highest Level of Qualification'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'c8deedc1-6614-4197-81b1-19dedf87d795'
+	fromColumn: 'Highest Level of Qualification'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '3b69213e-ded7-4fec-8526-3b12933549ee'
+	fromColumn: 'Highest Level of Qualification'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship 'c2a9ad41-dad8-46a6-b559-1843c2c2a406'
+	fromColumn: 'Ward Population'.C2021_AGE_102_SORTORDER
+	toColumn: 'Age Band Lookup'.Age
+
+relationship 'ec523443-740b-401a-998a-823b31b050e1'
+	fromColumn: 'Ward Population'.GEOGRAPHY_NAME
+	toColumn: 'Ward lookup'.Ward
+
+relationship 'd7c5511d-1df9-45c7-973a-11c6feca1114'
+	fromColumn: Occupation.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'c460d9c0-6c52-41f1-a812-a050759a0fb4'
+	fromColumn: Occupation.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship '6056a24f-ba82-4e0a-91f8-68fb4f519fc4'
+	fromColumn: Occupation.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '7a33a0aa-f867-4535-b422-9f8cb555c5f0'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: jts_o5_2019.LSOA_code
+	toColumn: 'LSOA11 to Ward Lookup'.LSOA11CD
+
+relationship 'f804b444-f7d7-4e2e-aa9c-16e0aae6b7b7'
+	crossFilteringBehavior: BothDirections
+	fromColumn: lbth_oa21_ward_lookup.ward_name
+	toCardinality: Many
+	toColumn: 'LSOA11 to Ward Lookup'.WD20NM
+
+relationship '80b65f32-1df8-4646-9dfa-e82581d220b7'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: jts_o5_2019.LSOA_code
+	toColumn: jts_02_2019.LSOA_code
+
+relationship '0f6d961d-f71b-489c-a98c-579f38c4e20e'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: jts_06_2019.LSOA_code
+	toColumn: jts_02_2019.LSOA_code
+
+relationship 'dde5bb92-2d9e-4b98-bf93-df1905a9251b'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'LSOA Parks only'.'LSOA code'
+	toColumn: jts_02_2019.LSOA_code
+
+relationship '4e7f43d6-51df-4431-9ed0-73258c6ff7e9'
+	crossFilteringBehavior: BothDirections
+	fromColumn: 'Ethnicity-21 Benchmarking'.C2021_ETH_20_NAME
+	toColumn: 'Ethnic Group Lookup'.C2021_ETH_20_NAME
+
+relationship '1d932995-2ca2-4d5c-96eb-30462f388c1f'
+	crossFilteringBehavior: BothDirections
+	fromColumn: 'Pop-AgeBand_Sex'.C2021_AGE_92
+	toColumn: PopPyramid_Age_Lookup.C2021_Age_92
+
+relationship '5ae5fdc1-fa77-463f-8794-4094caa0e035'
+	fromColumn: NO2.DateTime
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_d4abc65e-478b-450b-a7a0-d10225b5d81f'.Date
+
+relationship 'f199d47a-4f66-4c44-9190-3f3a48ccf0e3'
+	fromColumn: 'Ward Population'.GEOGRAPHY_NAME
+	toColumn: 'NS-SeC_ward'.GEOGRAPHY_NAME
+
+relationship 'e1e60c70-7bb2-455c-bfb6-51a426cdf93b'
+	fromColumn: 'Good Health'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'ef1ef491-ea69-4733-a0d5-1bf5be0486fa'
+	fromColumn: 'Good Health'.GEOGRAPHY_CODE
+	toColumn: 'popden-11'.GEOGRAPHY_CODE
+
+relationship 'e3efde52-e1df-4970-93d2-4fb78680acae'
+	fromColumn: 'Good Health'.GEOGRAPHY_CODE
+	toColumn: 'households-11'.GEOGRAPHY_CODE
+
+relationship '02d85210-db75-48b7-8eda-457a33e4c262'
+	fromColumn: 'Age by single year 0 - 18'.Ward
+	toColumn: 'Ward lookup'.Ward
+
+relationship '67df92e8-59f4-4a6c-b241-dfa132a301c4'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'LSOA Fuel Poverty'.'LSOA Code'
+	toColumn: jts_02_2019.LSOA_code
+
+relationship 'c0c6a0c4-4470-48b5-af80-43f98ba1996f'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'LSOA Fuel Poverty'.'LSOA Name'
+	isActive: false
+	toColumn: 'LSOA Parks only'.'LSOA name'
+
+relationship '511b8649-e545-4c08-9258-31997b1ada1b'
+	fromColumn: 'crime-lsoa'.'lsoa code'
+	toColumn: 'LSOA11 to Ward Lookup'.LSOA11CD
+
+relationship 'a279feeb-9178-46a4-a75e-f46f128ec30c'
+	fromColumn: 'Ethnicity-21 Benchmarking'.DATE
+	toColumn: 'london population estimates'.DATE
+
+relationship '013e2223-6f02-4fbf-8b7a-a8ce03d5d3e1'
+	fromColumn: 'Sexual_Orientation-21'.DATE
+	toColumn: 'london population estimates'.DATE
+
+relationship 'd3d1c24c-b950-483b-8aca-4f3891273a70'
+	fromColumn: 'Good Health'.DATE
+	toColumn: 'london population estimates'.DATE
+
+relationship 'db864ed4-35ec-4538-9478-46b187b916cd'
+	crossFilteringBehavior: BothDirections
+	fromColumn: 'crime benchmarking'.year
+	isActive: false
+	toColumn: 'london population estimates'.DATE
+
+relationship '1524d62a-5dd2-436e-b926-e92353bc471d'
+	fromColumn: 'Ethnicity-21 Benchmarking'.DATE
+	toColumn: 'tower hamlets population estimates'.DATE
+
+relationship '7e9dd9cc-afd2-4417-97e8-7c3727bec934'
+	fromColumn: 'Sexual_Orientation-21'.DATE
+	toColumn: 'tower hamlets population estimates'.DATE
+
+relationship 'b07896e3-049a-4cf2-a549-caa2744acf32'
+	fromColumn: 'Good Health'.DATE
+	toColumn: 'tower hamlets population estimates'.DATE
+
+relationship '2681d06a-0772-49ef-8af4-300587f34dad'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'crime benchmarking th'.rate
+	toColumn: 'crime benchmarking'.'crime benchmarking th.rate'
+
+relationship '0efb71fc-bac1-4094-bab1-c217db6ad08d'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'popden-11'.GEOGRAPHY_CODE
+	isActive: false
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'fe5ee1b8-376c-4469-ab5e-de19fb9bdf44'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'households-11'.GEOGRAPHY_CODE
+	isActive: false
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship '23453416-faf4-4ccb-a236-bcd302dc5711'
+	fromColumn: 'residents-11'.GEOGRAPHY_CODE
+	toColumn: lbth_oa21_ward_lookup.oa21cd
+
+relationship 'e327fbb0-0fcb-495a-a348-9a7c0f9bd7d0'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: ethnicity_vs_nssec.GEOGRAPHY_NAME
+	toColumn: 'NS-SeC_ward'.GEOGRAPHY_NAME
+
+relationship '22c48754-2c3b-4b6e-9c57-669e6db3b05b'
+	fromColumn: 'crime-lsoa'.'lsoa code'
+	isActive: false
+	toColumn: jts_02_2019.LSOA_code
+
+relationship 'af67b210-e33f-4a80-befb-17087c0c3236'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: KeyStage4_performance.Year
+	toColumn: KeyStage2_Attainment.year
+
+relationship '914c7223-3ef5-44e0-bc89-2be27f1f9028'
+	fromColumn: 'Highest Level of Qualification'.C2021_HIQUAL_8_NAME
+	toColumn: highest_qual_benchmarking.'Qualification Level'
+
+relationship '6a3cd56b-11b8-4698-a654-1bfe642c7153'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: museum_gallery_th.year
+	toColumn: KeyStage2_Attainment.year
+
+relationship '4d2c6914-2282-49db-a618-000be04dc971'
+	crossFilteringBehavior: BothDirections
+	fromCardinality: One
+	fromColumn: 'v&a_visits'.year
+	toColumn: KeyStage2_Attainment.year
+

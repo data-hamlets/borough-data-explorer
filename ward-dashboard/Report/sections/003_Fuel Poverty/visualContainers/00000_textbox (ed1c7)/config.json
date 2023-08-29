@@ -1,0 +1,73 @@
+{
+  "name": "ed1c791fff14285e58c7",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 37.55018013381369,
+        "y": 0,
+        "z": 3000,
+        "width": 1051.4050437467833,
+        "height": 189.06845084920226
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Fuel Poverty",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A household is considered to be fuel poor if they are living in a property with a fuel poverty energy efficiency rating of band D or below ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  },
+                  {
+                    "value": "and",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  },
+                  {
+                    "value": " when they spend the required amount to heat their home, they are left with a residual income below the official poverty line. There is compelling evidence that the drivers of fuel poverty (low income, poor energy efficiency, and energy prices) are strongly linked to cold homes. Evidence shows that living in cold homes is associated with poor health outcomes and an increased risk of morbidity and mortality for all age groups.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#212529"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

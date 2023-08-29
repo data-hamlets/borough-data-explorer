@@ -1,0 +1,40 @@
+{
+  "name": "266e5f4c4876c428ea38",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 740.135593220339,
+        "y": 61.6271186440678,
+        "z": 5000,
+        "width": 345.35593220338984,
+        "height": 71.389830508474574
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select one or more religions in bar chart (Ctrl + click) to explore map. Select an area on the map see how it compares to the ward average. ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

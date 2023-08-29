@@ -1,0 +1,61 @@
+{
+  "name": "d08d6081f4e85f681925",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15.380507343124165,
+        "y": 15.380507343124165,
+        "z": 0,
+        "width": 704.08544726301727,
+        "height": 107.66355140186916
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to Public Green Spaces",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to public green spaces is important for both physical and mental wellbeing.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This map shows the average distance to a public green space.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "a76887c636e7dc4d4d11",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 11.593220338983052,
+        "y": 57.966101694915253,
+        "z": 3000,
+        "width": 651.66101694915255,
+        "height": 139.72881355932205
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The Census asks respondents to indicate their health status on the day of the census. This provides the percentage of people who reported their health as good or very good.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "It is important to understand how people are feeling about their health as it can be impacted by access to services and treatment effectiveness.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

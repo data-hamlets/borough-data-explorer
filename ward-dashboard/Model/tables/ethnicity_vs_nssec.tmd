@@ -1,0 +1,64 @@
+table ethnicity_vs_nssec
+	lineageTag: 2a4cf7ba-93df-4628-9efa-a6400113e29e
+	ordinal: 37
+
+	partition 'ethnicity_vs_nssec-4475d040-3b31-4561-9af8-da690e32f59d' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.csv?date=latest&geography=641730979...641730990,641730994,641730995,641730991...641730993,641730996...641730998&c2021_eth_20=1001...1003,1005&measures=20301"),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DATE", Int64.Type}, {"DATE_NAME", Int64.Type}, {"DATE_CODE", Int64.Type}, {"DATE_TYPE", type text}, {"DATE_TYPECODE", Int64.Type}, {"DATE_SORTORDER", Int64.Type}, {"GEOGRAPHY", Int64.Type}, {"GEOGRAPHY_NAME", type text}, {"GEOGRAPHY_CODE", type text}, {"GEOGRAPHY_TYPE", type text}, {"GEOGRAPHY_TYPECODE", Int64.Type}, {"GEOGRAPHY_SORTORDER", Int64.Type}, {"C2021_ETH_20", Int64.Type}, {"C2021_ETH_20_NAME", type text}, {"C2021_ETH_20_CODE", Int64.Type}, {"C2021_ETH_20_TYPE", type text}, {"C2021_ETH_20_TYPECODE", Int64.Type}, {"C2021_ETH_20_SORTORDER", Int64.Type}, {"MEASURES", Int64.Type}, {"MEASURES_NAME", type text}, {"OBS_VALUE", type number}, {"OBS_STATUS", type text}, {"OBS_STATUS_NAME", type text}, {"OBS_CONF", type text}, {"OBS_CONF_NAME", type text}, {"URN", type text}, {"RECORD_OFFSET", Int64.Type}, {"RECORD_COUNT", Int64.Type}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"DATE", "GEOGRAPHY_NAME", "C2021_ETH_20_NAME", "OBS_VALUE"}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"DATE"}),
+			    #"Grouped Rows" = Table.Group(#"Removed Columns", {"GEOGRAPHY_NAME"}, {{"Count", each List.Sum([OBS_VALUE]), type nullable number}}),
+			    #"Merged Queries" = Table.NestedJoin(#"Grouped Rows", {"GEOGRAPHY_NAME"}, #"NS-SeC_ward", {"GEOGRAPHY_NAME"}, "NS-SeC_ward", JoinKind.LeftOuter),
+			    #"Expanded NS-SeC_ward" = Table.ExpandTableColumn(#"Merged Queries", "NS-SeC_ward", {"GEOGRAPHY_NAME", "OBS_VALUE", "C2021_NSSEC_10_NAME"}, {"NS-SeC_ward.GEOGRAPHY_NAME", "NS-SeC_ward.OBS_VALUE", "NS-SeC_ward.C2021_NSSEC_10_NAME"}),
+			    #"Removed Columns1" = Table.RemoveColumns(#"Expanded NS-SeC_ward",{"NS-SeC_ward.GEOGRAPHY_NAME"})
+			in
+			    #"Removed Columns1"
+
+	column GEOGRAPHY_NAME
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: d8ca1219-d658-4e5d-bac2-9d10e73c4489
+		sourceColumn: GEOGRAPHY_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: ff5d0112-76e4-43ee-9d82-16a9b3c7e2d7
+		sourceColumn: Count
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NS-SeC_ward.OBS_VALUE'
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: 92c97dae-2b1b-4871-b8e5-3af6ca8022a3
+		sourceColumn: NS-SeC_ward.OBS_VALUE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NS-SeC_ward.C2021_NSSEC_10_NAME'
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: caaa9e05-2e4d-4531-b362-0cead577a14c
+		sourceColumn: NS-SeC_ward.C2021_NSSEC_10_NAME
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_ChangedProperties = ["Name"]
+

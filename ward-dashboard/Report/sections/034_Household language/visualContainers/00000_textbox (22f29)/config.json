@@ -1,0 +1,46 @@
+{
+  "name": "22f29f42e64b2b0d02ad",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 11.593220338983052,
+        "y": 53.694915254237287,
+        "z": 4000,
+        "width": 686.4406779661017,
+        "height": 147.66101694915255
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English as their main language. Across the borough, households in which ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "all adults have English as a main language made up 62.9% of households, with a further 18.1% of households having at least one adult with English as a main language. ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

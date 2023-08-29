@@ -1,0 +1,39 @@
+{
+  "name": "75bbc6954fb4180c5d51",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 19.84251968503937,
+        "y": 48.188976377952756,
+        "z": 9000,
+        "width": 599.5275590551181,
+        "height": 63.779527559055111
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Mapping the count of 0-18 year olds in the borough is important in order to make effective school planning decisions",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

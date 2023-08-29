@@ -1,0 +1,40 @@
+{
+  "name": "2f9a57c245506f1751d1",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 774.9152542372882,
+        "y": 39.050847457627121,
+        "z": 5000,
+        "width": 333.15254237288138,
+        "height": 91.525423728813564
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Please click on one or more NS-SeC categories in table (Ctrl + click) to explore map. Select an area on the map see how it compares to the ward average.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+table museum_gallery_th
+	lineageTag: f486b01c-1a74-4716-a052-1294d3f4446f
+	ordinal: 53
+
+	partition 'museum_gallery_th-cbf369c1-9890-499e-97d7-a22cb7b5671d' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Csv.Document(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vQTW-HC2SYkYzMOXt7aVX30U3TpjtTkuxA1ZzI55kI9stg2nw9YRQVBtnnhQJFU_PW60XPgjlKD8Ple/pub?output=csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"year", type text}, {"tower_of_london", Int64.Type}, {"whitechapel_gallery", Int64.Type}, {"museum_of_london_docklands", Int64.Type}})
+			in
+			    #"Changed Type"
+
+	column year
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 1657a64b-1859-40cd-8991-a171ea053a33
+		sourceColumn: year
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column tower_of_london
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ce9603d7-1dc6-4b35-bd7d-c68cf76b22ca
+		sourceColumn: tower_of_london
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column whitechapel_gallery
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 57f999c1-2c87-416e-a0d8-7b39daaee866
+		sourceColumn: whitechapel_gallery
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column museum_of_london_docklands
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: f65b48cc-5d5f-4770-b822-4ea579f143cd
+		sourceColumn: museum_of_london_docklands
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

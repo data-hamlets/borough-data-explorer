@@ -1,0 +1,52 @@
+{
+  "name": "9fc3a85cc4835e2b1c9e",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 43.932203389830512,
+        "y": 0,
+        "z": 2000,
+        "width": 299.59322033898309,
+        "height": 53.694915254237287
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Air quality - NO",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": "2",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "lineHeight": "0",
+                      "position": "relative",
+                      "verticalAlign": "baseline",
+                      "scriptType": "sub",
+                      "bottom": "-0.25em"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

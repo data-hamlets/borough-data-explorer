@@ -1,0 +1,40 @@
+{
+  "name": "f5f8fb2b4e3c12982aee",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40.618388934092756,
+        "y": 0,
+        "z": 2000,
+        "width": 237.4613506916192,
+        "height": 47.908868999186325
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Crime",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

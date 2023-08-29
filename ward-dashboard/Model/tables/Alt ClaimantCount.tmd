@@ -1,0 +1,68 @@
+table 'Alt ClaimantCount'
+	lineageTag: 6902d936-6880-4ba0-8d50-3390d6e6753d
+	ordinal: 19
+
+	partition 'Alt ClaimantCount-efa11385-8477-42ec-b5e7-1109e2faae78' = M
+		mode: Import
+		expression:=
+			let
+					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\Alternative Claimant Count (Aug 22).xlsx"} , "\"),
+					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+			    #"Data Sheet 0_Sheet" = Source{[Item="Data Sheet 0",Kind="Sheet"]}[Data],
+			    #"Changed Type" = Table.TransformColumnTypes(#"Data Sheet 0_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type any}}),
+			    #"Removed Top Rows" = Table.Skip(#"Changed Type",9),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Month", type text}, {"Column2", type text}, {"August 2022", Int64.Type}}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Column2", "Ward"}}),
+			    #"Removed Bottom Rows" = Table.RemoveLastN(#"Renamed Columns",8),
+			    #"Removed Columns" = Table.RemoveColumns(#"Removed Bottom Rows",{"Month"}),
+			    #"Removed Top Rows1" = Table.Skip(#"Removed Columns",1),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Top Rows1", each ([Ward] <> "England" and [Ward] <> "London" and [Ward] <> "Tower Hamlets")),
+			    #"Renamed Columns1" = Table.RenameColumns(#"Filtered Rows",{{"August 2022", "Alternative Claimant Count"}})
+			in
+			    #"Renamed Columns1"
+
+	measure 'Alt Claimant Count Rate' = sum('Alt ClaimantCount'[Alternative Claimant Count])/calculate(sum('Ward Population'[OBS_VALUE]),'Age Band Lookup'[Broad Ranges] = "18 - 64")
+		formatString:= 0.0%;-0.0%;0.0%
+		lineageTag: 42ad70e7-7a51-4e87-8789-78f39a4eb2b4
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	measure Rate2 = sum('Alt ClaimantCount'[Alternative Claimant Count])/calculate(sum('Ward Population'[OBS_VALUE]),'Age Band Lookup'[Broad Ranges] = "18 - 64")
+		lineageTag: 7596a9ab-0b21-49b8-a542-e53f1fe78283
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'claimant min' = MIN('Alt ClaimantCount'[Alternative Claimant Count])/100
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 3019fa88-5878-4273-8e99-cc5884bad645
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+	column Ward
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 8f9e46c4-d695-4104-ba78-d36567670084
+		sourceColumn: Ward
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alternative Claimant Count'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e5d53d34-5fe6-4cf6-a578-8e38f0c3efd7
+		sourceColumn: "Alternative Claimant Count"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_ChangedProperties = ["Name"]
+

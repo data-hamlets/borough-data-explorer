@@ -1,0 +1,40 @@
+{
+  "name": "c4aee595a1d19784208c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 39.050847457627121,
+        "y": 4.2711864406779663,
+        "z": 3000,
+        "width": 485.69491525423729,
+        "height": 50.033898305084747
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Sexual Orientation - Benchmarking",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

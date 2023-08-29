@@ -1,0 +1,57 @@
+{
+  "name": "e6f321b3c896440221af",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 54.686248331108139,
+        "y": 3.4178905206942587,
+        "z": 3000,
+        "width": 1018.5313751668891,
+        "height": 145.260347129506
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Household types",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Tower Hamlets is the fastest growing borough in the country, largely due to the building of new homes. Tower Hamlets has the highest population density in the country. There are pockets of high density housing in areas such as Whitechapel, Canary Wharf, and Blackwall and Cubitt Town.",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
