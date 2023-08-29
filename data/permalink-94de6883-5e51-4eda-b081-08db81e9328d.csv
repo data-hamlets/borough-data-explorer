@@ -1,0 +1,22 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,old_la_code,new_la_code,la_name,gender,pt_rwm_met_expected_standard
+201516,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,60
+201516,Academic year,National,E92000001,England,,,,,,Total,54
+201516,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,62
+202122,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,67
+202122,Academic year,National,E92000001,England,,,,,,Total,59
+202122,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,66
+201617,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,68
+201617,Academic year,National,E92000001,England,,,,,,Total,62
+201617,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,68
+201718,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,71
+201718,Academic year,National,E92000001,England,,,,,,Total,65
+201718,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,72
+201819,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,72
+201819,Academic year,National,E92000001,England,,,,,,Total,65
+201819,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,71
+201920,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,x
+201920,Academic year,National,E92000001,England,,,,,,Total,x
+201920,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,x
+202021,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,x
+202021,Academic year,National,E92000001,England,,,,,,Total,x
+202021,Academic year,Local authority,E92000001,England,E12000007,London,211,E09000030,Tower Hamlets,Total,x

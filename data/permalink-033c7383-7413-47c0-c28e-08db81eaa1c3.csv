@@ -1,0 +1,13 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,old_la_code,new_la_code,la_name,characteristic_gender,characteristic_ethnic_major,characteristic_free_school_meals,characteristic_sen_status,characteristic_sen_description,characteristic_disadvantage,characteristic_first_language,pt_l2basics_94
+202122,Academic year,National,E92000001,England,,,,,,Total,Total,Total,Total,Total,Total,Total,69
+202122,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,Total,Total,Total,Total,Total,73.7
+202122,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,Total,Total,Total,Total,Total,71.2
+202021,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,Total,Total,Total,Total,Total,74.4
+202021,Academic year,National,E92000001,England,,,,,,Total,Total,Total,Total,Total,Total,Total,72.2
+201920,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,Total,Total,Total,Total,Total,73.4
+202021,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,Total,Total,Total,Total,Total,74.7
+201819,Academic year,National,E92000001,England,,,,,,Total,Total,Total,Total,Total,Total,Total,64.9
+201819,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,Total,Total,Total,Total,Total,66.5
+201819,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,Total,Total,Total,Total,Total,67.9
+201920,Academic year,National,E92000001,England,,,,,,Total,Total,Total,Total,Total,Total,Total,71.2
+201920,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,Total,Total,Total,Total,Total,73.6

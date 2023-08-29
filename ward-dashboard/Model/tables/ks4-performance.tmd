@@ -1,0 +1,53 @@
+table 'ks4-performance'
+	lineageTag: 59f88872-3482-4240-854d-9b759c213283
+	ordinal: 53
+
+	partition 'ks4-performance-1896d0aa-3439-41c3-b1b1-244dd2df372b' = M
+		mode: Import
+		expression:=
+			let
+			
+			    PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+			    homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+			    workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\permalink-033c7383-7413-47c0-c28e-08db81eaa1c3.csv"} , "\"),
+			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"time_identifier", "country_code", "country_name", "region_code", "region_name", "old_la_code", "new_la_code", "la_name", "characteristic_gender", "characteristic_ethnic_major", "characteristic_free_school_meals", "characteristic_sen_status", "characteristic_sen_description", "characteristic_disadvantage", "characteristic_first_language"}),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"pt_l2basics_94", type number}, {"time_period", Int64.Type}})
+			in
+			    #"Changed Type"
+
+	column time_period
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2c0ea296-450e-48cf-ae41-617338beb312
+		sourceColumn: time_period
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column geographic_level
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: e9f34a1d-76ed-4b35-b32d-2a0e5eec938d
+		sourceColumn: geographic_level
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column pt_l2basics_94
+		dataType: Double
+		isDataTypeInferred: false
+		lineageTag: e6f53865-0d8a-453a-9242-a131bf108806
+		sourceColumn: pt_l2basics_94
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

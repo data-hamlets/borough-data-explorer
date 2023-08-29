@@ -1,0 +1,52 @@
+table 'ks2-performance'
+	lineageTag: 688e4390-9898-40f2-9c84-5fc97b8b6a01
+	ordinal: 52
+
+	partition 'ks2-performance-430ed663-983c-4fb6-8285-6d9558cab4d9' = M
+		mode: Import
+		expression:=
+			let
+			    PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
+			    homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
+			    workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\permalink-94de6883-5e51-4eda-b081-08db81e9328d.csv"} , "\"),
+			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"time_identifier", "country_name", "old_la_code", "new_la_code", "gender", "la_name", "region_name", "region_code", "country_code"}),
+			    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([pt_rwm_met_expected_standard] <> "x")),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"time_period", Int64.Type}, {"pt_rwm_met_expected_standard", Int64.Type}})
+			in
+			    #"Changed Type"
+
+	column time_period
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: fe50ca82-6711-4d5a-a365-ae3d77c02c6a
+		sourceColumn: time_period
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column geographic_level
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: cf51959c-4c67-4ff7-8f4a-19962508da68
+		sourceColumn: geographic_level
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column pt_rwm_met_expected_standard
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2db61a36-5bb4-4451-bed0-bfb72ebde7f9
+		sourceColumn: pt_rwm_met_expected_standard
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
