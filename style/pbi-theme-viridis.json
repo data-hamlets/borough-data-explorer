@@ -1,1 +1,16 @@
-﻿{"name":"Viridis","dataColors":["#3e4989","#482878","#31688e","#26828e","#1f9e89","#35b779","#6ece58","#b5de2b"],"minimum":"#440154","center":"#21918c","maximum":"#fde725"}
+﻿{
+  "name": "Viridis",
+  "dataColors": [
+    "#fde725",
+    "#a0da39",
+    "#4ac16d",
+    "#1fa187",
+    "#277f8e",
+    "#365c8d",
+    "#46327e",
+    "#440154"
+  ],
+  "minimum": "#fde725",
+  "center": "#21918c",
+  "maximum": "#440154"
+}
