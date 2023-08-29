@@ -1,6 +1,6 @@
 table 'NS-SeC_ward'
 	lineageTag: 90007e2d-5429-4251-809c-ad4c182988c6
-	ordinal: 38
+	ordinal: 37
 
 	partition 'NS-SeC_ward-9c690600-dc6c-4c51-8f7b-4052d11fec2d' = M
 		mode: Import
@@ -43,6 +43,4 @@ table 'NS-SeC_ward'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 

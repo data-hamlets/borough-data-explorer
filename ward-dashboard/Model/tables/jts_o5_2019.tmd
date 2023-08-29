@@ -1,6 +1,6 @@
 table jts_o5_2019
 	lineageTag: faf3c5c3-f938-495e-a2b6-35bd806724a5
-	ordinal: 22
+	ordinal: 21
 
 	partition 'jts_o5_2019-bd39abc8-e7fc-42a8-a545-c9e3a1195b79' = M
 		mode: Import
@@ -75,5 +75,5 @@ table jts_o5_2019
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

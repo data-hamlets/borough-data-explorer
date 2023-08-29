@@ -1,6 +1,6 @@
 table 'Age by single year 0 - 18'
 	lineageTag: b957179e-e8c2-40c8-aa72-71bd7c686a12
-	ordinal: 40
+	ordinal: 39
 
 	partition 'Age by single year 0 - 18-d154f583-b212-4c7a-950b-2a024b622f42' = M
 		mode: Import
@@ -109,8 +109,6 @@ table 'Age by single year 0 - 18'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_ChangedProperties = ["FormatString"]
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

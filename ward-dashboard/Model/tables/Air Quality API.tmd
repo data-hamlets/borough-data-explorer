@@ -1,6 +1,6 @@
 table 'Air Quality API'
 	lineageTag: 8cea8332-f944-44dc-a0f8-09d05ec603fa
-	ordinal: 44
+	ordinal: 43
 
 	partition 'Air Quality API-de3b266c-7c8a-4d17-8d1c-9d2ed8a58b20' = M
 		mode: Import
@@ -259,8 +259,6 @@ table 'Air Quality API'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

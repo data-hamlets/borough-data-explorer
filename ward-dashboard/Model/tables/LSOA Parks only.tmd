@@ -1,6 +1,6 @@
 table 'LSOA Parks only'
 	lineageTag: 87d30286-3788-4a56-a8c4-f187e28ab276
-	ordinal: 29
+	ordinal: 28
 
 	partition 'LSOA Parks only-6d2b4c26-60c3-45c6-8e1c-e7e5e8c8490b' = M
 		mode: Import
@@ -103,8 +103,6 @@ table 'LSOA Parks only'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

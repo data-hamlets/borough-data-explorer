@@ -1,6 +1,6 @@
 table 'Good Health'
 	lineageTag: 4f42f274-1164-47d9-9110-92996a6d6ba1
-	ordinal: 39
+	ordinal: 38
 
 	partition 'Good Health-e7bd9bdf-1263-4f7f-a9d7-78f4bf828048' = M
 		mode: Import
@@ -13,19 +13,19 @@ table 'Good Health'
 			in
 			    #"Removed Columns"
 
-	measure 'health min' = MIN('Good Health'[OBS_VALUE])/100 
+	measure 'health min' = MIN('Good Health'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 11210ca7-7ca4-4f81-9c24-1cd4e00b62ac
 
 		annotation PBI_ChangedProperties = ["FormatString"]
 
-	measure 'health max' = MAX('Good Health'[OBS_VALUE])/100 
+	measure 'health max' = MAX('Good Health'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: fcbf47fc-d1c8-46b5-ab53-6d7d86187fc8
 
 		annotation PBI_ChangedProperties = ["FormatString"]
 
-	measure 'health avg' = AVERAGE('Good Health'[OBS_VALUE])/100 
+	measure 'health avg' = AVERAGE('Good Health'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 4fe31019-4a07-49d0-9793-87f30e712b1c
 
@@ -175,9 +175,5 @@ table 'Good Health'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

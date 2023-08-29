@@ -1,6 +1,6 @@
 table 'religion-21'
 	lineageTag: daa6e348-c1d9-48e9-95ab-0d6f0dd16d61
-	ordinal: 14
+	ordinal: 13
 
 	partition 'religion-21-82965508-2a31-4db5-985e-f24191c96d71' = M
 		mode: Import
@@ -60,9 +60,5 @@ table 'religion-21'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

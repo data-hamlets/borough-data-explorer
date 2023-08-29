@@ -1,6 +1,6 @@
 table jts_06_2019
 	lineageTag: 9c6d57e1-815c-4751-a651-9f8398fd9dc3
-	ordinal: 28
+	ordinal: 27
 
 	partition 'jts_06_2019-909b78f1-36e8-4159-86a6-b7e07ffd511a' = M
 		mode: Import
@@ -75,9 +75,5 @@ table jts_06_2019
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

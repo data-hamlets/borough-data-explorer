@@ -1,6 +1,6 @@
 table 'Ward Population'
 	lineageTag: 347b1d06-3cb7-4a6a-9cd2-71c495bd8b15
-	ordinal: 24
+	ordinal: 23
 
 	partition 'Ward Population-d97a244c-5c0a-48a1-bf3d-4126589c3b80' = M
 		mode: Import
@@ -52,8 +52,6 @@ table 'Ward Population'
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

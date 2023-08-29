@@ -1,6 +1,6 @@
 table 'london population estimates'
 	lineageTag: 2fad85ef-1d05-4d64-b6b6-cc4a6ef6d110
-	ordinal: 48
+	ordinal: 47
 
 	partition 'london population estimates-da8d1818-fbb5-46be-a30d-5a5f5147946c' = M
 		mode: Import

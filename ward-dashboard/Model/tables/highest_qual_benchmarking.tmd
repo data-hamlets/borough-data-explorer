@@ -1,6 +1,6 @@
 table highest_qual_benchmarking
 	lineageTag: af899ac7-7b7e-4b5f-bce7-5ba323d13a4c
-	ordinal: 52
+	ordinal: 49
 
 	partition 'highest_qual_benchmarking-6b51efc1-e946-48c1-8556-f3a60d8e24fd' = M
 		mode: Import
@@ -56,8 +56,6 @@ table highest_qual_benchmarking
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

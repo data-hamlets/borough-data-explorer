@@ -1,6 +1,6 @@
 table NO2
 	lineageTag: 8a659e06-bc81-4f27-a798-3bbc3dba6685
-	ordinal: 35
+	ordinal: 34
 
 	partition 'NO2-2042b027-c217-46c9-8225-c1dbfd1e272b' = M
 		mode: Import

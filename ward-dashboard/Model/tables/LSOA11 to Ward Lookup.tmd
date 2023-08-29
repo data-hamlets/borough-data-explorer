@@ -1,6 +1,6 @@
 table 'LSOA11 to Ward Lookup'
 	lineageTag: 0fb4fda5-3731-4aa4-b562-797d0e9a2246
-	ordinal: 26
+	ordinal: 25
 
 	partition 'LSOA11 to Ward Lookup-8a37ae24-e324-4f1f-80b0-9b392a1b46dc' = M
 		mode: Import
@@ -52,8 +52,6 @@ table 'LSOA11 to Ward Lookup'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

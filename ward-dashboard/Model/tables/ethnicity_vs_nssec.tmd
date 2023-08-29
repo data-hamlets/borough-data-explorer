@@ -1,6 +1,6 @@
 table ethnicity_vs_nssec
 	lineageTag: 2a4cf7ba-93df-4628-9efa-a6400113e29e
-	ordinal: 37
+	ordinal: 36
 
 	partition 'ethnicity_vs_nssec-4475d040-3b31-4561-9af8-da690e32f59d' = M
 		mode: Import
@@ -59,6 +59,4 @@ table ethnicity_vs_nssec
 		annotation SummarizationSetBy = Automatic
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

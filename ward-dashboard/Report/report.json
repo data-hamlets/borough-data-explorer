@@ -267,14 +267,14 @@
             "type": 100
           },
           {
-            "name": "Viridis10653835140254264.json",
-            "path": "Viridis10653835140254264.json",
-            "type": 201
-          },
-          {
             "name": "corporate-sectionpage1463628241949564.png",
             "path": "corporate-sectionpage1463628241949564.png",
             "type": 100
+          },
+          {
+            "name": "Viridis005328694418894386.json",
+            "path": "Viridis005328694418894386.json",
+            "type": 201
           }
         ],
         "name": "RegisteredResources",
@@ -296,5 +296,5 @@
       }
     }
   ],
-  "theme": "Viridis10653835140254264.json"
+  "theme": "Viridis005328694418894386.json"
 }

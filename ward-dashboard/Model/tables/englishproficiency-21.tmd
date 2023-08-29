@@ -1,6 +1,6 @@
 table 'englishproficiency-21'
 	lineageTag: fb3f4741-d105-475e-bc30-86701dfb7c92
-	ordinal: 15
+	ordinal: 14
 
 	partition 'englishproficiency-21-23377120-076d-46b3-a056-6ed9a4970245' = M
 		mode: Import
@@ -104,8 +104,6 @@ table 'englishproficiency-21'
 		level '(detailed)'
 			column: '(detailed)'
 			lineageTag: c3ac3b72-be1b-4b59-a395-4e6452d070c9
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

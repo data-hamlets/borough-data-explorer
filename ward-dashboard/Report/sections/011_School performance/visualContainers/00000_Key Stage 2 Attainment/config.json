@@ -17,19 +17,18 @@
     "projections": {
       "Category": [
         {
-          "queryRef": "KeyStage2_Attainment.year",
+          "queryRef": "ks2-performance.time_period",
           "active": true
         }
       ],
       "Y": [
         {
-          "queryRef": "Sum(KeyStage2_Attainment.London)"
-        },
+          "queryRef": "CountNonNull(ks2-performance.pt_rwm_met_expected_standard)"
+        }
+      ],
+      "Series": [
         {
-          "queryRef": "Sum(KeyStage2_Attainment.Inner London)"
-        },
-        {
-          "queryRef": "Sum(KeyStage2_Attainment.England)"
+          "queryRef": "ks2-performance.geographic_level"
         }
       ]
     },
@@ -38,7 +37,7 @@
       "From": [
         {
           "Name": "k",
-          "Entity": "KeyStage2_Attainment",
+          "Entity": "ks2-performance",
           "Type": 0
         }
       ],
@@ -50,9 +49,9 @@
                 "Source": "k"
               }
             },
-            "Property": "year"
+            "Property": "time_period"
           },
-          "Name": "KeyStage2_Attainment.year"
+          "Name": "ks2-performance.time_period"
         },
         {
           "Aggregation": {
@@ -63,137 +62,52 @@
                     "Source": "k"
                   }
                 },
-                "Property": "London"
+                "Property": "pt_rwm_met_expected_standard"
               }
             },
             "Function": 0
           },
-          "Name": "Sum(KeyStage2_Attainment.London)"
+          "Name": "CountNonNull(ks2-performance.pt_rwm_met_expected_standard)"
         },
         {
-          "Aggregation": {
+          "Column": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "k"
-                  }
-                },
-                "Property": "Inner London"
+              "SourceRef": {
+                "Source": "k"
               }
             },
-            "Function": 0
+            "Property": "geographic_level"
           },
-          "Name": "Sum(KeyStage2_Attainment.Inner London)"
-        },
-        {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "k"
-                  }
-                },
-                "Property": "England"
-              }
-            },
-            "Function": 0
-          },
-          "Name": "Sum(KeyStage2_Attainment.England)"
+          "Name": "ks2-performance.geographic_level"
         }
       ],
       "OrderBy": [
         {
-          "Direction": 1,
+          "Direction": 2,
           "Expression": {
-            "Column": {
+            "Aggregation": {
               "Expression": {
-                "SourceRef": {
-                  "Source": "k"
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "k"
+                    }
+                  },
+                  "Property": "pt_rwm_met_expected_standard"
                 }
               },
-              "Property": "year"
+              "Function": 0
             }
           }
         }
       ]
     },
-    "columnProperties": {
-      "Sum(KeyStage2_Attainment.London)": {
-        "displayName": "Tower Hamlets"
-      },
-      "Sum(KeyStage2_Attainment.Inner London)": {
-        "displayName": "London"
-      },
-      "KeyStage2_Attainment.year": {
-        "displayName": "Year"
-      }
-    },
     "queryOptions": {
       "keepProjectionOrder": true
     },
-    "showAllRoles": [
-      "Category"
-    ],
     "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
     "objects": {
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#AC0E73'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(KeyStage2_Attainment.Inner London)"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#0B5351'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(KeyStage2_Attainment.England)"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#0FB4B8'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(KeyStage2_Attainment.London)"
-          }
-        }
-      ],
       "valueAxis": [
         {
           "properties": {
@@ -252,6 +166,147 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "y2Axis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks2-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Regional'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks2-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'National'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks2-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Local authority'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]

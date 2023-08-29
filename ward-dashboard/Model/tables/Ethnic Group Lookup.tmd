@@ -1,6 +1,6 @@
 table 'Ethnic Group Lookup'
 	lineageTag: 0eb5f6b8-f541-48a7-b7dd-b01c9093c284
-	ordinal: 31
+	ordinal: 30
 
 	partition 'Ethnic Group Lookup-98f7ce5f-6cdf-4e44-b64a-81f08e7708be' = M
 		mode: Import
@@ -51,8 +51,6 @@ table 'Ethnic Group Lookup'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

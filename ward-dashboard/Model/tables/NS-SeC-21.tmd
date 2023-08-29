@@ -1,6 +1,6 @@
 table 'NS-SeC-21'
 	lineageTag: 32e9286a-dec6-4dbd-88d0-c350dc7eb06b
-	ordinal: 18
+	ordinal: 17
 
 	partition 'NS-SeC-21-a12c6507-2d32-4eb2-b9a0-f0fc332d5b22' = M
 		mode: Import
@@ -76,8 +76,6 @@ table 'NS-SeC-21'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

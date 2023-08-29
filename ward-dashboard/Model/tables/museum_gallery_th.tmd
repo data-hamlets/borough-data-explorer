@@ -1,6 +1,6 @@
 table museum_gallery_th
 	lineageTag: f486b01c-1a74-4716-a052-1294d3f4446f
-	ordinal: 53
+	ordinal: 50
 
 	partition 'museum_gallery_th-cbf369c1-9890-499e-97d7-a22cb7b5671d' = M
 		mode: Import
@@ -50,8 +50,6 @@ table museum_gallery_th
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

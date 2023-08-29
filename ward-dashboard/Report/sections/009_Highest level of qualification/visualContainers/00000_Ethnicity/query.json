@@ -1,0 +1,138 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "h",
+              "Entity": "Highest Level of Qualification",
+              "Type": 0
+            },
+            {
+              "Name": "e",
+              "Entity": "ethnicity-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "h"
+                      }
+                    },
+                    "Property": "Percentage"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Highest Level of Qualification.OBS_VALUE)"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "h"
+                  }
+                },
+                "Property": "GEOGRAPHY_CODE"
+              },
+              "Name": "Highest Level of Qualification.GEOGRAPHY_CODE"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "C2021_ETH_20_NAME.2"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "h"
+                        }
+                      },
+                      "Property": "Percentage"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Top": {}
+            }
+          },
+          "Aggregates": [
+            {
+              "Select": 0,
+              "Aggregations": [
+                {
+                  "Min": {}
+                },
+                {
+                  "Max": {}
+                }
+              ]
+            }
+          ],
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

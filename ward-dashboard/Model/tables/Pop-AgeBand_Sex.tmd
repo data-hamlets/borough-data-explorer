@@ -1,6 +1,6 @@
 table 'Pop-AgeBand_Sex'
 	lineageTag: 3bfa6ef7-eedf-4eb7-baa2-00bf8b2160b1
-	ordinal: 33
+	ordinal: 32
 
 	partition 'Pop-AgeBand_Sex-2bbeb05b-e81e-4b6c-85e7-be9c5d6a36ab' = M
 		mode: Import
@@ -216,9 +216,5 @@ table 'Pop-AgeBand_Sex'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

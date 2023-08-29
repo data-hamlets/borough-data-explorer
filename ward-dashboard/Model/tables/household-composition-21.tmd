@@ -89,7 +89,5 @@ table 'household-composition-21'
 			column: OBS_VALUE
 			lineageTag: 261e1ff7-ab8f-4eb6-8ba0-ac38ee818e4a
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
 

@@ -262,37 +262,6 @@
             "Operator": 3
           }
         }
-      },
-      {
-        "type": 0,
-        "expression": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "deprivation-21"
-              }
-            },
-            "Property": "C2021_DEP_6_NAME"
-          }
-        }
-      },
-      {
-        "type": 2,
-        "expression": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "deprivation-21"
-                  }
-                },
-                "Property": "OBS_VALUE"
-              }
-            },
-            "Function": 6
-          }
-        }
       }
     ]
   },

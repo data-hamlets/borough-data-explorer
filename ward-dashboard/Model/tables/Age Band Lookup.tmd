@@ -1,6 +1,6 @@
 table 'Age Band Lookup'
 	lineageTag: 734c1fe2-5658-405b-95b1-ccdc3854b2af
-	ordinal: 23
+	ordinal: 22
 
 	partition 'Age Band Lookup-dda185fc-1ff6-446c-baef-87d3a8de3fe7' = M
 		mode: Import
@@ -91,8 +91,6 @@ table 'Age Band Lookup'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

@@ -1,6 +1,6 @@
 table 'tower hamlets population estimates'
 	lineageTag: 74bf5d7e-c14e-4663-9a6d-99bc70a3fb14
-	ordinal: 49
+	ordinal: 48
 
 	partition 'tower hamlets population estimates-05093b8c-caa6-4195-8a02-49fc41314572' = M
 		mode: Import
@@ -36,6 +36,4 @@ table 'tower hamlets population estimates'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

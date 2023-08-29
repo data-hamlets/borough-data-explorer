@@ -1,6 +1,6 @@
 table tbl_measures
 	lineageTag: 0ca7adbf-341b-48bc-952a-11853164e939
-	ordinal: 42
+	ordinal: 41
 
 	partition 'tbl_measures-6280c51a-4095-4f7d-a80b-f410bf1d525d' = Calculated
 		mode: Import
@@ -22,6 +22,8 @@ table tbl_measures
 	column Column
 		dataType: Int64
 		formatString:= 0
+		isDataTypeInferred: false
+		isNameInferred: false
 		lineageTag: 98c1007d-c158-4cdd-98dd-7794b5e3d95d
 		sourceColumn: [Column]
 		summarizeBy: Sum

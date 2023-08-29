@@ -1,6 +1,6 @@
 table 'Ethnicity-21 Benchmarking'
 	lineageTag: 5352767c-13c0-4463-9e95-d7a3ff7c72d9
-	ordinal: 30
+	ordinal: 29
 
 	partition 'Ethnicity-21 Benchmarking-d61ec981-4bca-4a3a-b00d-261bf5c9287a' = M
 		mode: Import

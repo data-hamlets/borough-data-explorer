@@ -1,6 +1,6 @@
 table 'LSOA Fuel Poverty'
 	lineageTag: 6518e218-d1e8-4d37-b58e-780e93f46405
-	ordinal: 41
+	ordinal: 40
 
 	partition 'LSOA Fuel Poverty-daf29d4c-d776-4512-96f8-1472e19cb17d' = M
 		mode: Import
@@ -112,8 +112,6 @@ table 'LSOA Fuel Poverty'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

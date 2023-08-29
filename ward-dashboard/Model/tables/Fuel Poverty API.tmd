@@ -1,6 +1,6 @@
 table 'Fuel Poverty API'
 	lineageTag: 1fbc6fc1-976e-4e75-a432-d48c6f87fa62
-	ordinal: 43
+	ordinal: 42
 
 	partition 'Fuel Poverty API-45aa49ec-9f5f-4876-b036-8599210fa38c' = M
 		mode: Import
@@ -261,8 +261,6 @@ table 'Fuel Poverty API'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

@@ -1,6 +1,6 @@
 table PopPyramid_Age_Lookup
 	lineageTag: 2bd98326-92af-4489-ab94-54d6724bdbd4
-	ordinal: 34
+	ordinal: 33
 
 	partition 'PopPyramid_Age_Lookup-67be9514-90eb-4ce4-8c3c-deb0fa054cec' = M
 		mode: Import
@@ -36,8 +36,6 @@ table PopPyramid_Age_Lookup
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_ChangedProperties = ["SortByColumn"]
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

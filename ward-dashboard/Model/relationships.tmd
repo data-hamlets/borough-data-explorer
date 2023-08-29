@@ -42,18 +42,6 @@ relationship '850accb1-e7ad-40c1-b7cf-81980a6c5514'
 	fromColumn: 'country-of-birth-21'.GEOGRAPHY_CODE
 	toColumn: 'households-11'.GEOGRAPHY_CODE
 
-relationship 'f45a549e-c0d7-498f-800a-db1ee3afd429'
-	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
-	toColumn: lbth_oa21_ward_lookup.oa21cd
-
-relationship 'd26254c0-dc87-424b-8fd9-bd7e7a5498d1'
-	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
-	toColumn: 'popden-11'.GEOGRAPHY_CODE
-
-relationship 'b3c26a1c-6a27-452a-8a79-0bc54e8d53a0'
-	fromColumn: 'passports-held-21'.GEOGRAPHY_CODE
-	toColumn: 'households-11'.GEOGRAPHY_CODE
-
 relationship '4f8a9ad6-e9ac-4ee2-bb00-9949364c3426'
 	fromColumn: 'deprivation-21'.GEOGRAPHY_CODE
 	toColumn: lbth_oa21_ward_lookup.oa21cd
@@ -311,25 +299,7 @@ relationship '22c48754-2c3b-4b6e-9c57-669e6db3b05b'
 	isActive: false
 	toColumn: jts_02_2019.LSOA_code
 
-relationship 'af67b210-e33f-4a80-befb-17087c0c3236'
-	crossFilteringBehavior: BothDirections
-	fromCardinality: One
-	fromColumn: KeyStage4_performance.Year
-	toColumn: KeyStage2_Attainment.year
-
 relationship '914c7223-3ef5-44e0-bc89-2be27f1f9028'
 	fromColumn: 'Highest Level of Qualification'.C2021_HIQUAL_8_NAME
 	toColumn: highest_qual_benchmarking.'Qualification Level'
-
-relationship '6a3cd56b-11b8-4698-a654-1bfe642c7153'
-	crossFilteringBehavior: BothDirections
-	fromCardinality: One
-	fromColumn: museum_gallery_th.year
-	toColumn: KeyStage2_Attainment.year
-
-relationship '4d2c6914-2282-49db-a618-000be04dc971'
-	crossFilteringBehavior: BothDirections
-	fromCardinality: One
-	fromColumn: 'v&a_visits'.year
-	toColumn: KeyStage2_Attainment.year
 

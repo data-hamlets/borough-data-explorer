@@ -1,0 +1,118 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "h",
+              "Entity": "highest_qual_benchmarking",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "h"
+                  }
+                },
+                "Property": "Qualification Level"
+              },
+              "Name": "highest_qual_benchmarking.C2021_HIQUAL_8_NAME"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "h"
+                      }
+                    },
+                    "Property": "Tower Hamlets"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "CountNonNull(highest_qual_benchmarking.Tower Hamlets)"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "h"
+                      }
+                    },
+                    "Property": "London"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "CountNonNull(highest_qual_benchmarking.London)"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "h"
+                      }
+                    },
+                    "Property": "England"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(highest_qual_benchmarking.England)"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 1,
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "h"
+                    }
+                  },
+                  "Property": "Qualification Level"
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

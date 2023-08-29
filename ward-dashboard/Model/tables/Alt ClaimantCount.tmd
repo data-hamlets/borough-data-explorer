@@ -1,6 +1,6 @@
 table 'Alt ClaimantCount'
 	lineageTag: 6902d936-6880-4ba0-8d50-3390d6e6753d
-	ordinal: 19
+	ordinal: 18
 
 	partition 'Alt ClaimantCount-efa11385-8477-42ec-b5e7-1109e2faae78' = M
 		mode: Import
@@ -60,9 +60,5 @@ table 'Alt ClaimantCount'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

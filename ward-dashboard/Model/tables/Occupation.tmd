@@ -1,6 +1,6 @@
 table Occupation
 	lineageTag: 8ddfe5cb-9b86-4a64-9c5c-b90da7378340
-	ordinal: 25
+	ordinal: 24
 
 	partition 'Occupation-49cb63c2-2d52-4916-856c-7419549ac209' = M
 		mode: Import
@@ -70,8 +70,6 @@ table Occupation
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_ChangedProperties = ["FormatString"]
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

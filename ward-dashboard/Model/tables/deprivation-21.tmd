@@ -1,6 +1,6 @@
 table 'deprivation-21'
 	lineageTag: dfbdb39c-a944-4ec9-a0d1-5321b6512e9d
-	ordinal: 13
+	ordinal: 12
 
 	partition 'deprivation-21-f8b4539c-68e9-4d3e-b671-94fc3237c68a' = M
 		mode: Import
@@ -68,8 +68,6 @@ table 'deprivation-21'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

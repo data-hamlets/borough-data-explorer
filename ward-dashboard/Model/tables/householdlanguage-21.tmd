@@ -1,6 +1,6 @@
 table 'householdlanguage-21'
 	lineageTag: 31ec2de4-cf24-4cf8-b2bd-3a0d7318965c
-	ordinal: 16
+	ordinal: 15
 
 	partition 'householdlanguage-21-d31fef12-7bf1-460f-90c4-ed1d7e534518' = M
 		mode: Import
@@ -83,8 +83,6 @@ table 'householdlanguage-21'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

@@ -1,6 +1,6 @@
 table 'Ward lookup'
 	lineageTag: 0fec7e6e-3ec6-4fa2-ac16-2d450aa7d732
-	ordinal: 20
+	ordinal: 19
 
 	partition 'Ward lookup-94ed84d1-747d-44b2-8824-42c893398148' = M
 		mode: Import
@@ -35,9 +35,5 @@ table 'Ward lookup'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

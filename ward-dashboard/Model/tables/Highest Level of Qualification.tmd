@@ -1,6 +1,6 @@
 table 'Highest Level of Qualification'
 	lineageTag: 8114b8cb-d823-4644-a191-7f7f3dc502df
-	ordinal: 21
+	ordinal: 20
 
 	partition 'Highest Level of Qualification-6481a790-1d4a-4db0-b382-6818020323e4' = M
 		mode: Import
@@ -84,8 +84,6 @@ table 'Highest Level of Qualification'
 		level 'Sort Order'
 			column: 'Sort Order'
 			lineageTag: 50272f7e-5c8f-4940-8c4a-93c8c9cc5ce4
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

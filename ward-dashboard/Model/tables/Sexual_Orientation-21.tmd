@@ -1,6 +1,6 @@
 table 'Sexual_Orientation-21'
 	lineageTag: 0adc86c4-88c8-48be-992a-d88119794d39
-	ordinal: 32
+	ordinal: 31
 
 	partition 'Sexual_Orientation-21-be5918ae-bb62-476f-9ea3-a22493e2fde8' = M
 		mode: Import
@@ -280,9 +280,5 @@ table 'Sexual_Orientation-21'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
-
-	annotation PBI_ChangedProperties = ["Name"]
 

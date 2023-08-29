@@ -1,0 +1,147 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "h",
+              "Entity": "Highest Level of Qualification",
+              "Type": 0
+            },
+            {
+              "Name": "e",
+              "Entity": "ethnicity-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Arithmetic": {
+                "Left": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "h"
+                          }
+                        },
+                        "Property": "Percentage"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Aggregation": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "h"
+                              }
+                            },
+                            "Property": "Percentage"
+                          }
+                        },
+                        "Function": 0
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
+              },
+              "Name": "Sum(Highest Level of Qualification.OBS_VALUE)"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "h"
+                  }
+                },
+                "Property": "C2021_HIQUAL_8_NAME"
+              },
+              "Name": "Highest Level of Qualification.C2021_HIQUAL_8_NAME"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "C2021_ETH_20_NAME.2"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 1,
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "h"
+                    }
+                  },
+                  "Property": "C2021_HIQUAL_8_NAME"
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

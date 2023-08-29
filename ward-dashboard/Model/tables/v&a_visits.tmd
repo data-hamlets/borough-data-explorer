@@ -1,6 +1,6 @@
 table 'v&a_visits'
 	lineageTag: 3eda2305-364b-4f57-849a-94ade823e609
-	ordinal: 54
+	ordinal: 51
 
 	partition 'v&a_visits-5cd15038-4117-4bb2-b242-67cde1ff49ac' = M
 		mode: Import
@@ -75,8 +75,6 @@ table 'v&a_visits'
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

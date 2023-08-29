@@ -15,21 +15,20 @@
   "singleVisual": {
     "visualType": "lineChart",
     "projections": {
+      "Series": [
+        {
+          "queryRef": "ks4-performance.geographic_level"
+        }
+      ],
       "Category": [
         {
-          "queryRef": "KeyStage4_performance.Year",
+          "queryRef": "ks4-performance.time_period",
           "active": true
         }
       ],
       "Y": [
         {
-          "queryRef": "Sum(KeyStage4_performance.Tower Hamlets)"
-        },
-        {
-          "queryRef": "Sum(KeyStage4_performance.London)"
-        },
-        {
-          "queryRef": "Sum(KeyStage4_performance.England)"
+          "queryRef": "Sum(ks4-performance.pt_l2basics_94)"
         }
       ]
     },
@@ -38,7 +37,7 @@
       "From": [
         {
           "Name": "k",
-          "Entity": "KeyStage4_performance",
+          "Entity": "ks4-performance",
           "Type": 0
         }
       ],
@@ -50,9 +49,20 @@
                 "Source": "k"
               }
             },
-            "Property": "Year"
+            "Property": "geographic_level"
           },
-          "Name": "KeyStage4_performance.Year"
+          "Name": "ks4-performance.geographic_level"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "k"
+              }
+            },
+            "Property": "time_period"
+          },
+          "Name": "ks4-performance.time_period"
         },
         {
           "Aggregation": {
@@ -63,57 +73,30 @@
                     "Source": "k"
                   }
                 },
-                "Property": "Tower Hamlets"
+                "Property": "pt_l2basics_94"
               }
             },
             "Function": 0
           },
-          "Name": "Sum(KeyStage4_performance.Tower Hamlets)"
-        },
-        {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "k"
-                  }
-                },
-                "Property": "London"
-              }
-            },
-            "Function": 0
-          },
-          "Name": "Sum(KeyStage4_performance.London)"
-        },
-        {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "k"
-                  }
-                },
-                "Property": "England"
-              }
-            },
-            "Function": 0
-          },
-          "Name": "Sum(KeyStage4_performance.England)"
+          "Name": "Sum(ks4-performance.pt_l2basics_94)"
         }
       ],
       "OrderBy": [
         {
-          "Direction": 1,
+          "Direction": 2,
           "Expression": {
-            "Column": {
+            "Aggregation": {
               "Expression": {
-                "SourceRef": {
-                  "Source": "k"
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "k"
+                    }
+                  },
+                  "Property": "pt_l2basics_94"
                 }
               },
-              "Property": "Year"
+              "Function": 0
             }
           }
         }
@@ -123,6 +106,7 @@
       "keepProjectionOrder": true
     },
     "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
     "objects": {
       "valueAxis": [
         {
@@ -178,6 +162,32 @@
           }
         }
       ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "y2Axis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "dataPoint": [
         {
           "properties": {
@@ -185,8 +195,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#AC0E73'"
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -194,7 +205,30 @@
             }
           },
           "selector": {
-            "metadata": "Sum(KeyStage4_performance.London)"
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks4-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Regional'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         },
         {
@@ -203,8 +237,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0FB4B8'"
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -212,7 +247,85 @@
             }
           },
           "selector": {
-            "metadata": "Sum(KeyStage4_performance.Tower Hamlets)"
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks4-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'National'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "ks4-performance"
+                          }
+                        },
+                        "Property": "geographic_level"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Local authority'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

@@ -41,7 +41,5 @@ table 'country-of-birth-21'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
 
