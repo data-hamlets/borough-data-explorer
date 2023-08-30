@@ -141,6 +141,27 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(museum_gallery_th.museum_of_london_docklands)"
+          }
+        }
       ]
     },
     "vcObjects": {

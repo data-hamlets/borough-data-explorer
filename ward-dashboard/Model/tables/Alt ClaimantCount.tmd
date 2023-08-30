@@ -28,7 +28,7 @@ table 'Alt ClaimantCount'
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: 42ad70e7-7a51-4e87-8789-78f39a4eb2b4
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure Rate2 = sum('Alt ClaimantCount'[Alternative Claimant Count])/calculate(sum('Ward Population'[OBS_VALUE]),'Age Band Lookup'[Broad Ranges] = "18 - 64")
 		lineageTag: 7596a9ab-0b21-49b8-a542-e53f1fe78283
@@ -39,7 +39,7 @@ table 'Alt ClaimantCount'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 3019fa88-5878-4273-8e99-cc5884bad645
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column Ward
 		dataType: String

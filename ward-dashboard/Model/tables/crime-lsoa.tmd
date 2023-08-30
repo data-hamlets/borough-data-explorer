@@ -62,7 +62,7 @@ table 'crime-lsoa'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	annotation PBI_NavigationStepName = Navigation
 

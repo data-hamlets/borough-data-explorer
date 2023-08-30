@@ -318,8 +318,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0B5351'"
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -359,8 +360,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#AC0E73'"
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -400,8 +402,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0FB4B8'"
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
                     }
                   }
                 }

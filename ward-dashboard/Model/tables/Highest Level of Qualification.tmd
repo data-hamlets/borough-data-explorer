@@ -19,19 +19,19 @@ table 'Highest Level of Qualification'
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: f0af5e64-6903-4620-875a-15151aba25cb
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Minimum Percentage' = MIN('Highest Level of Qualification'[Percentage])/100
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: 54b57f33-04ae-4e78-acef-31bf5bd46546
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure Average = AVERAGE('Highest Level of Qualification'[Percentage])/100
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: 73ccac18-685f-435f-9470-14c257bf6b2d
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_CODE
 		dataType: String
@@ -52,7 +52,7 @@ table 'Highest Level of Qualification'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	column Percentage
 		dataType: Double
@@ -76,7 +76,7 @@ table 'Highest Level of Qualification'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	hierarchy 'Sort Order Hierarchy'
 		lineageTag: e71557fb-c146-4862-a7e2-58e87a777789

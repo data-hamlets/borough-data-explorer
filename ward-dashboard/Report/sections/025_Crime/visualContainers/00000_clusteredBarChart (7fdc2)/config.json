@@ -114,6 +114,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }

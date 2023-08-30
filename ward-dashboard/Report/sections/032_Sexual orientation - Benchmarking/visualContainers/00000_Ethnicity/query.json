@@ -1,0 +1,114 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Sexual_Orientation-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Property": "OBS_VALUE"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Sexual_Orientation-21.OBS_VALUE)"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "s"
+                  }
+                },
+                "Property": "GEOGRAPHY_NAME"
+              },
+              "Name": "Sexual_Orientation-21.GEOGRAPHY_NAME"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "s"
+                  }
+                },
+                "Property": "C2021_SEXOR_6_NAME"
+              },
+              "Name": "Sexual_Orientation-21.C2021_SEXOR_6_NAME"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "s"
+                        }
+                      },
+                      "Property": "OBS_VALUE"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  2
+                ]
+              }
+            ]
+          },
+          "Secondary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 200
+              }
+            },
+            "Secondary": {
+              "Top": {
+                "Count": 60
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

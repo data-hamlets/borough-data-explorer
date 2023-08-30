@@ -26,7 +26,7 @@ table 'london population estimates'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column OBS_VALUE
 		dataType: Int64

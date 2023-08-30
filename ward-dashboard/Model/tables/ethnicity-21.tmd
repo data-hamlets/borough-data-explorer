@@ -20,19 +20,19 @@ table 'ethnicity-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 87e743e8-2792-41d7-bf2f-e318b02d0b5b
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'eth average' = AVERAGE('ethnicity-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: fee70884-e04d-4122-88de-331b9dd19c1a
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'eth max' = MAX('ethnicity-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 97cc246d-c8dd-482e-a947-fbf10ffe0af5
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_CODE
 		dataType: String

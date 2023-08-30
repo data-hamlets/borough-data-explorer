@@ -1,0 +1,193 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "ethnicity-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "e"
+                      }
+                    },
+                    "Hierarchy": "Ethnic grou"
+                  }
+                },
+                "Level": "Ethnic group"
+              },
+              "Name": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.1"
+            },
+            {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "e"
+                      }
+                    },
+                    "Hierarchy": "Ethnic grou"
+                  }
+                },
+                "Level": "(detailed)"
+              },
+              "Name": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.2"
+            },
+            {
+              "Arithmetic": {
+                "Left": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "e"
+                          }
+                        },
+                        "Property": "OBS_VALUE"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Aggregation": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "OBS_VALUE"
+                          }
+                        },
+                        "Function": 0
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
+              },
+              "Name": "Divide(Sum(ethnicity-21.OBS_VALUE), ScopedEval(Sum(ethnicity-21.OBS_VALUE), []))"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "C2021_ETH_20_NAME.2"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "e"
+                            }
+                          },
+                          "Property": "OBS_VALUE"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "e"
+                                }
+                              },
+                              "Property": "OBS_VALUE"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  2
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

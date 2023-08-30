@@ -1,0 +1,79 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "englishproficiency-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "e"
+                  }
+                },
+                "Property": "EP Max"
+              },
+              "Name": "englishproficiency-21.EP Max"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "e"
+                          }
+                        },
+                        "Property": "English proficiency"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Main language is not English'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Top": {}
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

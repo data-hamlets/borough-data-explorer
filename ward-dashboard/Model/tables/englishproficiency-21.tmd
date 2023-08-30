@@ -22,19 +22,19 @@ table 'englishproficiency-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: f6717072-d9a3-45c7-860b-6d0303041313
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'EP Max' = MAX('englishproficiency-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: b97569c3-318e-4c21-b761-634b49387585
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'EP average' = AVERAGE('englishproficiency-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: d08091bd-6591-428f-b932-b3d2c57c469e
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_NAME
 		dataType: String

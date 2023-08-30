@@ -24,19 +24,19 @@ table 'Age by single year 0 - 18'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 817e1ed6-3e54-4da1-b665-8de3e97c2c8f
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'age max' = MAX('Age by single year 0 - 18'[Percentage of Ward Population])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 9c48bd01-0098-4ef0-bc1c-977c9ced0d5c
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'age average' = AVERAGE('Age by single year 0 - 18'[Percentage of Ward Population])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: c5428e70-9035-4e28-969a-a80b1b65b815
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column DATE
 		dataType: String
@@ -75,7 +75,7 @@ table 'Age by single year 0 - 18'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	column C2021_AGE_102_SORTORDER
 		dataType: Int64
@@ -108,7 +108,7 @@ table 'Age by single year 0 - 18'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	annotation PBI_ResultType = Table
 

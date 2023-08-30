@@ -1,0 +1,252 @@
+{
+  "objects": {
+    "legend": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "showTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fillRule": {
+            "linearGradient3": {
+              "min": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FDE725'"
+                    }
+                  }
+                }
+              },
+              "mid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#21918C'"
+                    }
+                  }
+                }
+              },
+              "max": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#440154'"
+                    }
+                  }
+                }
+              },
+              "nullColoringStrategy": {
+                "strategy": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'asZero'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "shape": [
+      {
+        "properties": {
+          "map": {
+            "geoJson": {
+              "type": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'packaged'"
+                  }
+                }
+              },
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'lbth-lsoa11.json'"
+                  }
+                }
+              },
+              "content": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "lbth-lsoa117997910546401386.json"
+                  }
+                }
+              }
+            }
+          },
+          "projectionEnum": {
+            "expr": {
+              "Literal": {
+                "Value": "'albersUsa'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "zoom": [
+      {
+        "properties": {
+          "autoZoom": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Category": [
+      0
+    ],
+    "Value": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "LSOA code",
+        "Name": "jts_o5_2019.LSOA_code",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Average travel time (mins)",
+        "Name": "Sum(jts_o5_2019.GPPTt)",
+        "Type": 1
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "deprivation-21"
+                  }
+                },
+                "Property": "OBS_VALUE"
+              }
+            },
+            "Function": 0
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "deprivation-21"
+              }
+            },
+            "Property": "MEASURES_NAME"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Category",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Value",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "LSOA code",
+      "queryName": "jts_o5_2019.LSOA_code",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "jts_o5_2019"
+            }
+          },
+          "Property": "LSOA_code"
+        }
+      }
+    },
+    {
+      "displayName": "Average travel time (mins)",
+      "queryName": "Sum(jts_o5_2019.GPPTt)",
+      "roles": {
+        "Value": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "jts_o5_2019"
+                }
+              },
+              "Property": "GPPTt"
+            }
+          },
+          "Function": 0
+        }
+      },
+      "relatedObjects": {
+        "dataPoint": {
+          "fillRule": [
+            null
+          ]
+        }
+      }
+    }
+  ]
+}

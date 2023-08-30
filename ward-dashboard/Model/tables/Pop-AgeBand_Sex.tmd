@@ -185,7 +185,7 @@ table 'Pop-AgeBand_Sex'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	column MEASURES
 		dataType: Int64

@@ -23,19 +23,19 @@ table 'LSOA Fuel Poverty'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 627d796f-62fc-412a-8f3b-de6426961215
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Fuel poverty max' = MAX('LSOA Fuel Poverty'[Proportion of households fuel poor (%)])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: b6529fe6-797d-41ea-b2ce-adc241cbd4e4
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Fuel poverty average' = AVERAGE('LSOA Fuel Poverty'[Proportion of households fuel poor (%)])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 7a495011-1768-4048-a7f9-23349cd88d94
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column 'LSOA Code'
 		dataType: String

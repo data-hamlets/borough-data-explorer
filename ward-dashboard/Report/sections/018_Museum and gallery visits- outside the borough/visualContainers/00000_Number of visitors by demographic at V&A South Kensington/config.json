@@ -214,6 +214,13 @@
                   "Value": "14D"
                 }
               }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }

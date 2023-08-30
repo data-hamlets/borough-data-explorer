@@ -1,0 +1,150 @@
+{
+  "objects": {
+    "data": [
+      {
+        "properties": {
+          "mode": {
+            "expr": {
+              "Literal": {
+                "Value": "'Basic'"
+              }
+            }
+          },
+          "isInvertedSelectionMode": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "general": [
+      {
+        "properties": {
+          "orientation": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "selection": [
+      {
+        "properties": {
+          "selectAllCheckboxEnabled": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "singleSelect": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "strictSingleSelect": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "header": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "items": [
+      {
+        "properties": {
+          "background": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#FFFFFF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Values": [
+      0
+    ]
+  },
+  "projectionActiveItems": {
+    "Values": [
+      {
+        "queryRef": "Age by single year 0 - 18.C2021_AGE_102_NAME",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "C2021_AGE_102_NAME",
+        "Name": "Age by single year 0 - 18.C2021_AGE_102_NAME",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "C2021_AGE_102_NAME",
+      "queryName": "Age by single year 0 - 18.C2021_AGE_102_NAME",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Age by single year 0 - 18"
+            }
+          },
+          "Property": "C2021_AGE_102_NAME"
+        }
+      }
+    }
+  ]
+}

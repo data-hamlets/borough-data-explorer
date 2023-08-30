@@ -1,0 +1,471 @@
+{
+  "objects": {
+    "categoryAxis": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "maxMarginFactor": {
+            "expr": {
+              "Literal": {
+                "Value": "50L"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "12D"
+              }
+            }
+          },
+          "preferredCategoryWidth": {
+            "expr": {
+              "Literal": {
+                "Value": "24D"
+              }
+            }
+          },
+          "innerPadding": {
+            "expr": {
+              "Literal": {
+                "Value": "12L"
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "12D"
+              }
+            }
+          },
+          "titleFontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "14D"
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "titleFontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "titleColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          },
+          "labelPosition": {
+            "expr": {
+              "Literal": {
+                "Value": "'InsideBase'"
+              }
+            }
+          },
+          "enableBackground": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#480091'"
+                  }
+                }
+              }
+            }
+          },
+          "showAllDataPoints": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 6,
+                    "Percent": 0.6
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sexual_Orientation-21"
+                        }
+                      },
+                      "Property": "GEOGRAPHY_NAME"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'England'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 9,
+                    "Percent": 0.6
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sexual_Orientation-21"
+                        }
+                      },
+                      "Property": "GEOGRAPHY_NAME"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'London'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 9,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sexual_Orientation-21"
+                        }
+                      },
+                      "Property": "GEOGRAPHY_NAME"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Tower Hamlets'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Area name'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Series": [
+      1
+    ],
+    "Category": [
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "Sexual_Orientation-21.C2021_SEXOR_6_NAME",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Percentage",
+        "Name": "Sum(Sexual_Orientation-21.OBS_VALUE)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Area name",
+        "Name": "Sexual_Orientation-21.GEOGRAPHY_NAME",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Sexual orientation",
+        "Name": "Sexual_Orientation-21.C2021_SEXOR_6_NAME",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Series",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Percentage",
+      "queryName": "Sum(Sexual_Orientation-21.OBS_VALUE)",
+      "roles": {
+        "Y": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sexual_Orientation-21"
+                }
+              },
+              "Property": "OBS_VALUE"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Area name",
+      "queryName": "Sexual_Orientation-21.GEOGRAPHY_NAME",
+      "roles": {
+        "Series": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Sexual_Orientation-21"
+            }
+          },
+          "Property": "GEOGRAPHY_NAME"
+        }
+      }
+    },
+    {
+      "displayName": "Sexual orientation",
+      "queryName": "Sexual_Orientation-21.C2021_SEXOR_6_NAME",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Sexual_Orientation-21"
+            }
+          },
+          "Property": "C2021_SEXOR_6_NAME"
+        }
+      }
+    }
+  ]
+}

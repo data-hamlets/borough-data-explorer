@@ -17,19 +17,19 @@ table 'Good Health'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 11210ca7-7ca4-4f81-9c24-1cd4e00b62ac
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'health max' = MAX('Good Health'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: fcbf47fc-d1c8-46b5-ab53-6d7d86187fc8
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'health avg' = AVERAGE('Good Health'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 4fe31019-4a07-49d0-9793-87f30e712b1c
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column DATE
 		dataType: Int64

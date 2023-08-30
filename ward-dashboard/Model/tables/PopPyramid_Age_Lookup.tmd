@@ -35,7 +35,7 @@ table PopPyramid_Age_Lookup
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	annotation PBI_ResultType = Table
 

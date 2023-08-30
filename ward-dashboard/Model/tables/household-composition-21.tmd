@@ -20,19 +20,19 @@ table 'household-composition-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 41752840-a372-47b1-a40d-6dd9b60277b5
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'household average' = AVERAGE('household-composition-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 0184c8c1-9812-4887-a199-0d51fd1e255e
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'household max' = MAX('household-composition-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 3d126d44-6f11-4ae4-b3e2-ea2927aac214
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_CODE
 		dataType: String
@@ -52,9 +52,11 @@ table 'household-composition-21'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString","DataType"]
-
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		changedProperty = FormatString
+
+		changedProperty = DataType
 
 	column 'Household type'
 		dataType: String

@@ -1,0 +1,387 @@
+{
+  "objects": {
+    "categoryAxis": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "maxMarginFactor": {
+            "expr": {
+              "Literal": {
+                "Value": "50L"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          },
+          "preferredCategoryWidth": {
+            "expr": {
+              "Literal": {
+                "Value": "24D"
+              }
+            }
+          },
+          "innerPadding": {
+            "expr": {
+              "Literal": {
+                "Value": "12L"
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "11D"
+              }
+            }
+          },
+          "titleFontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "14D"
+              }
+            }
+          },
+          "titleFontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "titleColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          },
+          "labelPosition": {
+            "expr": {
+              "Literal": {
+                "Value": "'InsideBase'"
+              }
+            }
+          },
+          "enableBackground": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#0B5351'"
+                  }
+                }
+              }
+            }
+          },
+          "showAllDataPoints": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Category": [
+      0,
+      1
+    ],
+    "Y": [
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.1",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Ethnic group",
+        "Name": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.1",
+        "Type": 2048
+      },
+      {
+        "Restatement": "(detailed)",
+        "Name": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.2",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Percentage",
+        "Name": "Divide(Sum(ethnicity-21.OBS_VALUE), ScopedEval(Sum(ethnicity-21.OBS_VALUE), []))",
+        "Type": 1,
+        "Format": "#,##0.00%"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ethnicity-21"
+                  }
+                },
+                "Hierarchy": "Ethnic grou"
+              }
+            },
+            "Level": "(detailed)"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Category",
+          "Projection": 0,
+          "isActive": true
+        },
+        {
+          "Name": "Category",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Y",
+          "Projection": 2,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Ethnic group",
+      "queryName": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.1",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "ethnicity-21"
+                }
+              },
+              "Hierarchy": "Ethnic grou"
+            }
+          },
+          "Level": "Ethnic group"
+        }
+      }
+    },
+    {
+      "displayName": "(detailed)",
+      "queryName": "ethnicity-21.C2021_ETH_20_NAME.1 Hierarchy.C2021_ETH_20_NAME.2",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "ethnicity-21"
+                }
+              },
+              "Hierarchy": "Ethnic grou"
+            }
+          },
+          "Level": "(detailed)"
+        }
+      }
+    },
+    {
+      "displayName": "Percentage",
+      "format": "#,##0.00%",
+      "queryName": "Divide(Sum(ethnicity-21.OBS_VALUE), ScopedEval(Sum(ethnicity-21.OBS_VALUE), []))",
+      "roles": {
+        "Y": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Arithmetic": {
+          "Left": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ethnicity-21"
+                    }
+                  },
+                  "Property": "OBS_VALUE"
+                }
+              },
+              "Function": 0
+            }
+          },
+          "Right": {
+            "ScopedEval": {
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ethnicity-21"
+                        }
+                      },
+                      "Property": "OBS_VALUE"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "Scope": []
+            }
+          },
+          "Operator": 3
+        }
+      }
+    }
+  ]
+}

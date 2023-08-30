@@ -22,19 +22,19 @@ table 'LSOA Parks only'
 		formatString:= 0
 		lineageTag: 717c71de-51c7-4a24-8156-dc97da1d2ab6
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'parks max' = MAX('LSOA Parks only'[Average distance to nearest Park or Public Garden (m)])
 		formatString:= 0
 		lineageTag: 84c6047c-fd21-4f92-b67c-f6bedca02d1a
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'parks avg' = AVERAGE('LSOA Parks only'[Average distance to nearest Park or Public Garden (m)])
 		formatString:= 0
 		lineageTag: d7b124fe-e357-48e6-b53b-20cac573d494
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column 'LAD code'
 		dataType: String

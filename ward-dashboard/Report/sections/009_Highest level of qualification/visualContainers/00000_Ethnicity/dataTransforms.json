@@ -279,6 +279,13 @@
           },
           "Function": 0
         }
+      },
+      "relatedObjects": {
+        "dataPoint": {
+          "fillRule": [
+            null
+          ]
+        }
       }
     },
     {

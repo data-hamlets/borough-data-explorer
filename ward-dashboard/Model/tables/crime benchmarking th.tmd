@@ -37,7 +37,7 @@ table 'crime benchmarking th'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column rate
 		dataType: Double

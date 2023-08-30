@@ -20,19 +20,19 @@ table 'householdlanguage-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: e6dfaa1d-f658-4c63-9163-46bca6d3874a
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Min household language' = MIN('householdlanguage-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 2a911245-cc1b-4306-98b5-36b2eca77b59
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Average household language' = AVERAGE('householdlanguage-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 74571413-208b-430a-9cc7-8f2d0a524226
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_NAME
 		dataType: String
@@ -73,7 +73,7 @@ table 'householdlanguage-21'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["SortByColumn"]
+		changedProperty = SortByColumn
 
 	column 'Sort order'
 		dataType: String

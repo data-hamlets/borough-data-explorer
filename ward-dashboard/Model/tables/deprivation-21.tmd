@@ -17,19 +17,19 @@ table 'deprivation-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 1d8ebaa5-c29f-4054-b62e-af6874e16c93
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Deprivation max' = MAX('deprivation-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 78a035d4-7dc7-4141-a860-ca097d62d5a8
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Deprivation average' = AVERAGE('deprivation-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 026e424c-6895-4863-954f-0fbe60cc7fe0
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_CODE
 		dataType: String

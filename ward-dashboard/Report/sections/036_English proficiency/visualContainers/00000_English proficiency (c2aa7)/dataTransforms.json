@@ -1,0 +1,376 @@
+{
+  "objects": {
+    "general": [
+      {
+        "properties": {}
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#0B5351'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "categoryAxis": [
+      {
+        "properties": {
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "titleFontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          },
+          "titleFontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "labelOrientation": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "labelPosition": {
+            "expr": {
+              "Literal": {
+                "Value": "'InsideBase'"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "14D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "filters": [
+      {
+        "properties": {
+          "filteredToUniqueValue": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "englishproficiency-21.English proficiency.2 Hierarchy.English proficiency.2"
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Category": [
+      1,
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "englishproficiency-21.English proficiency.2 Hierarchy.English proficiency.2",
+        "suppressConcat": true
+      },
+      {
+        "queryRef": "englishproficiency-21.English proficiency.2 Hierarchy.(detailed)",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Percentage",
+        "Name": "Avg(englishproficiency-21.OBS_VALUE)",
+        "Type": 1,
+        "Format": "#,##0.00%"
+      },
+      {
+        "Restatement": "English proficiency",
+        "Name": "englishproficiency-21.English proficiency.2 Hierarchy.English proficiency.2",
+        "Type": 2048
+      },
+      {
+        "Restatement": "(detailed)",
+        "Name": "englishproficiency-21.English proficiency.2 Hierarchy.(detailed)",
+        "Type": 2048
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "deprivation-21"
+              }
+            },
+            "Property": "MEASURES_NAME"
+          }
+        }
+      },
+      {
+        "type": 7
+      },
+      {
+        "type": 0,
+        "expression": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "englishproficiency-21"
+                  }
+                },
+                "Hierarchy": "English proficiency.2 Hierarchy"
+              }
+            },
+            "Level": "English proficiency"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 1,
+          "isActive": true
+        },
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Percentage",
+      "format": "#,##0.00%",
+      "queryName": "Avg(englishproficiency-21.OBS_VALUE)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Arithmetic": {
+          "Left": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "englishproficiency-21"
+                    }
+                  },
+                  "Property": "OBS_VALUE"
+                }
+              },
+              "Function": 0
+            }
+          },
+          "Right": {
+            "ScopedEval": {
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "englishproficiency-21"
+                        }
+                      },
+                      "Property": "OBS_VALUE"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "Scope": []
+            }
+          },
+          "Operator": 3
+        }
+      }
+    },
+    {
+      "displayName": "English proficiency",
+      "queryName": "englishproficiency-21.English proficiency.2 Hierarchy.English proficiency.2",
+      "roles": {
+        "Category": true
+      },
+      "sort": 1,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "englishproficiency-21"
+                }
+              },
+              "Hierarchy": "English proficiency.2 Hierarchy"
+            }
+          },
+          "Level": "English proficiency"
+        }
+      }
+    },
+    {
+      "displayName": "(detailed)",
+      "queryName": "englishproficiency-21.English proficiency.2 Hierarchy.(detailed)",
+      "roles": {
+        "Category": true
+      },
+      "sort": 1,
+      "sortOrder": 1,
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "englishproficiency-21"
+                }
+              },
+              "Hierarchy": "English proficiency.2 Hierarchy"
+            }
+          },
+          "Level": "(detailed)"
+        }
+      }
+    }
+  ]
+}

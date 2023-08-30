@@ -17,19 +17,19 @@ table Occupation
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: 07b7eb26-a926-4fda-ab45-7ffe5960453d
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Minimum Percentage Occupation' = MIN('Occupation'[OBS_VALUE])/100
 		formatString:= 0.0%;-0.0%;0.0%
 		lineageTag: 5e003e52-c8f5-4256-8f76-7717895ee34b
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Average occupation' = AVERAGE('Occupation'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 8069c791-1654-4d6b-90e5-f8b9e1ca7118
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_CODE
 		dataType: String
@@ -69,7 +69,7 @@ table Occupation
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	annotation PBI_ResultType = Table
 

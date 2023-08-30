@@ -1,0 +1,130 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "ethnicity-21",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "e"
+                      }
+                    },
+                    "Property": "OBS_VALUE"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(ethnicity-21.OBS_VALUE)"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "e"
+                  }
+                },
+                "Property": "GEOGRAPHY_CODE"
+              },
+              "Name": "ethnicity-21.GEOGRAPHY_CODE"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "C2021_ETH_20_NAME.2"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "e"
+                        }
+                      },
+                      "Property": "OBS_VALUE"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Top": {}
+            }
+          },
+          "Aggregates": [
+            {
+              "Select": 0,
+              "Aggregations": [
+                {
+                  "Min": {}
+                }
+              ]
+            }
+          ],
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

@@ -31,7 +31,7 @@ table 'residents-21'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["DataType"]
+		changedProperty = DataType
 
 	column C_SEX_NAME
 		dataType: String

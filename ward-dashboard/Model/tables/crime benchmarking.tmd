@@ -37,7 +37,7 @@ table 'crime benchmarking'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column 'crime rate lonodn'
 		dataType: Double
@@ -49,7 +49,7 @@ table 'crime benchmarking'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column 'crime benchmarking th.rate'
 		dataType: Double
@@ -61,7 +61,7 @@ table 'crime benchmarking'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	annotation PBI_NavigationStepName = Navigation
 

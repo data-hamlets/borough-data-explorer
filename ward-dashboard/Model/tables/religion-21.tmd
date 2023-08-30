@@ -17,19 +17,19 @@ table 'religion-21'
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 28e18621-3701-4e05-a885-676160995133
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Min religion' = MIN('religion-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 1b6bcbb1-d135-443f-ae5a-552d0cba92c1
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	measure 'Average religion' = AVERAGE('religion-21'[OBS_VALUE])/100
 		formatString:= 0.00%;-0.00%;0.00%
 		lineageTag: 0f88cb4d-f70a-4eed-a693-8493610c1baa
 
-		annotation PBI_ChangedProperties = ["FormatString"]
+		changedProperty = FormatString
 
 	column GEOGRAPHY_NAME
 		dataType: String
