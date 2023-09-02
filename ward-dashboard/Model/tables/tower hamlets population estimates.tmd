@@ -33,7 +33,5 @@ table 'tower hamlets population estimates'
 
 		annotation SummarizationSetBy = Automatic
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
 

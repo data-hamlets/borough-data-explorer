@@ -47,7 +47,5 @@ table 'ks4-performance'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Table
 
