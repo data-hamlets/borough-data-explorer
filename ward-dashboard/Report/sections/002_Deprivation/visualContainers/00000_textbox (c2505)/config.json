@@ -51,7 +51,14 @@
               {
                 "textRuns": [
                   {
-                    "value": "employment: any member of a household, who is not a full-time student, is either unemployed or long-term sick",
+                    "value": "employment",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ": any member of a household, who is not a full-time student, is either unemployed or long-term sick",
                     "textStyle": {
                       "fontSize": "14pt"
                     }
@@ -62,7 +69,14 @@
               {
                 "textRuns": [
                   {
-                    "value": "education: no person in the household has at least level 2 education (5+ GCSE passes) or is aged 16-18 and a full-time student",
+                    "value": "education",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ": no person in the household has at least level 2 education (5+ GCSE passes) or is aged 16-18 and a full-time student",
                     "textStyle": {
                       "fontSize": "14pt"
                     }
@@ -73,7 +87,14 @@
               {
                 "textRuns": [
                   {
-                    "value": "health and disability: any person in the household has general health that is “bad” or has a long-term health problem",
+                    "value": "health and disability",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ": any person in the household has general health that is “bad” or has a long-term health problem",
                     "textStyle": {
                       "fontSize": "14pt"
                     }
@@ -84,7 +105,14 @@
               {
                 "textRuns": [
                   {
-                    "value": "housing: the household’s accommodation is either overcrowded or is in a shared dwelling, or has no central heating.",
+                    "value": "housing",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": ": the household’s accommodation is either overcrowded or is in a shared dwelling, or has no central heating.",
                     "textStyle": {
                       "fontSize": "14pt"
                     }
