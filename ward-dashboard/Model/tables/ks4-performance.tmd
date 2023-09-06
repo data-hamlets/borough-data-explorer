@@ -5,12 +5,8 @@ table 'ks4-performance'
 	partition 'ks4-performance-1896d0aa-3439-41c3-b1b1-244dd2df372b' = M
 		mode: Import
 		expression:=
-			let
-			
-			    PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-			    homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-			    workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\permalink-033c7383-7413-47c0-c28e-08db81eaa1c3.csv"} , "\"),
-			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			let			
+			    Source = Csv.Document(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/ks4-perf.csv"),[Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.None]),
 			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 			    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"time_identifier", "country_code", "country_name", "region_code", "region_name", "old_la_code", "new_la_code", "la_name", "characteristic_gender", "characteristic_ethnic_major", "characteristic_free_school_meals", "characteristic_sen_status", "characteristic_sen_description", "characteristic_disadvantage", "characteristic_first_language"}),
 			    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"pt_l2basics_94", type number}, {"time_period", Int64.Type}})

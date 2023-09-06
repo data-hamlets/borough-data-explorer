@@ -6,10 +6,7 @@ table 'Alt ClaimantCount'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\Alternative Claimant Count (Aug 22).xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+					Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/Alternative%20Claimant%20Count%20Aug%2022.xlsx"), null, true),
 			    #"Data Sheet 0_Sheet" = Source{[Item="Data Sheet 0",Kind="Sheet"]}[Data],
 			    #"Changed Type" = Table.TransformColumnTypes(#"Data Sheet 0_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type any}}),
 			    #"Removed Top Rows" = Table.Skip(#"Changed Type",9),

@@ -5,17 +5,14 @@ table 'LSOA11 to Ward Lookup'
 	partition 'LSOA11 to Ward Lookup-8a37ae24-e324-4f1f-80b0-9b392a1b46dc' = M
 		mode: Import
 		expression:=
-			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\LSOA11 to Ward Lookup.xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
-			    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
-			    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
-			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
-			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"LSOA11CD", type text}, {"LSOA11NM", type text}, {"WD20CD", type text}, {"WD20NM", type text}})
-			in
-			    #"Changed Type1"
+		let
+				Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/LSOA11%20to%20Ward%20Lookup.xlsx"), null, true),
+				Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				#"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				#"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				#"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"LSOA11CD", type text}, {"LSOA11NM", type text}, {"WD20CD", type text}, {"WD20NM", type text}})
+		in
+				#"Changed Type1"
 
 	column LSOA11CD
 		dataType: String

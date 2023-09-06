@@ -6,10 +6,7 @@ table 'Ethnic Group Lookup'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\Ethnic Group Lookup.csv"} , "\"),
-			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    Source = Csv.Document(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/Ethnic%20Group%20Lookup.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
 			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
 			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"C2021_ETH_20_NAME", type text}, {"C2021_ETH_20_CODE", type text}, {"Ethnic Group", type text}, {"Ethnic Subgroup", type text}})

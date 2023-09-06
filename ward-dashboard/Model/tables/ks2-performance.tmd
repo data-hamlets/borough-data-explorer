@@ -6,10 +6,7 @@ table 'ks2-performance'
 		mode: Import
 		expression:=
 			let
-			    PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-			    homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-			    workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\permalink-94de6883-5e51-4eda-b081-08db81e9328d.csv"} , "\"),
-			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    Source = Csv.Document(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/ks2-perf.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 			    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"time_identifier", "country_name", "old_la_code", "new_la_code", "gender", "la_name", "region_name", "region_code", "country_code"}),
 			    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([pt_rwm_met_expected_standard] <> "x")),

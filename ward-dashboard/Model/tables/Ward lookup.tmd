@@ -6,16 +6,11 @@ table 'Ward lookup'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\TH Old to New ward Look up.xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
-			    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
-			    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}}),
-			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
-			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Ward", type text}, {"New Wards", type text}})
+					Source = Csv.Document(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/TH%20Old%20to%20New%20ward%20Look%20up.csv"), [Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
+			    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true])
 			in
-			    #"Changed Type1"
+			    #"Promoted Headers"
 
 	column Ward
 		dataType: String

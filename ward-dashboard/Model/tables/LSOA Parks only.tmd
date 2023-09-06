@@ -6,10 +6,7 @@ table 'LSOA Parks only'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\ospublicgreenspacereferencetables.xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+					Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/ospublicgreenspacereferencetables.xlsx"), null, true),
 			    #"LSOA Parks only_Sheet" = Source{[Item="LSOA Parks only",Kind="Sheet"]}[Data],
 			    #"Promoted Headers" = Table.PromoteHeaders(#"LSOA Parks only_Sheet", [PromoteAllScalars=true]),
 			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Country code", type text}, {"Country name", type text}, {"Region code", type text}, {"Region name", type text}, {"LAD code", type text}, {"LAD name", type text}, {"MSOA code", type text}, {"MSOA name", type text}, {"LSOA code", type text}, {"LSOA name", type text}, {"Index of Multiple Deprivation rank (country specific)", Int64.Type}, {"Index of Multiple Deprivation decile (country specific)", Int64.Type}, {"Average distance to nearest Park or Public Garden (m)", type number}, {"Average size of nearest Park or Public Garden (m2)", type number}, {"Average number of Parks or Public Gardens within 1,000 m radius", type number}, {"Average combined size of Parks or Public Gardens within 1,000 m radius (m2)", type number}, {"Number of postcodes within built up area", Int64.Type}, {"Number of built up area postcodes  within 300m of a Park or Public Garden", Int64.Type}, {"Number of built up area postcodes  within 900m of a Park or Public Garden", Int64.Type}}),

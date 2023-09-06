@@ -6,10 +6,7 @@ table 'Age Band Lookup'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\age band look up.xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+					Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/age%20band%20look%20up.xlsx"), null, true),
 			    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 			    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 			    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Age", Int64.Type}, {"5 year Age Band", type text}, {"5 year sort order", Int64.Type}, {"10 Year Age Band", type text}, {"10 year sort order", Int64.Type}, {"Broad Ranges", type text}, {"Broad Range sort order", Int64.Type}, {"16+", type text}})

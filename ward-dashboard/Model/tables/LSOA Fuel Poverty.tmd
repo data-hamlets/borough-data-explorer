@@ -6,10 +6,7 @@ table 'LSOA Fuel Poverty'
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\sub-regional-fuel-poverty-2022-tables.xlsx"} , "\"),
-					Source = Excel.Workbook(File.Contents(workingDirFile), null, true),
+					Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/sub-regional-fuel-poverty-2022-tables.xlsx"), null, true),
 			    #"Table 3_Sheet" = Source{[Item="Table 3",Kind="Sheet"]}[Data],
 			    #"Removed Top Rows" = Table.Skip(#"Table 3_Sheet",2),
 			    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),

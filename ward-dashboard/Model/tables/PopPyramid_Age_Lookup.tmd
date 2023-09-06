@@ -6,10 +6,7 @@ table PopPyramid_Age_Lookup
 		mode: Import
 		expression:=
 			let
-					PySource = Python.Execute("from pathlib import Path#(lf)import pandas as pd#(lf)dataset = pd.DataFrame([[str(Path.home())]], columns = [1])"),
-					homeDir = Text.Trim(Lines.ToText(PySource{[Name="dataset"]}[Value][1])),
-					workingDirFile = Text.Combine({homeDir, "code\borough-data-explorer\data\PopPyramid_Age_Lookup.csv"} , "\"),
-			    Source = Csv.Document(File.Contents(workingDirFile),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    Source = Csv.Document(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/PopPyramid_Age_Lookup.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"C2021_Age_92", Int64.Type}, {"Age Band", type text}})
 			in
