@@ -6,7 +6,7 @@ table jts_o5_2019
 		mode: Import
 		expression:=
 			let
-					Source = Excel.Workbook(File.Contents("c:\users\joseph.leach\code\borough-data-explorer\data\jts_o5_2019.xlsx"), null, true),
+					Source = Excel.Workbook(Web.Contents("https://github.com/data-hamlets/borough-data-explorer/raw/main/data/jts_o5_2019.xlsx"), null, true),
 			    jts_o5_2019_Sheet = Source{[Item="jts_o5_2019",Kind="Sheet"]}[Data],
 			    #"Removed Top Rows" = Table.Skip(jts_o5_2019_Sheet,6),
 			    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
