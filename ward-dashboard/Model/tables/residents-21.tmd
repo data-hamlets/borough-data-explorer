@@ -22,12 +22,11 @@ table 'residents-21'
 		annotation SummarizationSetBy = Automatic
 
 	column OBS_VALUE
-		dataType: Int64
-		formatString:= 0
+		dataType: String
 		isDataTypeInferred: false
 		lineageTag: 0a67b567-d304-41c4-8ca4-f904c8f8a7b7
 		sourceColumn: OBS_VALUE
-		summarizeBy: Sum
+		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
 

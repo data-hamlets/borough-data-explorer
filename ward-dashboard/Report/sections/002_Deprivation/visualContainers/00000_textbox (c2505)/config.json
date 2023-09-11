@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 15.380507343124165,
+        "x": 48,
         "y": 0,
         "z": 0,
-        "width": 1088.5981308411215,
-        "height": 208.49132176234977
+        "width": 1056,
+        "height": 208
       }
     }
   ],
@@ -23,18 +23,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "   Deprivation",
+                    "value": "Deprivation",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "20pt"
                     }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
                   }
                 ]
               },

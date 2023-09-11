@@ -67,6 +67,8 @@ table 'Fuel Poverty API'
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fuel Poverty API","TableItemName":"Area Name (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column 'Area Type'
 		dataType: String
 		isDataTypeInferred: false
@@ -261,6 +263,41 @@ table 'Fuel Poverty API'
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
+
+	column 'Area Name (groups)' =
+		SWITCH(
+		  TRUE,
+		  ISBLANK('Fuel Poverty API'[Area Name]),
+		  "(Blank)",
+		  'Fuel Poverty API'[Area Name] IN {"Tower Hamlets"},
+		  "Tower Hamlets",
+		  "Other"
+		)
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: aebab3f4-6658-4562-869e-11e7fb8bc3d7
+		summarizeBy: None
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fuel Poverty API"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Area Name"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Tower Hamlets","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Area Name"}}],"Values":[[{"Literal":{"Value":"'Tower Hamlets'"}}]]}}},{"DisplayName":"Other"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+		extendedProperty GroupingMetadata =
+			{
+			  "version": 0,
+			  "groupedColumns": [
+			    {
+			      "Column": {
+			        "Expression": {
+			          "SourceRef": {
+			            "Entity": "Fuel Poverty API"
+			          }
+			        },
+			        "Property": "Area Name"
+			      }
+			    }
+			  ]
+			}
 
 	annotation PBI_ResultType = Table
 

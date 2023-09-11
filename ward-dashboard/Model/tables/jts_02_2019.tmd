@@ -72,5 +72,5 @@ table jts_02_2019
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

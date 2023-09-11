@@ -1,0 +1,51 @@
+{
+  "name": "f51a4949806d546be29b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 640,
+        "y": 239.99999999999997,
+        "z": 9000,
+        "width": 512,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Select number of deprivation ",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "dimensions ",
+                    "textStyle": {
+                      "fontSize": "18.6667px"
+                    }
+                  },
+                  {
+                    "value": "to show:",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

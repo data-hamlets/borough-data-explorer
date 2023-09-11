@@ -25,6 +25,11 @@
         {
           "queryRef": "Sum(Fuel Poverty API.Value)"
         }
+      ],
+      "Series": [
+        {
+          "queryRef": "Fuel Poverty API.Area Name (groups)"
+        }
       ]
     },
     "prototypeQuery": {
@@ -63,6 +68,29 @@
             "Function": 0
           },
           "Name": "Sum(Fuel Poverty API.Value)"
+        },
+        {
+          "GroupRef": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "f"
+              }
+            },
+            "Property": "Area Name (groups)",
+            "GroupedColumns": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "f"
+                    }
+                  },
+                  "Property": "Area Name"
+                }
+              }
+            ]
+          },
+          "Name": "Fuel Poverty API.Area Name (groups)"
         }
       ],
       "OrderBy": [
@@ -130,6 +158,90 @@
           "selector": {
             "metadata": "Sum(Fuel Poverty API.Value)"
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fuel Poverty API"
+                          }
+                        },
+                        "Property": "Area Name (groups)"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Other'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fuel Poverty API"
+                          }
+                        },
+                        "Property": "Area Name (groups)"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Tower Hamlets'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "categoryAxis": [
@@ -172,6 +284,65 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "responsive": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "ribbonChart": [
+        {
+          "properties": {
+            "colorBands": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "bandsTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100L"
                 }
               }
             }

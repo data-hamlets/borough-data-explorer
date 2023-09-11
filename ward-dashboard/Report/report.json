@@ -14,7 +14,7 @@
     },
     {
       "boundSection": "ReportSectionee093817b0b100200311",
-      "config": "{}",
+      "config": "{\"acceptsFilterContext\":1}",
       "name": "Pod1"
     },
     {
@@ -41,8 +41,7 @@
     {
       "boundSection": "ReportSectiond22b99c0d2d59d9148cd",
       "config": "{\"acceptsFilterContext\":1}",
-      "name": "Pod12",
-      "referenceScope": 1
+      "name": "Pod12"
     },
     {
       "boundSection": "ReportSectionf7b53b09a093e2ce69e5",

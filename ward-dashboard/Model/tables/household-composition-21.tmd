@@ -44,7 +44,7 @@ table 'household-composition-21'
 		annotation SummarizationSetBy = Automatic
 
 	column OBS_VALUE
-		dataType: Double
+		dataType: Int64
 		isDataTypeInferred: false
 		lineageTag: cc750251-d891-49bf-b7f4-cdc69a265dbf
 		sourceColumn: OBS_VALUE
