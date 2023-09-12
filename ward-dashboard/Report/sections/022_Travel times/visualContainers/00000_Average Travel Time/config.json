@@ -23,7 +23,7 @@
       ],
       "Y": [
         {
-          "queryRef": "Sum(jts_06_2019.HospPTt)"
+          "queryRef": "jts_06_2019.avg hospital"
         }
       ]
     },
@@ -36,7 +36,7 @@
           "Type": 0
         },
         {
-          "Name": "j1",
+          "Name": "j",
           "Entity": "jts_06_2019",
           "Type": 0
         }
@@ -54,38 +54,28 @@
           "Name": "LSOA11 to Ward Lookup.WD20NM"
         },
         {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "j1"
-                  }
-                },
-                "Property": "HospPTt"
+              "SourceRef": {
+                "Source": "j"
               }
             },
-            "Function": 1
+            "Property": "avg hospital"
           },
-          "Name": "Sum(jts_06_2019.HospPTt)"
+          "Name": "jts_06_2019.avg hospital"
         }
       ],
       "OrderBy": [
         {
           "Direction": 2,
           "Expression": {
-            "Aggregation": {
+            "Measure": {
               "Expression": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Source": "j1"
-                    }
-                  },
-                  "Property": "HospPTt"
+                "SourceRef": {
+                  "Source": "j"
                 }
               },
-              "Function": 1
+              "Property": "avg hospital"
             }
           }
         }
@@ -140,6 +130,13 @@
                   }
                 }
               }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -171,15 +168,88 @@
       ],
       "dataPoint": [
         {
+          "properties": {}
+        },
+        {
           "properties": {
             "fill": {
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0B5351'"
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "jts_06_2019"
+                            }
+                          },
+                          "Property": "avg hospital"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'minColor'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'midColor'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'maxColor'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

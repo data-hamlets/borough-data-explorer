@@ -35,6 +35,13 @@
                 }
               }
             }
+          },
+          "invertAxis": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
           }
         }
       }
@@ -66,15 +73,88 @@
     ],
     "dataPoint": [
       {
+        "properties": {}
+      },
+      {
         "properties": {
           "fill": {
             "solid": {
               "color": {
                 "expr": {
-                  "Literal": {
-                    "Value": "'#0B5351'"
+                  "FillRule": {
+                    "Input": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "jts_06_2019"
+                          }
+                        },
+                        "Property": "avg hospital"
+                      }
+                    },
+                    "FillRule": {
+                      "linearGradient3": {
+                        "min": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'minColor'"
+                            }
+                          }
+                        },
+                        "mid": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'midColor'"
+                            }
+                          }
+                        },
+                        "max": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'maxColor'"
+                            }
+                          }
+                        },
+                        "nullColoringStrategy": {
+                          "strategy": {
+                            "Literal": {
+                              "Value": "'asZero'"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "dataViewWildcard": {
+                "matchingOption": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "showGradientLegend": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
               }
             }
           }
@@ -106,8 +186,8 @@
         "Type": 2048
       },
       {
-        "Restatement": "Average travel time (mins)",
-        "Name": "Sum(jts_06_2019.HospPTt)",
+        "Restatement": "avg hospital",
+        "Name": "jts_06_2019.avg hospital",
         "Type": 1
       }
     ],
@@ -209,8 +289,8 @@
       }
     },
     {
-      "displayName": "Average travel time (mins)",
-      "queryName": "Sum(jts_06_2019.HospPTt)",
+      "displayName": "avg hospital",
+      "queryName": "jts_06_2019.avg hospital",
       "roles": {
         "Y": true
       },
@@ -221,18 +301,13 @@
         "underlyingType": 259
       },
       "expr": {
-        "Aggregation": {
+        "Measure": {
           "Expression": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "jts_06_2019"
-                }
-              },
-              "Property": "HospPTt"
+            "SourceRef": {
+              "Entity": "jts_06_2019"
             }
           },
-          "Function": 1
+          "Property": "avg hospital"
         }
       }
     }

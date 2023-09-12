@@ -11,7 +11,7 @@
               "Type": 0
             },
             {
-              "Name": "j1",
+              "Name": "j",
               "Entity": "jts_06_2019",
               "Type": 0
             },
@@ -34,20 +34,15 @@
               "Name": "LSOA11 to Ward Lookup.WD20NM"
             },
             {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "j1"
-                      }
-                    },
-                    "Property": "HospPTt"
+                  "SourceRef": {
+                    "Source": "j"
                   }
                 },
-                "Function": 1
+                "Property": "avg hospital"
               },
-              "Name": "Sum(jts_06_2019.HospPTt)"
+              "Name": "jts_06_2019.avg hospital"
             }
           ],
           "Where": [
@@ -83,18 +78,13 @@
             {
               "Direction": 2,
               "Expression": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "j1"
-                        }
-                      },
-                      "Property": "HospPTt"
+                    "SourceRef": {
+                      "Source": "j"
                     }
                   },
-                  "Function": 1
+                  "Property": "avg hospital"
                 }
               }
             }
@@ -119,6 +109,19 @@
               }
             }
           },
+          "Aggregates": [
+            {
+              "Select": 1,
+              "Aggregations": [
+                {
+                  "Min": {}
+                },
+                {
+                  "Max": {}
+                }
+              ]
+            }
+          ],
           "Version": 1
         },
         "ExecutionMetricsKind": 1

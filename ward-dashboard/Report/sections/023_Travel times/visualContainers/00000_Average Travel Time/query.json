@@ -34,20 +34,15 @@
               "Name": "LSOA11 to Ward Lookup.WD20NM"
             },
             {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "j"
-                      }
-                    },
-                    "Property": "PSPTt"
+                  "SourceRef": {
+                    "Source": "j"
                   }
                 },
-                "Function": 1
+                "Property": "school avg"
               },
-              "Name": "Sum(jts_02_2019.PSPTt)"
+              "Name": "jts_02_2019.school avg"
             }
           ],
           "Where": [
@@ -83,18 +78,13 @@
             {
               "Direction": 2,
               "Expression": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "j"
-                        }
-                      },
-                      "Property": "PSPTt"
+                    "SourceRef": {
+                      "Source": "j"
                     }
                   },
-                  "Function": 1
+                  "Property": "school avg"
                 }
               }
             }
@@ -119,6 +109,19 @@
               }
             }
           },
+          "Aggregates": [
+            {
+              "Select": 1,
+              "Aggregations": [
+                {
+                  "Min": {}
+                },
+                {
+                  "Max": {}
+                }
+              ]
+            }
+          ],
           "Version": 1
         },
         "ExecutionMetricsKind": 1

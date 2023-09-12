@@ -1,19 +1,19 @@
 {
-  "name": "7c915645477ed24c3350",
+  "name": "75c3ed1d01bf482362f2",
   "layouts": [
     {
       "id": 0,
       "position": {
-        "x": 610.86614173228338,
-        "y": 250.86614173228344,
+        "x": 604.02290938542615,
+        "y": 306.29426854324629,
         "z": 3000,
-        "width": 625.03937007874015,
-        "height": 360
+        "width": 644.28203808543481,
+        "height": 329.38754503345342
       }
     }
   ],
   "singleVisual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "columnChart",
     "projections": {
       "Category": [
         {
@@ -23,7 +23,7 @@
       ],
       "Y": [
         {
-          "queryRef": "jts_02_2019.school avg"
+          "queryRef": "tbl_measures.fp_per"
         }
       ]
     },
@@ -31,13 +31,13 @@
       "Version": 2,
       "From": [
         {
-          "Name": "l",
-          "Entity": "LSOA11 to Ward Lookup",
+          "Name": "t",
+          "Entity": "tbl_measures",
           "Type": 0
         },
         {
-          "Name": "j",
-          "Entity": "jts_02_2019",
+          "Name": "l",
+          "Entity": "LSOA11 to Ward Lookup",
           "Type": 0
         }
       ],
@@ -57,12 +57,12 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Source": "j"
+                "Source": "t"
               }
             },
-            "Property": "school avg"
+            "Property": "fp_per"
           },
-          "Name": "jts_02_2019.school avg"
+          "Name": "tbl_measures.fp_per"
         }
       ],
       "OrderBy": [
@@ -72,10 +72,10 @@
             "Measure": {
               "Expression": {
                 "SourceRef": {
-                  "Source": "j"
+                  "Source": "t"
                 }
               },
-              "Property": "school avg"
+              "Property": "fp_per"
             }
           }
         }
@@ -88,8 +88,8 @@
       "LSOA11 to Ward Lookup.WD20NM": {
         "displayName": "Area name"
       },
-      "Sum(jts_02_2019.PSPTt)": {
-        "displayName": "Average travel time (mins)"
+      "tbl_measures.fp_per": {
+        "displayName": "Percentage"
       }
     },
     "drillFilterOtherVisuals": true,
@@ -101,7 +101,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average travel time (mins)'"
+                  "Value": "'Percentage'"
                 }
               }
             },
@@ -148,6 +148,13 @@
                   }
                 }
               }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -172,13 +179,18 @@
                   "expr": {
                     "FillRule": {
                       "Input": {
-                        "Measure": {
+                        "Aggregation": {
                           "Expression": {
-                            "SourceRef": {
-                              "Entity": "jts_02_2019"
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "LSOA Fuel Poverty"
+                                }
+                              },
+                              "Property": "Proportion of households fuel poor (%)"
                             }
                           },
-                          "Property": "school avg"
+                          "Function": 6
                         }
                       },
                       "FillRule": {
@@ -233,6 +245,20 @@
       "legend": [
         {
           "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bottom'"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "showGradientLegend": {
               "expr": {
                 "Literal": {
@@ -297,21 +323,34 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average Travel Time'"
+                  "Value": "'Percentage of households in fuel poverty'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "14D"
                 }
               }
             },
-            "show": {
+            "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
                 }
               }
             }

@@ -118,26 +118,8 @@
       }
     ]
   },
-  "queryMetadata": {
-    "Select": [
-      {
-        "Restatement": "WD20NM",
-        "Name": "LSOA11 to Ward Lookup.WD20NM",
-        "Type": 2048
-      }
-    ]
-  },
-  "visualElements": [
-    {
-      "DataRoles": [
-        {
-          "Name": "Values",
-          "Projection": 0,
-          "isActive": true
-        }
-      ]
-    }
-  ],
+  "queryMetadata": null,
+  "visualElements": null,
   "selects": [
     {
       "displayName": "WD20NM",

@@ -6,7 +6,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Average travel time (mins)'"
+                "Value": "'Percentage'"
               }
             }
           },
@@ -53,6 +53,13 @@
                 }
               }
             }
+          },
+          "concatenateLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
           }
         }
       }
@@ -77,13 +84,18 @@
                 "expr": {
                   "FillRule": {
                     "Input": {
-                      "Measure": {
+                      "Aggregation": {
                         "Expression": {
-                          "SourceRef": {
-                            "Entity": "jts_02_2019"
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "LSOA Fuel Poverty"
+                              }
+                            },
+                            "Property": "Proportion of households fuel poor (%)"
                           }
                         },
-                        "Property": "school avg"
+                        "Function": 6
                       }
                     },
                     "FillRule": {
@@ -138,6 +150,20 @@
     "legend": [
       {
         "properties": {
+          "position": {
+            "expr": {
+              "Literal": {
+                "Value": "'Bottom'"
+              }
+            }
+          },
+          "showTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
           "showGradientLegend": {
             "expr": {
               "Literal": {
@@ -180,8 +206,8 @@
         "Type": 2048
       },
       {
-        "Restatement": "school avg",
-        "Name": "jts_02_2019.school avg",
+        "Restatement": "Percentage",
+        "Name": "tbl_measures.fp_per",
         "Type": 1
       }
     ],
@@ -283,8 +309,8 @@
       }
     },
     {
-      "displayName": "school avg",
-      "queryName": "jts_02_2019.school avg",
+      "displayName": "Percentage",
+      "queryName": "tbl_measures.fp_per",
       "roles": {
         "Y": true
       },
@@ -298,10 +324,34 @@
         "Measure": {
           "Expression": {
             "SourceRef": {
-              "Entity": "jts_02_2019"
+              "Entity": "tbl_measures"
             }
           },
-          "Property": "school avg"
+          "Property": "fp_per"
+        }
+      }
+    },
+    {
+      "displayName": "Median of Proportion of households fuel poor (%)",
+      "queryName": "Median(LSOA Fuel Poverty.Proportion of households fuel poor (%))",
+      "roles": {},
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "LSOA Fuel Poverty"
+                }
+              },
+              "Property": "Proportion of households fuel poor (%)"
+            }
+          },
+          "Function": 6
         }
       }
     }
