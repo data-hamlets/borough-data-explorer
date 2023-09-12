@@ -16,9 +16,9 @@ this project contains:
 ├── ward-dashboard.pbix - pbi report
 └── ward-dashboard - report extracted to text sources (powerquery etc)
 ```
-## version controls
+## proper versioning for pbi
 
-this project uses [pbi.tools](https://pbi.tools) and the following commands have been really handy for getting this product onto a sustainable footing:
+this project uses [pbi.tools](https://pbi.tools) to enhance the operations side of working with pbi (reliable collaboration and publishing support), and the following commands have been really handy for getting this product onto a sustainable footing:
 
 `pbi-tools extract ward-dashboard.pbix`
 
