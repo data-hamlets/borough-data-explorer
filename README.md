@@ -1,6 +1,6 @@
 # borough-data-explorer
 
-![dashboard screenshot](./docs/borough-data-explorer.png)
+[![dashboard screenshot](./docs/borough-data-explorer.png)](https://data-hamlets.github.io/open-data-tower-hamlets/borough-data-explorer/)
 
 this project contains: 
 
@@ -18,31 +18,31 @@ this project contains:
 ```
 ## version controls
 
-this project now uses [pbi.tools](https://pbi.tools)
-
-the following commands have been really handy for getting this product onto a sustainable footing:
-
-> Extract the contents of a PBIX/PBIT file into a folder structure suitable for source control.
+this project uses [pbi.tools](https://pbi.tools) and the following commands have been really handy for getting this product onto a sustainable footing:
 
 `pbi-tools extract ward-dashboard.pbix`
 
-...you can then work on powerquery directly in a code editor, useful for managing complex products where you need to find/replace across multiple powerqueries.
+> Extract the contents of a PBIX/PBIT file into a folder structure suitable for source control.
 
-> Generate a PBIT file from sources in the specified PbixProj folder
+...you can then work on powerquery directly in a code editor, useful for managing complex products where you need to find/replace across multiple pages.
 
 `pbi-tools compile ward-dashboard -overwrite -format PBIT`
 
-...having fixed your powerqueries, you can recompile these back into a PBIT...
+> re-compile a PBIT file from modified sources in the specified folder
 
-> open a pbit in pbi
+...having fixed up your powerqueries, you can recompile these back into a PBIT, which in turn you can open in pbi, ready to save as a PBIX report...
 
 `pbi-tools launch-pbi ward-dashboard.pbit`
 
-this file can then be saved as pbix format and published
+> open a pbit in pbi
 
-> bonus: this extracts the binary from an [official installer](https://github.com/microsoft/winget-pkgs/tree/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI), giving you the latest tool (nb, rule out intermediary exploits with: `certutil.exe -hashfile PBIDesktopSetup_x64.exe SHA256` to verify [checksums match](https://github.com/microsoft/winget-pkgs/blob/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI/2.120.963.0/Microsoft.PowerBI.installer.yaml#L25)) between the released/downloaded file
+...this file can then be saved as pbix format and published!
+
+### bonus section
 
 `pbi-tools extract-pbidesktop <installerPath>   - Extracts binaries from latest installer`
+
+> this extracts the binary from an [official installer](https://github.com/microsoft/winget-pkgs/tree/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI), giving you the latest tool (nb, rule out intermediary exploits with: `certutil.exe -hashfile PBIDesktopSetup_x64.exe SHA256` to verify [checksums match](https://github.com/microsoft/winget-pkgs/blob/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI/2.120.963.0/Microsoft.PowerBI.installer.yaml#L25)) between the released/downloaded file
 
 ## _note on statistical/political geographies_
 > they don't line up
