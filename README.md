@@ -42,7 +42,7 @@ this project uses [pbi.tools](https://pbi.tools) and the following commands have
 
 `pbi-tools extract-pbidesktop <installerPath>   - Extracts binaries from latest installer`
 
-> this extracts the binary from an [official installer](https://github.com/microsoft/winget-pkgs/tree/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI), giving you the latest tool (nb, rule out intermediary exploits with: `certutil.exe -hashfile PBIDesktopSetup_x64.exe SHA256` to verify [checksums match](https://github.com/microsoft/winget-pkgs/blob/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI/2.120.963.0/Microsoft.PowerBI.installer.yaml#L25)) between the released/downloaded file
+> this extracts the binary from an [official installer](https://github.com/microsoft/winget-pkgs/tree/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI), giving you the latest tool (nb, rule out intermediary exploits with: `certutil.exe -hashfile PBIDesktopSetup_x64.exe SHA256` to verify [checksums match](https://github.com/microsoft/winget-pkgs/blob/4f5c3107c67f67ab682d72b7c3825a9a8d1f48cd/manifests/m/Microsoft/PowerBI/2.120.963.0/Microsoft.PowerBI.installer.yaml#L25) between the released/downloaded file)
 
 ## _note on statistical/political geographies_
 > they don't line up
