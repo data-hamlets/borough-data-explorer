@@ -10,7 +10,7 @@ this project contains:
 ├── LICENSE - AGPLv3
 ├── README.md
 ├── boundaries - topojson custom maps
-├── data - online sources ensures "scheduled refresh" works online
+├── data - using only online sources ensures "scheduled refresh" works
 ├── style - viridis palette
 ├── ward-dashboard.pbit - pbi template
 ├── ward-dashboard.pbix - pbi report
@@ -18,7 +18,7 @@ this project contains:
 ```
 ## proper versioning for pbi
 
-this project uses [pbi.tools](https://pbi.tools) to enhance the operations side of working with pbi (reliable collaboration and publishing support), and the following commands have been really handy for getting this product onto a sustainable footing:
+this project uses [pbi.tools](https://pbi.tools) to enhance the operations side of working with pbi (reliable collaboration, documentation, and maintenance), and the following commands have been really handy for getting this product onto a sustainable footing:
 
 `pbi-tools extract ward-dashboard.pbix`
 
@@ -49,4 +49,4 @@ this project uses [pbi.tools](https://pbi.tools) to enhance the operations side 
 
 currently we are using 2021 output areas (where possible), these are the smallest unit of aggregation, and can be fairly accurately assigned to wards, although there are many [OAs that don't fit perfectly](https://nbviewer.org/github/data-hamlets/census-data/blob/main/notebooks/0.2-lbth-oa-ward-overlaps.ipynb). 
 
-![map showing oas overlapping wards](./docs/oas-overlapping-wards.png)
+[![map showing oas overlapping wards](./docs/oas-overlapping-wards.png)](https://nbviewer.org/github/data-hamlets/census-data/blob/main/notebooks/0.2-lbth-oa-ward-overlaps.ipynb)
