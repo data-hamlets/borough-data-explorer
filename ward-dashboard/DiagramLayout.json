@@ -626,6 +626,32 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 19019.128876604351,
+            "y": 0
+          },
+          "nodeIndex": "waqi api - blackwall",
+          "nodeLineageTag": "cb0a5a39-4a14-4a8c-ac4e-648ac6153842",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 19443.3629429542,
+            "y": 0
+          },
+          "nodeIndex": "waqi api - victoria park",
+          "nodeLineageTag": "a7788859-36b8-46eb-bae5-026682ad6f74",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

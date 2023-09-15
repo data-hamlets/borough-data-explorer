@@ -303,3 +303,203 @@ relationship '914c7223-3ef5-44e0-bc89-2be27f1f9028'
 	fromColumn: 'Highest Level of Qualification'.C2021_HIQUAL_8_NAME
 	toColumn: highest_qual_benchmarking.'Qualification Level'
 
+relationship '6978eefa-70b6-4f34-b45c-0e29c81eb999'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.h.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_768d0d13-9631-49c8-b2cb-fe5c7422a65e'.Date
+
+relationship '9aa4269f-6f53-470c-bac8-cb70096789e7'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.no2.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_5bc1c0de-4ca6-4365-9b5c-807a5bb11ccd'.Date
+
+relationship '777842f0-a879-4022-9a25-fc9ab9b7f4f9'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.p.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_1cd5b8a2-a153-491b-bcaf-9b99ff115faa'.Date
+
+relationship 'e1330a77-c3c0-49fc-a568-4fac1ed7a75e'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.pm10.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_63172c62-8e96-4609-bb77-d72594581295'.Date
+
+relationship '00d0774d-2ba7-4b3c-ae98-a7e592a5fa35'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.pm25.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_0f23d3e3-2cbf-4af1-b5ad-5898581554f8'.Date
+
+relationship '72005d7a-3725-4547-bca9-7bc441f0f8c9'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.t.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_affdcea6-38d5-4b6e-9eca-5f04e2dd6724'.Date
+
+relationship 'dc578232-f6f7-451d-b53a-370c3d66cd57'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.time.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_49d9dc17-3377-4a4b-a0d6-75c8d29d73ed'.Date
+
+relationship '1581c45d-b5b2-48a8-ba6e-4476df947a60'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.time.iso'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_db581b7d-094e-43c4-bb2f-04f36085ecc0'.Date
+
+relationship '5b99c06b-1d1a-4ede-9937-5450806e99e1'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.h.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_a7564b74-74fc-44fd-9154-98a17a45ee84'.Date
+
+relationship '2faa6900-b866-4fa9-89ee-b37409114a1b'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.no2.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_e09ce6b5-dffe-49a9-98b5-d52811208f5e'.Date
+
+relationship 'f63a11e0-d8bd-403b-b2c6-4b09762129b9'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.p.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_0fc66e98-9565-4c6d-9ad9-a42966fdc839'.Date
+
+relationship 'e270a1ff-eb19-4594-a357-7e3034910815'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.pm10.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_5fe63f6e-7ebf-4313-a92d-3f6ce6c8d9f2'.Date
+
+relationship '84cff815-e83a-491e-90b5-701611b2403b'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.pm25.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_99d84a6b-a8d3-481d-8a67-c464385d2050'.Date
+
+relationship 'd0183a16-d8d8-4244-afe9-443245c85c9d'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.t.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_84fb9d9a-e9fb-40f8-89ac-e3ad43a4ecb1'.Date
+
+relationship '308154e6-c630-4b56-9a1c-9be47948d277'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.h.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_24ca66b8-e999-4555-bccc-56c8a1fb3aa8'.Date
+
+relationship '15272a96-1b82-4f25-bea3-b884c2ed9839'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.no2.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_6350e7f1-dd9e-4003-b18f-64cd3e66860b'.Date
+
+relationship '2863e5c9-d659-4f64-ab94-61d80da692bb'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.o3.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_ad8342e0-429e-42e1-8e60-e22fbc9c1feb'.Date
+
+relationship '49bfadc2-f312-4541-b03f-f12b5434eec4'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.p.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_7ffd510c-ceec-4a4d-b43c-28eac3b42b89'.Date
+
+relationship 'be6888ff-45cc-43df-b102-d00b14f737a6'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.pm10.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_f7d2d5e2-89db-4199-bb05-e272106e0fde'.Date
+
+relationship '51d277fc-555e-4530-af1a-19d4348d8062'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.pm25.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_7eb4bd11-429a-45a1-8feb-4ed071a201e9'.Date
+
+relationship '6dff0c4f-0a97-42fd-95ec-67c35fe40a71'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.t.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_7d485481-0e27-4293-a1b3-584993fea05a'.Date
+
+relationship 'b8da23ed-adea-464b-a92c-5564398e6c6a'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.w.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_cf7023ef-f0da-4fa2-ac5d-58bebb304584'.Date
+
+relationship '4122053a-2924-4d76-8566-46527a268a63'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.iaqi.wg.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_1b8cd742-e7ab-42c4-91a1-bfaedf896c32'.Date
+
+relationship 'cc9850e8-4bac-4f30-838b-c6ee0ee806bb'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.time.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_7b0f326d-c44b-421f-8bd7-5277be478d9f'.Date
+
+relationship '5bf0f1e8-6414-45b8-b4a0-1fd5f95f5d4f'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.time.iso'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_e7783e04-9f24-4f24-8911-9864e35024fd'.Date
+
+relationship 'ba518dd7-cec8-48c8-8cc2-6005372d4eff'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.h.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_6acfa85b-3e6b-4d33-8adb-e6613d62a3b3'.Date
+
+relationship 'a2d5c8b2-4b93-4ce5-b46b-a6b33a76e08a'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.no2.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_d5c9b7a9-dd66-47f4-87cd-66d9e46a5373'.Date
+
+relationship '82981385-7d0a-4cd9-8fcf-4c3eba6790e1'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.o3.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_b3bf4ffa-fefa-42a9-9bcd-7871ec1c5ffd'.Date
+
+relationship '467fdc52-26df-4824-befb-38c421f1bae6'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.p.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_4bfc854b-1444-4a5c-81ea-f791dcf89646'.Date
+
+relationship '1aeac91a-2277-468b-b14e-db365f46e970'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.pm10.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_1d4d8109-74ba-4cfd-ad8e-943f52936107'.Date
+
+relationship '1b815dba-7135-4fd6-ae6e-fa4f27f3f17b'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.pm25.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_f880f3d4-93e4-4d52-8ed9-329f61989d2e'.Date
+
+relationship 'a563d4b0-5e12-431f-8b0c-0d1f7ab2c43e'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.t.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_8fdbb521-3720-46e7-874e-57c37c9aa08a'.Date
+
+relationship 'dfddb9db-dad2-47ba-8949-bb953b97a0b1'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.w.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_0cdbc9c0-e9c0-4726-be9e-2d8fe5ca156f'.Date
+
+relationship '1a0a3455-a98d-4dee-b044-67fb70ed07e1'
+	fromColumn: 'waqi api - blackwall'.'rxs.obs.msg.obs.wg.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_951abaaa-fa18-4c57-8e84-d411b7c53440'.Date
+
+relationship 'da7aab89-8ead-42a6-9db1-bb2dc4e19346'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.o3.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_537db35c-0652-465d-9490-8cbe2ff1734f'.Date
+
+relationship '10cfab24-54c3-4023-8bcf-edea2b5d3df4'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.w.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_e0ba0c06-45ac-4ad3-a010-aeb43d11584d'.Date
+
+relationship '2cb63c33-cf9a-4b98-8c7a-06c8b1a12fb1'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.iaqi.wg.t'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_ca9e4a0f-4212-4a12-bd93-3ac6d7235995'.Date
+
+relationship 'a9c9fe36-ec52-49f8-af4a-4fc1c8d34750'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.o3.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_202c7cdb-4a97-4f7c-879c-9b9113e4cbe6'.Date
+
+relationship '3d162ff1-e3f4-41c6-be89-b61f44e07048'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.w.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_be931007-b2b8-4875-923d-a31f96881b49'.Date
+
+relationship '520280fc-ebcc-43d8-ad32-924e4dbaf1cc'
+	fromColumn: 'waqi api - victoria park'.'rxs.obs.msg.obs.wg.s'
+	joinOnDateBehavior: DatePartOnly
+	toColumn: 'LocalDateTable_3fd39fdd-0afc-49ca-89cf-630b5ed655a3'.Date
+
