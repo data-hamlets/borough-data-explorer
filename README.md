@@ -10,7 +10,7 @@ this project contains:
 ├── LICENSE - AGPLv3
 ├── README.md
 ├── boundaries - topojson custom maps
-├── data - online sources ensures "scheduled refresh" works online
+├── data - using only online sources ensures "scheduled refresh" works
 ├── style - viridis palette
 ├── ward-dashboard.pbit - pbi template
 ├── ward-dashboard.pbix - pbi report
