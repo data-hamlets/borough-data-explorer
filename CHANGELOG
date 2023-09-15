@@ -1,19 +1,4 @@
-4ba6baa (added gradient to travel time bars, 2023-09-12)
-f633a33 (move deprivation later as min/max ui confusing, 2023-09-12)
-9d1d785 (table as ui on deprivation page as values >  00%, 2023-09-11)
-c7e926a (move last dataset to web (allow scheduled refresh), 2023-09-11)
-5186c14 (add wardcodes alongside names (stabler link), 2023-09-11)
-a477cb5 (pre-select deprivation; fuel poverty bars gradient, 2023-09-06)
-d11935c (moved all offline data sources online, 2023-09-06)
-ad99934 (csv instead of xlsx for one lookup, 2023-09-06)
-224291e (renamed datasets for convenience, 2023-09-05)
-05ba16f (embolden deprivation labels, 2023-09-04)
-40741d1 (removed dynamic sources as they broke app.powerbi, 2023-09-02)
-944c39e (use viridis colours on more visuals, 2023-08-30)
-a76734f (version working based on pbit and tmdl files, 2023-08-30)
-5899428 (tweaked viridis colour ramp, 2023-08-30)
-0454576 (switched data from web page scraper to csv, 2023-08-30)
-df6f40a (first commit using pbi-tools and tmdl, 2023-08-29)
-f93b8da (Merge branch 'main' of https://github.com/data-hamlets/borough-data-explorer, 2023-08-24)
-818b54f (initial commit, 2023-08-24)
-e4b1f8a (Initial commit, 2023-08-24)
+fcee4d9 (HEAD -> main, tag: 0.1.3) added near realtime air quality data
+4ba6baa (tag: 0.1.2) added gradient to travel time bars
+c7e926a (tag: 0.1.1) move last dataset to web (allow scheduled refresh)
+818b54f (tag: 0.1.0) initial commit

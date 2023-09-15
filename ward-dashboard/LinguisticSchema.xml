@@ -200,5 +200,10 @@
         <Word>Museum and gallery visits- outside the borough</Word>
       </Words>
     </Entity>
+    <Entity Name="Air_quality_now" ConceptualEntity="Pod40" Source="Generated">
+      <Words>
+        <Word>Air quality now</Word>
+      </Words>
+    </Entity>
   </Entities>
 </LinguisticSchema>

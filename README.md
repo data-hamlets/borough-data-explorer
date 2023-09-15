@@ -6,7 +6,7 @@ this project contains:
 
 ```sh
 ├── docs
-├── CHANGELOG - git log --pretty=reference
+├── CHANGELOG - git log --oneline --decorate --simplify-by-decoration | grep tag > CHANGELOG
 ├── LICENSE - AGPLv3
 ├── README.md
 ├── boundaries - topojson custom maps
