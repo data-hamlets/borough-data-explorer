@@ -1,14 +1,14 @@
 {
-  "name": "6865dccedf52ea36a02c",
+  "name": "e3c9a1efacc5b89b0740",
   "layouts": [
     {
       "id": 0,
       "position": {
         "x": 32,
-        "y": 208,
+        "y": 176,
         "z": 2000,
-        "width": 512,
-        "height": 352
+        "width": 528,
+        "height": 383.99999999999994
       }
     }
   ],
@@ -17,12 +17,12 @@
     "projections": {
       "Category": [
         {
-          "queryRef": "jts_02_2019.LSOA_code"
+          "queryRef": "jts_o5_2019.LSOA_code"
         }
       ],
       "Value": [
         {
-          "queryRef": "Sum(jts_02_2019.PSPTt)"
+          "queryRef": "Sum(jts_o5_2019.GPPTt)"
         }
       ]
     },
@@ -36,7 +36,7 @@
         },
         {
           "Name": "j",
-          "Entity": "jts_02_2019",
+          "Entity": "jts_o5_2019",
           "Type": 0
         }
       ],
@@ -50,7 +50,7 @@
             },
             "Property": "LSOA_code"
           },
-          "Name": "jts_02_2019.LSOA_code"
+          "Name": "jts_o5_2019.LSOA_code"
         },
         {
           "Aggregation": {
@@ -61,12 +61,12 @@
                     "Source": "j"
                   }
                 },
-                "Property": "PSPTt"
+                "Property": "GPPTt"
               }
             },
             "Function": 0
           },
-          "Name": "Sum(jts_02_2019.PSPTt)"
+          "Name": "Sum(jts_o5_2019.GPPTt)"
         }
       ],
       "OrderBy": [
@@ -91,10 +91,10 @@
       ]
     },
     "columnProperties": {
-      "Sum(jts_02_2019.PSPTt)": {
+      "Sum(jts_o5_2019.GPPTt)": {
         "displayName": "Average travel time (mins)"
       },
-      "jts_02_2019.LSOA_code": {
+      "jts_o5_2019.LSOA_code": {
         "displayName": "LSOA code"
       }
     },
@@ -212,13 +212,6 @@
         {
           "properties": {
             "autoZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "manualZoom": {
               "expr": {
                 "Literal": {
                   "Value": "true"

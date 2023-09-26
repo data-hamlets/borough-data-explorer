@@ -1,0 +1,102 @@
+{
+  "name": "aacfe310dc7950288a90",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48.188976377952756,
+        "y": 208.34645669291336,
+        "z": 1000,
+        "width": 720,
+        "height": 459.2125984251968
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This dashboard was created to visualise available data relevant to the 8 priorities outlined in the 2022-26 Tower Hamlets Strategic Plan. Data has been used from a wide variety of publically-available sources including ONS, Gov.uk, Met Police and the NHS. ",
+                    "textStyle": {
+                      "fontSize": "24pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The ward values used in the preceding charts and tables are ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "indicative",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": " and not exact - they are drawn by aggregating statistical areas (OA, LSOA, and MSOA) by ward based on which ward each areas population centre falls within. The spatial resolutions used do however provide  detailed local analyses to be conducted, as well as enabling ward level inferences to be drawn.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

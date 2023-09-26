@@ -1,0 +1,55 @@
+{
+  "name": "b3360108dd4cf47033a0",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 63.779527559055111,
+        "y": 287.71653543307087,
+        "z": 3000,
+        "width": 650.55118110236219,
+        "height": 317.48031496062993
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Thank you for taking the time to look through this dashboard, we hope it provides a useful resource for exploring borough data! We would love to hear your thoughts and discuss any additional data sources you believe would be relevant. Please contact Joe (joseph.leach@towerhamlets.gov.uk) or Sophie (sophie.porton@towerhamlets.gov.uk) to provide feedback. ",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

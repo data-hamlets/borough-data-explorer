@@ -205,5 +205,15 @@
         <Word>Air quality now</Word>
       </Words>
     </Entity>
+    <Entity Name="Table_of_Contents" ConceptualEntity="Pod41" Source="Generated">
+      <Words>
+        <Word>Table of Contents</Word>
+      </Words>
+    </Entity>
+    <Entity Name="Foreword" ConceptualEntity="Pod42" Source="Generated">
+      <Words>
+        <Word>Foreword</Word>
+      </Words>
+    </Entity>
   </Entities>
 </LinguisticSchema>

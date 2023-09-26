@@ -1,0 +1,55 @@
+{
+  "name": "35de2e0a0c512800349c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 48.188976377952756,
+        "y": 111.96850393700787,
+        "z": 2000,
+        "width": 720,
+        "height": 86.456692913385822
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Table of Contents",
+                    "textStyle": {
+                      "fontSize": "42pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
